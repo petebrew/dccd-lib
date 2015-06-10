@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+    <format type="org.joda.time.DateTime" serializer="nl.knaw.dans.common.jibx.util.Converter.serializeDateTime"
+        deserializer="nl.knaw.dans.common.jibx.util.Converter.deSerializeDateTime" />
+
+ <mapping name="projectadministrativemetadata" class="nl.knaw.dans.dccd.model.ProjectAdministrativeMetadata"
+ ns="http://dans.knaw.nl/dccd/projectadministrativemetadata/" >
+    <namespace prefix="pam" uri="http://dans.knaw.nl/dccd/projectadministrativemetadata/" />
+    <value name="state" get-method="getAdministrativeState" set-method="setAdministrativeState"/>
+    <value name="lastStateChange" field="lastStateChange" usage="optional"/>
+    <value name="previousState" field="previousState" usage="optional"/>
+
+    <value name="managerId" get-method="getManagerId" set-method="setManagerId"/>
+    <value name="legalOwnerOrganisationId" get-method="getLegalOwnerOrganisationId" set-method="setLegalOwnerOrganisationId"/>
+</mapping>
+</binding>

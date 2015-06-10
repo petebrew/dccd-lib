@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tridas:tridas xmlns:tridas="http://www.tridas.org/1.2.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml">
+    <tridas:project>
+        <tridas:title>dccd-webapp-testdata-minimal-v_1</tridas:title>
+        <tridas:identifier domain="test.org">TEST-P:1</tridas:identifier>
+        <tridas:comments></tridas:comments>
+        <tridas:type>datering</tridas:type>
+        <tridas:description></tridas:description>
+        <tridas:laboratory>
+            <tridas:identifier domain="test.org">1</tridas:identifier>
+            <tridas:name acronym=""></tridas:name>
+            <tridas:address>
+                <tridas:addressLine1></tridas:addressLine1>
+                <tridas:addressLine2></tridas:addressLine2>
+                <tridas:cityOrTown></tridas:cityOrTown>
+                <tridas:stateProvinceRegion></tridas:stateProvinceRegion>
+                <tridas:postalCode></tridas:postalCode>
+                <tridas:country></tridas:country>
+            </tridas:address>
+        </tridas:laboratory>
+        <tridas:category>archeologie</tridas:category>
+        <tridas:investigator>a name</tridas:investigator>
+        <tridas:period>a period</tridas:period>
+        <tridas:commissioner></tridas:commissioner>
+        <tridas:object>
+            <tridas:title>test object 1</tridas:title>
+            <tridas:identifier domain="test.org">TEST-O:1</tridas:identifier>
+            <tridas:comments></tridas:comments>
+            <tridas:type lang="nl">Onbekend</tridas:type>
+            <tridas:description></tridas:description>
+            <tridas:creator></tridas:creator>
+            <tridas:owner></tridas:owner>
+            <tridas:location>
+                <tridas:locationGeometry>
+                    <gml:Point srsName="WGS 84">
+                        <gml:pos>4.00969 51.92261</gml:pos>
+                    </gml:Point>
+                </tridas:locationGeometry>
+                <tridas:locationPrecision></tridas:locationPrecision>
+                <tridas:locationComment></tridas:locationComment>
+            </tridas:location>
+            <tridas:element>
+                <tridas:title>test element 1</tridas:title>
+                <tridas:identifier domain="test.org">TEST-E:1</tridas:identifier>
+                <tridas:comments></tridas:comments>
+                <tridas:type lang="nl">Onbekend</tridas:type>
+                <tridas:description></tridas:description>
+                <tridas:taxon lang="nl">Quercus</tridas:taxon>
+                <tridas:authenticity></tridas:authenticity>
+                <tridas:processing></tridas:processing>
+                <tridas:marks></tridas:marks>
+                <tridas:sample>
+                    <tridas:title>test sample 1</tridas:title>
+                    <tridas:identifier domain="test.org">TEST-S:1</tridas:identifier>
+                    <tridas:comments></tridas:comments>
+                    <tridas:type>divers</tridas:type>
+                    <tridas:description></tridas:description>
+                    <tridas:position></tridas:position>
+                    <tridas:state></tridas:state>
+                    <tridas:knots>false</tridas:knots>
+                    <tridas:radius>
+                        <tridas:title>test radius 1</tridas:title>
+                        <tridas:identifier domain="test.org">TEST-R:1</tridas:identifier>
+                        <tridas:comments></tridas:comments>
+                        <tridas:measurementSeries id="M651">
+                            <tridas:title>M1</tridas:title>
+                            <tridas:identifier domain="test.org">TEST-M:1</tridas:identifier>
+                            <tridas:comments></tridas:comments>
+                            <tridas:analyst></tridas:analyst>
+                            <tridas:dendrochronologist></tridas:dendrochronologist>
+                            <tridas:measuringMethod normalTridas="measuring platform"></tridas:measuringMethod>
+                            <tridas:interpretationUnsolved/>
+                            <tridas:values>
+<tridas:variable normalTridas="ring width">Ring width</tridas:variable>
+<tridas:unit normalTridas="1/100th millimetres">1/100th millimetres</tridas:unit>
+<tridas:value value="101"/>
+<tridas:value value="102"/>
+<tridas:value value="103"/>
+<tridas:value value="104"/>
+<tridas:value value="105"/>
+<tridas:value value="106"/>
+<tridas:value value="107"/>
+<tridas:value value="108"/>
+<tridas:value value="109"/>
+<tridas:value value="110"/>
+                            </tridas:values>
+                        </tridas:measurementSeries>
+                    </tridas:radius>
+                    <tridas:radius>
+                        <tridas:title>test radius 2</tridas:title>
+                        <tridas:identifier domain="test.org">TEST-R:2</tridas:identifier>
+                        <tridas:comments></tridas:comments>
+                        <tridas:woodCompleteness>
+                            <tridas:ringCount>233</tridas:ringCount>
+                            <tridas:pith presence="absent"/>
+                            <tridas:heartwood presence="unknown">
+<tridas:missingHeartwoodRingsToPithFoundation></tridas:missingHeartwoodRingsToPithFoundation>
+                            </tridas:heartwood>
+                            <tridas:sapwood presence="unknown">
+<tridas:nrOfSapwoodRings>0</tridas:nrOfSapwoodRings>
+<tridas:missingSapwoodRingsToBarkFoundation></tridas:missingSapwoodRingsToBarkFoundation>
+                            </tridas:sapwood>
+                            <tridas:bark presence="absent"/>
+                        </tridas:woodCompleteness>
+                        <tridas:measurementSeries id="M652">
+                            <tridas:title>M2</tridas:title>
+                            <tridas:identifier domain="test.org">TEST-M:2</tridas:identifier>
+                            <tridas:comments></tridas:comments>
+                            <tridas:woodCompleteness>
+<tridas:ringCount>10</tridas:ringCount>
+<tridas:pith presence="absent"/>
+<tridas:heartwood presence="unknown">
+    <tridas:missingHeartwoodRingsToPithFoundation></tridas:missingHeartwoodRingsToPithFoundation>
+</tridas:heartwood>
+<tridas:sapwood presence="unknown">
+    <tridas:nrOfSapwoodRings>0</tridas:nrOfSapwoodRings>
+    <tridas:missingSapwoodRingsToBarkFoundation></tridas:missingSapwoodRingsToBarkFoundation>
+</tridas:sapwood>
+<tridas:bark presence="absent"/>
+                            </tridas:woodCompleteness>
+                            <tridas:analyst></tridas:analyst>
+                            <tridas:dendrochronologist></tridas:dendrochronologist>
+                            <tridas:measuringMethod normalTridas="measuring platform"></tridas:measuringMethod>
+                            <tridas:interpretation>
+<tridas:dating type="absolute"/>
+<tridas:statFoundation>
+    <tridas:statValue>0</tridas:statValue>
+    <tridas:type>type</tridas:type>
+    <tridas:usedSoftware>software</tridas:usedSoftware>
+</tridas:statFoundation>
+<tridas:provenance></tridas:provenance>
+                            </tridas:interpretation>
+                            <tridas:values>
+<tridas:variable normalTridas="ring width">Ring width</tridas:variable>
+<tridas:unit normalTridas="1/100th millimetres">1/100th millimetres</tridas:unit>
+<tridas:value value="109"/>
+<tridas:value value="108"/>
+<tridas:value value="107"/>
+<tridas:value value="106"/>
+<tridas:value value="105"/>
+<tridas:value value="104"/>
+<tridas:value value="103"/>
+<tridas:value value="102"/>
+<tridas:value value="101"/>
+<tridas:value value="100"/>
+                            </tridas:values>
+                        </tridas:measurementSeries>
+                    </tridas:radius>
+                </tridas:sample>
+            </tridas:element>
+        </tridas:object>
+        <tridas:derivedSeries id="D165">
+            <tridas:title>test derivedseries 1</tridas:title>
+            <tridas:identifier domain="test.org">TEST-D:1</tridas:identifier>
+            <tridas:comments></tridas:comments>
+            <tridas:type>Average of single sample</tridas:type>
+            <tridas:linkSeries>
+                <tridas:series>
+                    <tridas:identifier domain="test.org">TEST-S:1</tridas:identifier>
+                </tridas:series>
+            </tridas:linkSeries>
+            <tridas:objective></tridas:objective>
+            <tridas:standardizingMethod></tridas:standardizingMethod>
+            <tridas:author></tridas:author>
+            <tridas:version></tridas:version>
+            <tridas:interpretationUnsolved/>
+            <tridas:values>
+<tridas:variable normalTridas="ring width">Ring width</tridas:variable>
+<tridas:unit normalTridas="1/100th millimetres">1/100th millimetres</tridas:unit>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+            </tridas:values>
+        </tridas:derivedSeries>
+    </tridas:project>
+</tridas:tridas>

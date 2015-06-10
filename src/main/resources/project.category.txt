@@ -1,0 +1,12 @@
+en	nl	de	fr
+archaeology	archeologie	Archäologie	archéologie
+built heritage	gebouwd erfgoed	Baudenkmalpflege	patrimoine immobilier
+furniture	meubilair	Möbel	mobilier
+mobilia	mobilia	mobilia	patrimoine mobilier
+musical instrument	muziek instrument	Musikinstrument	instrument de musique
+painting	schilderij	Gemälde	peinture
+palaeo-vegetation	paleo-vegetatie	Paläovegetation	paléo-végétation
+ship archaeology	scheepsarcheologie	Schiffarchäologie	archéologie navale
+standing trees	staande boom	stehende Bäume	arbre sur pied
+woodcarving	houtsnijwerk	Holzschnitzarbeit	sculpture sur bois
+other	anders	andere	autre

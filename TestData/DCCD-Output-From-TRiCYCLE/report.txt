@@ -1,0 +1,459 @@
+
+File: BelfastApple-A1805.txt.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: BelfastArchive-bellframe1.arx.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Besancon-BesanconNew.txt.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-addated.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-AKK00010.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-AKK00010.rwl.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-bcdated.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-Maris.rwl.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-OBL10001.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-OBL10002.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-Tucson1.crn.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-Tucson2.crn.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-Tucson3.crn.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-Tucson6.rwl.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-Tucson7.rwl.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-UAKK0530.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-UAKK0540.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-UAKK0550.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-UAKK0560.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-UAKK0570.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Catras-undated.CAT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: CorinaLegacy-TRB1AB.SUM.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: CSVMatrix-test.csv.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: DendroDB-0567_25272.dat.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+
+File: DendroDB-0567_25274.dat.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+
+File: DendroDB-0567_25278.dat.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+
+File: DendroDB-0567_25280.dat.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+
+File: DendroDB-0567_25282.dat.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+
+File: DendroDB-0577_25317.dat.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+
+File: DendroDB-0577_25319.dat.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+
+File: Excel-test.xls.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-bababa.fh.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-minimal-dated.fh.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-minimal-reldated.fh.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-minimal-undated.fh.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-minimal.fh.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-SET01.FH.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-SET02.FH.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-SET03.FH.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-singlecol.fh.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-SYNTH.FH.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Heidelberg-SYNTH2.FH.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Nottingham-nottingham.txt.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: OODFMatrix-test.ods.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: OOXML-test.xlsx.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Oxford-test.dan.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Past-Voorburg 1988.p4p.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+
+File: Sheffield-HunBoat.d.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+Missing required field: type (org.tridas.schema.TridasDerivedSeries)
+
+File: Sheffield-igor.d.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+Invalid DCCD controlled vocabulary term for: taxon (org.tridas.schema.TridasElement)
+
+File: Sheffield-yhg50683.d.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+
+File: Sheffield-yhg50688.d.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+
+File: Sheffield-yhg50712.d.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+
+File: Sheffield-yhg50713.d.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+
+File: Topham-topham.txt.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Topham-topham2.txt.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Trims-GRC04B.txt.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Tucson-AKK00010.rwl.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Tucson-Maris.rwl.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Tucson-Tucson6.rwl.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: Tucson-Tucson7.rwl.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: TucsonCompact-tucsoncompact.rwm.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: VFormat-DE_V.!oj.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: VFormat-H_V.!oj.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: VFormat-NL_V.!oj.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: VFormat-pwbtest.!oj.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: VFormat-Testdata_VFormat_LS.!oj.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: VFormat-Testdata_VFormat_P.!oj.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: VFormat-Testdata_VFormat_Q.!oj.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+
+File: WinDendro-IRA1-5(Kelcey).TXT.xml:
+DCCD archiving validation result (empty when OK):
+Missing required field: identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)

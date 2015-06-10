@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+<mapping name="dccduser" class="nl.knaw.dans.dccd.model.DccdUserImpl" abstract="true">
+  <!--  Note id is the username -->
+  <value name="id" get-method="getId" set-method="setId"/>
+  <value name="email" get-method="getEmail" set-method="setEmail"/>
+  <value name="title" get-method="getTitle" set-method="setTitle"  usage="optional"/>
+  <value name="initials" get-method="getInitials" set-method="setInitials"/>
+  <value name="prefix" get-method="getPrefixes" set-method="setPrefixes"  usage="optional"/>
+  <value name="surname" get-method="getSurname" set-method="setSurname"/>
+  <value name="function" get-method="getFunction" set-method="setFunction"  usage="optional"/>
+  <value name="telephone" get-method="getTelephone" set-method="setTelephone"  usage="optional"/>
+  <value name="digitalauthoridentifier" get-method="getDigitalAuthorIdentifier" set-method="setDigitalAuthorIdentifier"  usage="optional"/>
+  <!--  note the 'z' in the getter and setter -->
+  <value name="organisation" get-method="getOrganization" set-method="setOrganization" />
+  <value name="state" get-method="getState" set-method="setState"/>
+
+   <collection name="roles" get-method="getRoleStringArrayList" set-method="setRoleStringArrayList" type="java.util.ArrayList" >
+     <value name="role" style="element" type="java.lang.String" />
+   </collection>
+
+</mapping>
+</binding>

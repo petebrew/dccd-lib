@@ -1,0 +1,2508 @@
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#-----------------------------------------------------------------------
+#some test synonym mappings unlikely to appear in real input text
+aaa => aaaa
+bbb => bbbb1 bbbb2
+ccc => cccc1,cccc2
+a\=>a => b\=>b
+a\,a => b\,b
+fooaaa,baraaa,bazaaa
+
+# Some synonym groups specific to this example
+GB,gib,gigabyte,gigabytes
+MB,mib,megabyte,megabytes
+Television, Televisions, TV, TVs
+#notice we use "gib" instead of "GiB" so any WordDelimiterFilter coming
+#after us won't split it into two words.
+
+# Synonym mappings can be used for spelling correction too
+pixima => pixma
+
+# dccd vocabularies
+#Kerk, Church, Église, Kirche
+
+#### DCCD Note: 
+#
+# if the accents are removed from the query using a filter 
+# like when you have
+#     <analyzer type="query">
+#        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+#      <filter class="solr.ISOLatin1AccentFilterFactory"/> --> 
+#<!-- <filter class="solr.ASCIIFoldingFilterFactory"/> -->
+#        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+#  
+# <filter class="solr.ISOLatin1AccentFilterFactory"/> 
+# or
+# <filter class="solr.ASCIIFoldingFilterFactory"/> 
+#
+# in the schema.xml
+# Then the sysnonyms.txt must also have the accents replaced. 
+# For instance the line
+#    gnarf, blarf, blörp
+# must be changed to
+#    gnarf, blarf, blorp
+#
+#
+# NOTE need to escape whitespace in phrases otherwise we get strange results!
+#
+#gnarf,blarf\ blorp,snork
+
+# DCCD synonyms for supporting finding with terms in multiple languages
+# project.category.txt
+archaeology,archeologie,Archäologie,archéologie
+built\ heritage,gebouwd\ erfgoed,Baudenkmalpflege,patrimoine\ immobilier
+furniture,meubilair,Möbel,mobilier
+mobilia,mobilia,mobilia,patrimoine\ mobilier
+musical\ instrument,muziek\ instrument,Musikinstrument,instrument\ de\ musique
+painting,schilderij,Gemälde,peinture
+palaeo-vegetation,paleo-vegetatie,Paläovegetation,paléo-végétation
+ship\ archaeology,scheepsarcheologie,Schiffarchäologie,archéologie\ navale
+standing\ trees,staande\ boom,stehende\ Bäume,arbre\ sur\ pied
+woodcarving,houtsnijwerk,Holzschnitzarbeit,sculpture\ sur\ bois
+other,anders,andere,autre
+
+# project.type.txt
+anthropology,antropologie,l'anthropologie
+climatology,klimatologie,climatologie
+dating,datering,datation
+ecology,ecologie,écologie
+entomology,entomologie,entomologie
+forest\ dynamics,bosdynamiek,dynamique\ forestrière
+forest\ management\ studies,bosbeheer\ studies,études\ de\ gestion\ forestière
+forestry,bosbouw,foresterie
+hydrology,hydrologie,hydrologie
+geomorphology,geomorfologie,géomorphologie
+glaciology,glaciologie,glaciologie
+palaeo-ecology,paleo-ecologie,paléo-écologie
+provenancing,herkomst\ bepaling,provenance
+pyrochronology,pyrochronologie,pyrochronologie
+wood\ technology,hout\ technologie,technologie\ du\ bois
+wood\ biology,hout\ biologie,biologie\ du\ bois
+other:\ go\ to\ project.comments,anders:\ ga\ naar\ commentaar\ (project.commentaar),autre:\ allez\ à\ commentaires\ (project.comments)
+
+# sample.type.txt
+cross\ section,dwars\ doorsnede,Querschnitt,section\ transversale
+core,boorkern,Bohrkern,carotte
+MRI,MRI,MRI,MRI
+none,geen,keine,aucun
+photo,foto,Foto,photo
+physical\ imprint,hout\ afdruk,Ausdruck,moulage
+scan,scan,Scan,scan
+wedge,wig,Keil,section
+various,divers,divers,divers
+other,anders,andere,autre
+
+# derivedseries.type.txt
+published\ chronology,gepubliseerde\ kalender,publizierte\ Chronology,chronologie\ publiée
+individual\ measurementSeries,individuele\ meetreeks,individuelle\ Jahrringserie,mesure\ individuelle
+unpublished\ chronology,ongepubliseerde\ kalender,nicht\ publizierte\ Chronology,chronologie\ inédite
+average\ of\ single\ sample,gemiddelde\ boomcurve,gemittelte\ Einzelserien,moyenne\ dendrochronologique\ individuelle
+other,anders,andere,autre
+
+# object.type.txt
+aak,barge,barge,Frachtkahn
+aak,barge,chaland,Frachtkahn
+aak,barge,péniche,Frachtkahn
+aak,barge,barge,Kahn
+aak,barge,chaland,Kahn
+aak,barge,chaland,Kahn
+aak,barge,péniche,Kahn
+aak,barge,barge,Lastkahn
+aak,barge,chaland,Lastkahn
+aak,barge,péniche,Lastkahn
+Aanlegplaats,Landing\ place,Quai,Anlegeplatz
+Aanlegplaats,Landing\ stage,Quai,Anlegeplatz
+Aanlegplaats,Landing\ place,Quai,Anlegestelle
+Aanlegplaats,Landing\ stage,Quai,Anlegestelle
+Aanlegplaats,Landing\ place,Quai,Landungsplatz
+Aanlegplaats,Landing\ stage,Quai,Landungsplatz
+Aanlegplaats,Landing\ place,Quai,Landungsstelle
+Aanlegplaats,Landing\ stage,Quai,Landungsstelle
+Aanlegsteiger,Landing\ stage,débarcadère,Anlege
+Aanlegsteiger,Landing\ stage,embarcadère,Anlege
+Aanlegsteiger,Landing\ stage,Ponton,Anlege
+Aanlegsteiger,Quay,débarcadère,Anlege
+Aanlegsteiger,Quay,embarcadère,Anlege
+Aanlegsteiger,Quay,Ponton,Anlege
+Aanlegsteiger,wharf,débarcadère,Anlege
+Aanlegsteiger,wharf,embarcadère,Anlege
+Aanlegsteiger,wharf,Ponton,Anlege
+Aanlegsteiger,Landing\ stage,débarcadère,Bootssteg
+Aanlegsteiger,Landing\ stage,embarcadère,Bootssteg
+Aanlegsteiger,Landing\ stage,Ponton,Bootssteg
+Aanlegsteiger,Quay,débarcadère,Bootssteg
+Aanlegsteiger,Quay,embarcadère,Bootssteg
+Aanlegsteiger,Quay,Ponton,Bootssteg
+Aanlegsteiger,wharf,débarcadère,Bootssteg
+Aanlegsteiger,wharf,embarcadère,Bootssteg
+Aanlegsteiger,wharf,Ponton,Bootssteg
+Aanlegsteiger,Landing\ stage,débarcadère,Landungsbrücke
+Aanlegsteiger,Landing\ stage,embarcadère,Landungsbrücke
+Aanlegsteiger,Landing\ stage,Ponton,Landungsbrücke
+Aanlegsteiger,Quay,débarcadère,Landungsbrücke
+Aanlegsteiger,Quay,embarcadère,Landungsbrücke
+Aanlegsteiger,Quay,Ponton,Landungsbrücke
+Aanlegsteiger,wharf,débarcadère,Landungsbrücke
+Aanlegsteiger,wharf,embarcadère,Landungsbrücke
+Aanlegsteiger,wharf,Ponton,Landungsbrücke
+Aanlegsteiger,Landing\ stage,débarcadère,Landungsplatz
+Aanlegsteiger,Landing\ stage,embarcadère,Landungsplatz
+Aanlegsteiger,Landing\ stage,Ponton,Landungsplatz
+Aanlegsteiger,Quay,débarcadère,Landungsplatz
+Aanlegsteiger,Quay,embarcadère,Landungsplatz
+Aanlegsteiger,Quay,Ponton,Landungsplatz
+Aanlegsteiger,wharf,débarcadère,Landungsplatz
+Aanlegsteiger,wharf,embarcadère,Landungsplatz
+Aanlegsteiger,wharf,Ponton,Landungsplatz
+Abdij,Abbey,Abbaye,Abtei
+Abdijkerk,Abbey\ church,Abbatiale,Abteikirche
+Achtergevel,Back\ (side),Façade\ postérieure,Hinterfront
+Achtergevel,Rear\ (side),Façade\ postérieure,Hinterfront
+Achterhuis,Back\ aisle,Arrière-corps\ (de\ la\ maison),Hinterhaus
+Achterhuis,Rear\ part,Arrière-corps\ (de\ la\ maison),Hinterhaus
+Achterkamer,Back\ room,Chambre\ de\ derrière,Hinterstube
+Achterkamer,Back\ room,Chambre\ de\ derrière,Hinterzimmer
+achterschip,aft,l'arrière\ du\ vaisseau,Hinterschiff
+achterschip,quarter,l'arrière\ du\ vaisseau,Hinterschiff
+achtersteven,stern,étambot,Achtersteven
+achtersteven,stern,étambot,Hintersteven
+achterstevenplaat,prow\ block\ (stern),épaulure\ (de\ poupe),Bugholz\ (Achterschiff)
+affuit,rolpaard,carriage,affût,Lafette
+Aftakking,Branch,Embranchement,Abzweigung
+afvalkuil,waste\ pit,fosse\ à\ déchets,Abfallgrube
+afwateringssleuf,bilge\ gutter,gouttière\ de\ bouchain,Bilgerinne
+Altaar,Altar,Autel,Altar
+Altaarstuk,Altarpiece,Retable,Altarbild
+Altviool,Viola,Violon,Viola
+Ambachtshuis,crafts\ house,maison\ de\ l'artisanat,Handwerk\ Haus
+Andreaskruis,Crossbridging,Croix\ de\ Saint-André,Andreaskreuz
+Andreaskruis,Crossbridgings,Croix\ de\ Saint-André,Andreaskreuz
+Andreaskruis,Saint\ Andrew's\ cross,Croix\ de\ Saint-André,Andreaskreuz
+Anker,Anchor,ancre,Anker
+Anker,Anchor,Armature,Anker
+anker\ bolster,anchor\ bolster,défanse\ ancres,Ankerschweinsrücken
+Ankerbalk,Anchor\ beam,Entrait,Ankerbalken
+Ankerbalk,Anchor\ beam,poutre\ d'ancrage,Ankerbalken
+ankerstok,anchor\ stock,jas\ ancres,Ankerstock
+apostel,knighthead,apôtre,Ohrholz
+Badding,Batten,Basting,Bohle
+Badding,Batten,madrier,Bohle
+Badding,Batten,Basting,Rähm
+Badding,Batten,madrier,Rähm
+Bak,Bin,Bac,Kasten
+Bak,Bin,coffre,Kasten
+Bak,Bin,récipient,Kasten
+Bak,Tray,Bac,Kasten
+Bak,Tray,coffre,Kasten
+Bak,Tray,récipient,Kasten
+bakboord,larboard,bâbord,Backbord
+bakboord,port,bâbord,Backbord
+bakboordzijde,larboard\ side,côté\ bâbord,Backbordseite
+bakboordzijde,port\ side,côté\ bâbord,Backbordseite
+bakdek,forecastle,gaillard\ d'avant,Backdeck
+Baldakijn,Baldachin,Baldaquin,Baldachin
+Baldakijn,Baldachin,dais,Baldachin
+Baldakijn,Canopy,Baldaquin,Baldachin
+Baldakijn,Canopy,Baldaquin,Baldachin
+Baldakijn,Dais,dais,Baldachin
+Baldakijn,Dais,dais,Baldachin
+Balk,Beam,Poutre,Balken
+Balk,Joist,Poutre,Balken
+balk,beam,barrot,Balken
+Balkkop,Beam\ end,About,Balkenende
+Balkkop,Beam\ end,About,Balkenköpf
+Balklaag,Floor\ frame,Potrage,Balkenlagen
+Balklaag,Floor\ frame,poutaison,Balkenlagen
+Balklaag,Floor\ frame,solivage,Balkenlagen
+Balklaag,Floor\ frame,solivure,Balkenlagen
+Balklaag,Floor\ joists,Potrage,Balkenlagen
+Balklaag,Floor\ joists,poutaison,Balkenlagen
+Balklaag,Floor\ joists,solivage,Balkenlagen
+Balklaag,Floor\ joists,solivure,Balkenlagen
+Balklaag,Joisting,Potrage,Balkenlagen
+Balklaag,Joisting,poutaison,Balkenlagen
+Balklaag,Joisting,solivage,Balkenlagen
+Balklaag,Joisting,solivure,Balkenlagen
+Balklaag,Floor\ frame,Potrage,Gebälk
+Balklaag,Floor\ frame,poutaison,Gebälk
+Balklaag,Floor\ frame,solivage,Gebälk
+Balklaag,Floor\ frame,solivure,Gebälk
+Balklaag,Floor\ joists,Potrage,Gebälk
+Balklaag,Floor\ joists,poutaison,Gebälk
+Balklaag,Floor\ joists,solivage,Gebälk
+Balklaag,Floor\ joists,solivure,Gebälk
+Balklaag,Joisting,Potrage,Gebälk
+Balklaag,Joisting,poutaison,Gebälk
+Balklaag,Joisting,solivage,Gebälk
+Balklaag,Joisting,solivure,Gebälk
+balkweger,clamp,bauquière,Balkweger
+Balustrade,Balustrade,Balustrade,Geländer
+bank,thwart,banc,Ducht
+Barak,Barrack,Baraque,Baracke
+Barak,Hut,Baraque,Baracke
+Barak,Shed,Baraque,Baracke
+bark,bark,barque,barque,Frachtkahn
+bark,bark,barque,barque,Kahn
+bark,bark,barque,barque,Lastkahn
+barkas,cutter,bateaux\ à\ l'usage,Barkasse
+barkas,cutter,chaloupe,Barkasse
+barkas,launch,bateaux\ à\ l'usage,Barkasse
+barkas,launch,chaloupe,Barkasse
+barkas,longboat,bateaux\ à\ l'usage,Barkasse
+barkas,longboat,chaloupe,Barkasse
+barkentijn,barkentine,barque-goélette,Barkantine
+barkentijn,barkentine,barquentine,Barkantine
+barkentijn,barkentine,goélette,Barkantine
+barkentijn,barkentine,trois-mâts,Barkantine
+barkentijn,barquetine,barque-goélette,Barkantine
+barkentijn,barquetine,barquentine,Barkantine
+barkentijn,barquetine,goélette,Barkantine
+barkentijn,barquetine,trois-mâts,Barkantine
+barkentijn,barkentine,barque-goélette,Barkschoner
+barkentijn,barkentine,barquentine,Barkschoner
+barkentijn,barkentine,goélette,Barkschoner
+barkentijn,barkentine,trois-mâts,Barkschoner
+barkentijn,barquetine,barque-goélette,Barkschoner
+barkentijn,barquetine,barquentine,Barkschoner
+barkentijn,barquetine,goélette,Barkschoner
+barkentijn,barquetine,trois-mâts,Barkschoner
+barkentijn,barkentine,barque-goélette,Schonerbark
+barkentijn,barkentine,barquentine,Schonerbark
+barkentijn,barkentine,goélette,Schonerbark
+barkentijn,barkentine,trois-mâts,Schonerbark
+barkentijn,barquetine,barque-goélette,Schonerbark
+barkentijn,barquetine,barquentine,Schonerbark
+barkentijn,barquetine,goélette,Schonerbark
+barkentijn,barquetine,trois-mâts,Schonerbark
+Bas,Bass,contrebasse,Bass
+Bastion,Bastion,Bastion,Bastei
+Bastion,Bastion,Bastion,Bastion
+Bed,Bed,Lit,Bett
+Beeld,Statue,Statue,Bildsäule
+Beeld,Sculpture,Sculpture,Skulptur
+Beeldhouwwerk,Sculpture,Sculpture,Skulptur
+Beerput,Cesspit,Fosse\ d'aisances,Senkgrube
+Beerput,Cesspool,Fosse\ d'aisances,Senkgrube
+begijnenra,crossjack\ yard,vergue\ sèche,Bagienrah
+Begraafplaats,Cemetery,Cimetière,Friedhof
+Bekisting,Falsework,Coffrage,Betonschalung
+Bekisting,Formwork,Coffrage,Betonschalung
+beleggen,belaying,amarrer,Belegen
+beplanking,planking,bordé,Beplankung
+beplanking,planking,planchéiage,Beplankung
+Berd,Scantling,Échantillon,Brett
+berghout,fender,préceinte,Bargholz
+berghout,wale,ceinte,Bargholz
+berghout,wale,préceinte,Bargholz
+berghout,fender,préceinte,Scheuerleiste
+berghout,wale,préceinte,Scheuerleiste
+bergplaats,locker,débarras,Verschlag
+Beschieting,Battening,Volige,Dachschalung
+Beschieting,boarding,voligeage,Dachschalung
+Beschieting,Roof\ boarding,voligeage,Dachschalung
+Beschoeiing\ (mijn),Timbering,boisage,Verzug
+Beschoeiing\ (rivieroever),Campsheeting,palée,Spundwand
+Beschoeiing\ (rivieroever),Sheet\ piling,palée,Spundwand
+Beschoeiing\ (rivieroever),sheeting,palée,Spundwand
+Beschoeiing\ (rivieroever),Campsheeting,palée,Uferbefestigung
+Beschoeiing\ (rivieroever),Sheet\ piling,palée,Uferbefestigung
+Beschoeiing\ (rivieroever),sheeting,palée,Uferbefestigung
+Beschoeiing\ (wand),Campshed(ding),Paroi\ de\ soutènement,Unbekannt
+Beschoeiing\ (wand),Campshot,Paroi\ de\ soutènement,Unbekannt
+Beschoeiing\ (wand),Facing,Paroi\ de\ soutènement,Unbekannt
+Beschot,Boarding,Voligeage,Schalung
+Beschot,Panelling,Voligeage,Schalung
+Beschot,Wainscoting,Voligeage,Schalung
+beslag,fittings,armature,Ausrüstung
+Betimmering,Panelling,boiserie,Getäfel
+Betimmering,Panelling,Lambris,Getäfel
+Betimmering,Wainscoting,boiserie,Getäfel
+Betimmering,Wainscoting,Lambris,Getäfel
+Betimmering,Panelling,boiserie,Tafelwerk
+Betimmering,Panelling,Lambris,Tafelwerk
+Betimmering,Wainscoting,boiserie,Tafelwerk
+Betimmering,Wainscoting,Lambris,Tafelwerk
+Betimmering,Panelling,boiserie,Vertäfelung
+Betimmering,Panelling,Lambris,Vertäfelung
+Betimmering,Wainscoting,boiserie,Vertäfelung
+Betimmering,Wainscoting,Lambris,Vertäfelung
+beting,bitt,bitte,Beting
+bewerkingsspoor,tool\ mark,trace\ d’outil,Werkzeugspur
+bezaansmars,mizzen\ top,hune\ d'artimon,Besanmars
+bezaansmast,mizzen\ lower\ mast,bas\ mât\ d'artimon,Besanmast
+bezaanspardoenrust,mizzen\ stool,porte-galhaubans\ d'artimon,Besanpardunenrüste
+bezaansroede,mizzen\ yard,vergue\ d'artimon,Besanrute
+bezaansrust,mizzen\ channel,porte-haubans\ d'artimon,Besanrüste
+Bijgebouw,Annex,Annexe,Nebengebäude
+Bijgebouw,Annex,dépendance,Nebengebäude
+binnenberghout,inwale,préceinte\ interne,Dollbaum
+binnenberghout,inwale,serre,Dollbaum
+binnenberghout,stringer,préceinte\ interne,Dollbaum
+binnenberghout,stringer,serre,Dollbaum
+binnenberghout,inwale,préceinte\ interne,Stringer
+binnenberghout,inwale,serre,Stringer
+binnenberghout,stringer,préceinte\ interne,Stringer
+binnenberghout,stringer,serre,Stringer
+binnenboord,inboard,préceinte\ interne,Dollbaum
+binnenboord,inboard,serre,Dollbaum
+binnenboord,inwale,préceinte\ interne,Dollbaum
+binnenboord,inwale,serre,Dollbaum
+binnenboord,stringer,préceinte\ interne,Dollbaum
+binnenboord,stringer,serre,Dollbaum
+binnenboord,inboard,préceinte\ interne,Stringer
+binnenboord,inboard,serre,Stringer
+binnenboord,inwale,préceinte\ interne,Stringer
+binnenboord,inwale,serre,Stringer
+binnenboord,stringer,préceinte\ interne,Stringer
+binnenboord,stringer,serre,Stringer
+Bintlaag,Floor\ frame,Potrage,Balkenlagen
+Bintlaag,Floor\ frame,poutaison,Balkenlagen
+Bintlaag,Floor\ frame,solivage,Balkenlagen
+Bintlaag,Floor\ frame,solivure,Balkenlagen
+Bintlaag,Floor\ joists,Potrage,Balkenlagen
+Bintlaag,Floor\ joists,poutaison,Balkenlagen
+Bintlaag,Floor\ joists,solivage,Balkenlagen
+Bintlaag,Floor\ joists,solivure,Balkenlagen
+Bintlaag,Joisting,Potrage,Balkenlagen
+Bintlaag,Joisting,poutaison,Balkenlagen
+Bintlaag,Joisting,solivage,Balkenlagen
+Bintlaag,Joisting,solivure,Balkenlagen
+Bintlaag,Floor\ frame,Potrage,Gebälk
+Bintlaag,Floor\ frame,poutaison,Gebälk
+Bintlaag,Floor\ frame,solivage,Gebälk
+Bintlaag,Floor\ frame,solivure,Gebälk
+Bintlaag,Floor\ joists,Potrage,Gebälk
+Bintlaag,Floor\ joists,poutaison,Gebälk
+Bintlaag,Floor\ joists,solivage,Gebälk
+Bintlaag,Floor\ joists,solivure,Gebälk
+Bintlaag,Joisting,Potrage,Gebälk
+Bintlaag,Joisting,poutaison,Gebälk
+Bintlaag,Joisting,solivage,Gebälk
+Bintlaag,Joisting,solivure,Gebälk
+Bintwerk,Floor\ frame,Potrage,Balkenlagen
+Bintwerk,Floor\ frame,Potrage,Balkenlagen
+Bintwerk,Floor\ frame,solivage,Balkenlagen
+Bintwerk,Floor\ frame,solivage,Balkenlagen
+Bintwerk,Floor\ joists,Potrage,Balkenlagen
+Bintwerk,Floor\ joists,Potrage,Balkenlagen
+Bintwerk,Floor\ joists,solivage,Balkenlagen
+Bintwerk,Floor\ joists,solivage,Balkenlagen
+Bintwerk,Joisting,Potrage,Balkenlagen
+Bintwerk,Joisting,Potrage,Balkenlagen
+Bintwerk,Joisting,solivage,Balkenlagen
+Bintwerk,Joisting,solivage,Balkenlagen
+Bintwerk,Floor\ frame,poutaison,Gebälk
+Bintwerk,Floor\ frame,poutaison,Gebälk
+Bintwerk,Floor\ frame,solivure,Gebälk
+Bintwerk,Floor\ frame,solivure,Gebälk
+Bintwerk,Floor\ joists,poutaison,Gebälk
+Bintwerk,Floor\ joists,poutaison,Gebälk
+Bintwerk,Floor\ joists,solivure,Gebälk
+Bintwerk,Floor\ joists,solivure,Gebälk
+Bintwerk,Joisting,poutaison,Gebälk
+Bintwerk,Joisting,poutaison,Gebälk
+Bintwerk,Joisting,solivure,Gebälk
+blaasbalk\ (blaasbalg?),stern\ outboard,mouchoir\ sous\ le\ jotterau,Blasebalgen\ (Blasebalck\ ?)
+blaasbalk\ (blaasbalg?),stern\ outboard,tambour\ d'\ éperon,Blasebalgen\ (Blasebalck\ ?)
+blaasbalk\ (blaasbalg?),wash\ board,mouchoir\ sous\ le\ jotterau,Blasebalgen\ (Blasebalck\ ?)
+blaasbalk\ (blaasbalg?),wash\ board,tambour\ d'\ éperon,Blasebalgen\ (Blasebalck\ ?)
+blindera,spritsail\ yard,vergue\ de\ civadière,Blinderah
+blindesteng,jackstaff,mât\ de\ pavillon\ beaupré,Bugsprietflaggenstock
+blok,block,poulie,Block
+blok,pulley,poulie,Block
+Blokbouw,Log\ cabin\ construction,Construction\ en\ pièce\ sur\ pièce,Kasten/Blockbau
+Blokkeel,Sole\ piece,Blochet,Sattelbalken
+Blokkeel,Spur\ (tie),Blochet,Sattelbalken
+Blokkeel,Sole\ piece,Blochet,Stichbalken
+Blokkeel,Spur\ (tie),Blochet,Stichbalken
+Blokkeel,Sole\ piece,Blochet,Zange
+Blokkeel,Spur\ (tie),Blochet,Zange
+Bodem,Base,Fond,Boden
+Bodem,Bottom,Fond,Boden
+bodem,bottom,carène,Boden
+bodem,bottom,fond,Boden
+bodem,bottom,sole,Boden
+Bodem,Floor,Fond,Boden
+bodem,bottom,carène,Schiffsboden
+bodem,bottom,fond,Schiffsboden
+bodem,bottom,sole,Schiffsboden
+boeg,bow,proue,Bug
+boegband,breasthook,breast\ knee,guirlande,Bugband
+boegbeeld,figurehead,figure\ de\ proue,Galionsfigur
+boegspriet,bowsprit,beaupré,Bugspriet
+boeiklamp,construction\ cleat,étrier\ de\ construction,Konstruktionsklampe
+boeisel,bulwark,plat-bord,Dollbord
+boeisel,wash\ strake,plat-bord,Dollbord
+Boerderij,Farmhouse,Ferme,Bauernhof
+bok,jig,bigue,Bock
+bok,jig,cabre,Bock
+bok,sheers,bigue,Bock
+bok,sheers,cabre,Bock
+Bolder,Bitt,Bitte\ (d'amarrage),Beting
+Bolder,Bitt,bitton,Beting
+Bolder,Bitt,bollard,Beting
+Bolder,Bollard,Bitte\ (d'amarrage),Beting
+Bolder,Bollard,bitton,Beting
+Bolder,Bollard,bollard,Beting
+Bolder,Dolphin,Bitte\ (d'amarrage),Beting
+Bolder,Dolphin,bitton,Beting
+Bolder,Dolphin,bollard,Beting
+Bolder,Bitt,Bitte\ (d'amarrage),Poller
+Bolder,Bitt,bitton,Poller
+Bolder,Bitt,bollard,Poller
+Bolder,Bollard,Bitte\ (d'amarrage),Poller
+Bolder,Bollard,bitton,Poller
+Bolder,Bollard,bollard,Poller
+Bolder,Dolphin,Bitte\ (d'amarrage),Poller
+Bolder,Dolphin,bitton,Poller
+Bolder,Dolphin,bollard,Poller
+Bolder,Bitt,Bitte\ (d'amarrage),Rolle
+Bolder,Bitt,bitton,Rolle
+Bolder,Bitt,bollard,Rolle
+Bolder,Bollard,Bitte\ (d'amarrage),Rolle
+Bolder,Bollard,bitton,Rolle
+Bolder,Bollard,bollard,Rolle
+Bolder,Dolphin,Bitte\ (d'amarrage),Rolle
+Bolder,Dolphin,bitton,Rolle
+Bolder,Dolphin,bollard,Rolle
+Bolwerk,Bastion,Bastion,Bastion
+Bolwerk,Bulwark,Bastion,Bastion
+Bolwerk,Vallum,Bastion,Bastion
+Bolwerk,Bastion,Bastion,Bollwerk
+Bolwerk,Bulwark,Bastion,Bollwerk
+Bolwerk,Vallum,Bastion,Bollwerk
+bolwulf,Unknown,Inconnu,Unbekannt
+bomen,punting,conduire\ à\ la\ gaffe,staken
+bomen,punting,conduire\ à\ la\ perche,staken
+bomen,punting,gaffer,staken
+Boog,Arch,Arc,Bogen
+Boog,Arch,arche\ (d'un\ pont),Bogen
+Boog,Arch,cintre,Bogen
+boom,boom,bôme,Baum
+Boomstam,(Tree-)trunk,Tronc,Stamm
+Boomstam,Trunk,Tronc,Stamm
+Boomstamboot,Dugout,Inconnu,Einbaum
+Boomstamkano,Dugout,Inconnu,Einbaum
+Boomstronk,Tree-stump,Souche,Baumstumpf
+boord,ship’s\ side,bord,Bord
+boord,ship’s\ side,muraille,Bord
+boord,ship’s\ side,bord,Bordwand
+boord,ship’s\ side,muraille,Bordwand
+boordgang,board,bordage,Bordgang
+boordgang,side\ strake,bordage,Bordgang
+Boot,Boat,Bateau,Boot
+bootbalken,boat\ boom,poutre\ chaloupes,Beibootebalken
+Bossage,Bosse,Bossage,Bosse
+Bossage,Bosse,Bossage,Buckel
+botteloef,boomkin,bossoir\ de\ minot,Halsbaum
+botteloef,boomkin,boute-lof,Halsbaum
+botteloef,bumkin,bossoir\ de\ minot,Halsbaum
+botteloef,bumkin,boute-lof,Halsbaum
+botteloef,bumpkin,bossoir\ de\ minot,Halsbaum
+botteloef,bumpkin,boute-lof,Halsbaum
+bottom\ first,bottom\ first,construction\ à\ fond\ en\ premier,bottom\ first
+bout,bolt,boulon,Bolzen
+bouwspant,constructional\ section,couple\ de\ construction,Bauspant
+bovenberghout,main\ wale,préceinte,Großbargholz
+bovenblindera,sprit\ topsail\ yard,vergue\ de\ contre-civadière,Oberblinderah
+bovenbramsteng,topgallant\ royal\ mast,mât\ de\ perroquet\ volant,Oberbramstenge
+bovendek,upper\ deck,pont\ supérieur,Oberdeck
+Bovendeur,Upper\ door,battant\ supérieur\ (d'une\ porte),Obertür
+Bovendeur,Upper\ door,Vantail\ supérieur\ (d'une\ porte),Obertür
+Bovendorpel,Lintel,Linteau,Fenstersturz
+Bovendorpel,Window\ head,Linteau,Fenstersturz
+Bovendorpel,Door\ head,Linteau,Sturz
+Bovendorpel,Lintel,Linteau,Sturz
+Bovendorpel,Window\ head,Linteau,Sturz
+bovenkampagne,poop\ deck,dunette,Puppdeck
+bovenlicht,skylight,claire-voie,Oberlicht
+Box,Box,Boîte,Dose
+breegang,black\ strake,bordage\ de\ remplissage,Breitegang
+breegang,black\ strake,bordage\ des\ sabords,Breitegang
+breeuwen,caulking,calfater,Kalfatern
+breeuwhamer,caulking\ mallet,maillet\ de\ calfat,Kalfathammer
+breeuwmateriaal,caulking\ material,matériel\ de\ calfatage,Kalfaterung
+breeuwsel,caulkage,calfatage,Abdichtung,Kalfat
+breeuwspijker,caulking\ nail,clou\ de\ calfatage,Kalfatnagel
+breeuwwijze,caulking\ method,méthode\ de\ calfatage,Kalfaterungsweise
+brigantijn,brig,brig,Briggschoner
+brigantijn,brigantine,brigantin,Briggschoner
+brigantijn,brig,brig,Schonerbrigg
+brigantijn,brigantine,brigantin,Schonerbrigg
+bril,Unknown,Inconnu,Unbekannt
+Brug,Bridge,Pont,Brücke
+Bruggenhoofd,Abutment,Tête\ de\ pont,Brückenkopf
+Bruggenhoofd,Bridge\ head,Tête\ de\ pont,Brückenkopf
+Brugpijler,Pier,Pile,Pfeiler
+Brugpijler,Pier,pilier,Pfeiler
+buikdenning,floor\ ceiling,vaigrage\ de\ cale,Bodenwegerung
+buikdenning,floor\ ceiling,vaigrage\ de\ fond,Bodenwegerung
+buikstuk,floor,varangue\ de\ fond,Bauchstück
+buikstuk,floortimber,varangue\ de\ fond,Bauchstück
+buikstuk,floor,varangue\ de\ fond,Bodenwrange
+buikstuk,floortimber,varangue\ de\ fond,Bodenwrange
+buiswater,bilge\ water,eau\ de\ cale,Bilgewasser
+Buitenplaats,Country\ estate,Manoir,Landsgut
+Buitenplaats,Country\ house,Manoir,Landsgut
+Buitenplaats,Mansion,Manoir,Landsgut
+buitentrap,outside\ ladder,echelle\ hors\ bord,Außentreppe
+bun,fish\ well,cale\ de\ poissons,Bünte
+Burcht,Castle,Château-fort,Burg
+Castellum,Castellum,Castellum,Castellum
+Cello,Cello,violoncelle,Cello
+chialoup,sloep,sloop,chaloupe,Schlup
+compagniejacht,Unknown,Inconnu,Unbekannt
+Console,Console,Console,Konsole
+Console,Console,Corbeau,Konsole
+Console,Corbel,Console,Konsole
+Console,Corbel,Corbeau,Konsole
+Console,Modillion,Console,Konsole
+Console,Modillion,Corbeau,Konsole
+Consoletafel,Console\ table,Console,Konsole
+Consoletafel,Console\ table,Console,Konsoltischchen
+Contrabas,Contrabass,Contrebasse,Bassgeige
+Contrabas,Double\ bass,Contrebasse,Bassgeige
+Contrabas,Contrabass,Contrebasse,Kontrabass
+Contrabas,Double\ bass,Contrebasse,Kontrabass
+Cultusplaats,Cult\ place,sanctuaire,Kultusplatz
+Dak,Roof,Toit,toiture,Dach
+Dakbalk,Roof\ timber,Entrait,Dachbalken
+Dakbalk,Roof\ timber,tirant,Dachbalken
+Dakbalk,Roof-beam,Entrait,Dachbalken
+Dakbalk,Roof-beam,tirant,Dachbalken
+Dakbeschot,Battening,Volige,Dachschalung
+Dakbeschot,boarding,voligeage,Dachschalung
+Dakbeschot,Roof\ boarding,voligeage,Dachschalung
+Dakruiter,Ridge\ turret,campanile,Dachfirst
+Dakruiter,Ridge\ turret,lanterneau,Dachfirst
+Dakruiter,Roof\ turret,campanile,Dachfirst
+Dakruiter,Roof\ turret,lanterneau,Dachfirst
+Dakruiter,Ridge\ turret,campanile,Dachreiter
+Dakruiter,Ridge\ turret,lanterneau,Dachreiter
+Dakruiter,Roof\ turret,campanile,Dachreiter
+Dakruiter,Roof\ turret,lanterneau,Dachreiter
+Dakruiter,Ridge\ turret,campanile,First
+Dakruiter,Ridge\ turret,lanterneau,First
+Dakruiter,Roof\ turret,campanile,First
+Dakruiter,Roof\ turret,lanterneau,First
+Dakschild,Roof\ hip,Côte\ du\ toit,Walm
+Dakspaan,Shingle,Bardeau,Holzschindel
+Dakspaan,Shingle,Bardeau,Schindel
+Dakspoor,Rafter,Chevron,Dachsparren
+Dakstoel,Roof\ truss(es),comble,Dachstuhl
+Dakstoel,Roof\ truss(es),Ferme,Dachstuhl
+Dakstoel,Roof\ truss(es),comble,Dachwerk
+Dakstoel,Roof\ truss(es),Ferme,Dachwerk
+Dam,Dam,Digue,Damm
+Deel,Deal,Aire,Brett
+Deel,Deal,Plancher,Brett
+Dek,Deck,Pont,Deck
+dek,deck,pont,Deck
+Dekbalk,Superimposed\ tiebeam,Solive,Deckbalken
+Dekbalk,Superimposed\ tiebeam,Solive,Deckbinderbalken
+dekbalk,deckbeam,joist,barrot\ (de\ pont),Decksbalken
+Dekenkist,Blanket\ chest,Bahut,Truhe
+dekplank,deckplank,bordage\ de\ pont,Decksplanke
+dekronding,camber,bouge,Balkenbucht
+dekronding,crown,bouge,Balkenbucht
+dekronding,crown\ of\ beam,bouge,Balkenbucht
+dekronding,roundup,bouge,Balkenbucht
+Deksel,Lid,Couvercle,Deckel
+Deur,Door,Porte,Tür
+Deurkozijn,Door\ frame,Cadre,Türrahmen
+Deurkozijn,Door\ frame,Chambranle,Türrahmen
+Deurstijl,Door\ jamb,Montant\ de\ porte,Türpfosten
+Deurstijl,Door\ post,Montant\ de\ porte,Türpfosten
+Deurstijl,Door\ jamb,Montant\ de\ porte,Türständer
+Deurstijl,Door\ post,Montant\ de\ porte,Türständer
+Deurvleugel,Leaf,Battant,Türblatt
+deutel,quoin,coin,Deutel
+deutel,quoin,épile,Deutel
+deutel,quoin,tapon,Deutel
+deuvel,tenon,tenon,Nut
+Dijk,Dike,Digue,Deich
+Diverse\ vondsten,Miscellaneous\ finds,Objets\ divers,Mehrere\ Funde
+doft,thwart,banc,Ducht
+Doksaal,Rood\ loft,Jubé,Doxale
+Doksaal,Rood\ loft,Jubé,Lettner
+dol,thole,tolet,Dolle
+dol,thole,tolet,Dollpflock
+dolboord,gunwale,plat-bord,Dollbord
+dolboord\ met\ riempoorten,gunwale,plat-bord\ avec\ ouverture\ de\ rame,Dollbord\ mit\ Riemenpforte
+dolboord\ zonder\ riempoorten,wash\ strake,plat-bord\ sans\ ouverture\ de\ rame,Dollbord\ Ohne\ Riemenpforte
+Donjon,Keep,Donjon,Bergfried
+Donjon,Keep,Donjon,Donjon
+Donjon,Keep,Donjon,Turmburg
+Doodkist,Coffin,Cercueil,Sarg
+doodshoofd,heart,moque,Dodshoofd
+Doos,Box,Boîte,Dose
+Dorpel,Doorstep,Seuil,Schwell
+Dorpel,Threshold,Seuil,Schwell
+Draagbalk,Summer,Solive,Träger
+Drempel,Sill,Seuil\ de\ porte,Schwelle
+Drempel,Threshold,Seuil\ de\ porte,Schwelle
+Drempel,Sill,Seuil\ de\ porte,Türschwelle
+Drempel,Threshold,Seuil\ de\ porte,Türschwelle
+driedekker,three-decker,trois-ponts,Dreidecker
+drukker,Unknown,Inconnu,Unbekannt
+Drukschoor,Windbrace,Contrefiche,Kopfstrebe,Windrispe
+Drukschoor,Strut,Contrefiche,Strebe
+dubbeling,sheathing,doublage,Plankenbeslag
+dubbeling,sheathing,revêtement,Plankenbeslag
+Duig,Stave,Douve,Daube
+Duiker,Culvert,Ponceau,Düker
+Dwarsbalk,Transom(bar),Traverse,Querbalken
+dwarsbalk,cross\ beam,barrot,Quergurt
+dwarsbalk,cross\ beam,poutre\ transversale,Quergurt
+dwarsbalk,transverse\ timber,barrot,Quergurt
+dwarsbalk,transverse\ timber,poutre\ transversale,Quergurt
+dwarsbalk,cross\ beam,barrot,Querriegel
+dwarsbalk,cross\ beam,poutre\ transversale,Querriegel
+dwarsbalk,transverse\ timber,barrot,Querriegel
+dwarsbalk,transverse\ timber,poutre\ transversale,Querriegel
+dwarsbalk,cross\ beam,barrot,Quervergurtung
+dwarsbalk,cross\ beam,poutre\ transversale,Quervergurtung
+dwarsbalk,transverse\ timber,barrot,Quervergurtung
+dwarsbalk,transverse\ timber,poutre\ transversale,Quervergurtung
+dwarshout,cross\ beam,barrot,Quergurt
+dwarshout,cross\ beam,poutre\ transversale,Quergurt
+dwarshout,transverse\ timber,barrot,Quergurt
+dwarshout,transverse\ timber,poutre\ transversale,Quergurt
+dwarshout,cross\ beam,barrot,Querriegel
+dwarshout,cross\ beam,poutre\ transversale,Querriegel
+dwarshout,transverse\ timber,barrot,Querriegel
+dwarshout,transverse\ timber,poutre\ transversale,Querriegel
+dwarshout,cross\ beam,barrot,Quervergurtung
+dwarshout,cross\ beam,poutre\ transversale,Quervergurtung
+dwarshout,transverse\ timber,barrot,Quervergurtung
+dwarshout,transverse\ timber,poutre\ transversale,Quervergurtung
+Dwarsschip,Transept,transept,Kreuzschiff
+Dwarsschip,Transept,transept,Querschiff
+dwarszaling,cross\ tree,traversin,Quersaling
+ezelshoofd,cap,chouquet,Eselshaupt
+Fliering,Roof\ plate,panne,Pfette
+Fliering,Roof\ plate,panne,Stuhlrähm
+Fluit,Flute,Flûte,Flöte
+fluitschip,flute\ ship,flûte,Fleute
+fokke\ rust,fore\ channel,porte-haubans\ de\ misaine,Fockrüste
+fokkemars,fore\ top,hune\ de\ misaine,Fockmars
+fokkemast,fore\ lower\ mast,mât\ majeur\ de\ misaine,Fockmast
+fokkera,fore\ yard,vergue\ de\ misaine,Fockrah
+frame\ first,frame\ first,construction\ à\ membrures\ en\ premier,frame\ first
+fregat,frigate,frégate,Fregatte
+Fries,Frieze,Frise,Fries
+fries,frieze,friese,Verzierung
+Fundering,Foundation,Fondation,Fundament
+Funderingspaal,Foundation\ pile,pilot\ de\ fondation,Rammpfahl
+gaffel,gaff,vergue\ de\ corne,corne,Gaffel
+galei,galley,galère,Galeere
+Galg,Gallow,Gibet,Galgen
+Galg,Gallow,potence,Galgen
+galg,bracket,gousset,support,Galgen
+Galgenveld,Gallows-field,Gibet,Galgenplatz
+Galgenveld,Gallows-field,lieu\ patibulaire,Galgenplatz
+Galgenveld,Gallows-lee,Gibet,Galgenplatz
+Galgenveld,Gallows-lee,lieu\ patibulaire,Galgenplatz
+Galgenveld,Gallows-field,Gibet,Gerichtsstätte
+Galgenveld,Gallows-field,lieu\ patibulaire,Gerichtsstätte
+Galgenveld,Gallows-lee,Gibet,Gerichtsstätte
+Galgenveld,Gallows-lee,lieu\ patibulaire,Gerichtsstätte
+Galgenveld,Gallows-field,Gibet,Richtplatz
+Galgenveld,Gallows-field,lieu\ patibulaire,Richtplatz
+Galgenveld,Gallows-lee,Gibet,Richtplatz
+Galgenveld,Gallows-lee,lieu\ patibulaire,Richtplatz
+galjas,galeas,galéasse,Galeas
+galjas,galeas,galéasse,Galeasse
+galjoensbeting,main\ rail\ timber\ head,biton\ herpe,Galionsbeting
+galjoenspant,head\ timber,jambette\ herpe,Galionsspant
+galjoensreling,head\ parapet,parapet\ herpe,Galionsgeländer
+galjoot,galliot,galiote\ Hollandaise,Galiot
+Gang,Corridor,Allée,Flur
+Gang,Corridor,corridor,Flur
+Gang,Hallway,Allée,Flur
+Gang,Hallway,corridor,Flur
+Gang,Passage(way),Allée,Flur
+Gang,Passage(way),corridor,Flur
+Gang,Corridor,Allée,Gang
+Gang,Corridor,corridor,Gang
+Gang,Hallway,Allée,Gang
+Gang,Hallway,corridor,Gang
+Gang,Passage(way),Allée,Gang
+Gang,Passage(way),corridor,Gang
+gang,strake,virure,Gang
+Gang,Corridor,Allée,Laufgang
+Gang,Corridor,corridor,Laufgang
+Gang,Hallway,Allée,Laufgang
+Gang,Hallway,corridor,Laufgang
+Gang,Passage(way),Allée,Laufgang
+Gang,Passage(way),corridor,Laufgang
+gang,strake,virure,Plankengang
+gangboord,gangway,passerelle,passavant,passe-avant,Gangbord
+Gebintbalk,Truss\ tie,poutre\ de\ charpente,Bundbalken
+Gebouw,Building,Bâtiment,Gebäude
+Gebouw,Building,édifice,Gebäude
+gekknie,Unknown,Inconnu,Unbekannt
+gekstok,brake,bringuebale,Geckstok
+gekstok,brake,gaule\ de\ pompe,Geckstok
+gekstok,handle,bringuebale,Geckstok
+gekstok,handle,gaule\ de\ pompe,Geckstok
+gemak,latrine,latrine,Latrine
+geschutsluik,port\ lid,mantelet,Pfortendeckel
+Geul,Channel,rigole,Rinne
+Geul,Cutting,rigole,Rinne
+Geul,Trench,rigole,Rinne
+Geul,Channel,rigole,Wassergraben
+Geul,Cutting,rigole,Wassergraben
+Geul,Trench,rigole,Wassergraben
+Gevel,Facade,Façade,Fassade
+Gewelf,Vault,Voûte,Gewölbe
+giek,boom,bôme,Baum
+giek,boom,gui,Baum
+giek,boom,gui\ de\ grand\ voile,Baum
+giek,main\ boom,bôme,Baum
+giek,main\ boom,gui,Baum
+giek,main\ boom,gui\ de\ grand\ voile,Baum
+giek,boom,bôme,Großbaum
+giek,boom,gui,Großbaum
+giek,boom,gui\ de\ grand\ voile,Großbaum
+giek,main\ boom,bôme,Großbaum
+giek,main\ boom,gui,Großbaum
+giek,main\ boom,gui\ de\ grand\ voile,Großbaum
+gilling,counter\ timber,arcasse,Gilling
+Gitaar,Guitar,guitare,Gitarre
+gladboordig,carvel,bordé\ à\ franc-bord,Kraweel(bauart)
+gladboordig,carvelbuilt,bordé\ à\ franc-bord,Kraweel(bauart)
+gladboordig,flush\ planking,bordé\ à\ franc-bord,Kraweel(bauart)
+Gording,purlin,anneau,Pfette
+Gording,purlin,moise,Pfette
+Gordingenkap,Purlin\ roof,Charpente\ à\ pannes,Pfettendach
+Graanschuur,Granary,Grange,Getreidespeicher
+Gracht,Moat,Fossé,Burggraben
+Gracht,Canal,Canal,Graben
+Gracht,Channel,Canal,Graben
+Gracht,Canal,Canal,Gracht
+Gracht,Channel,Canal,Gracht
+Gracht,Canal,Canal,Kanal
+Gracht,Channel,Canal,Kanal
+Graf,Grave,Sépulcre,Grab
+Graf,Grave,tombeau,Grab
+Graf,Tomb,Sépulcre,Grab
+Graf,Tomb,tombeau,Grab
+Grafkuil,Burial\ pit,Fosse,Gruft
+Grafveld,Grave\ field,Terrain\ des\ tombes,Gräberfeld
+Grendel,Bolt,Verrou,Riegel
+Greppel,Ditch,Fossé,Graben
+Greppel,Trench,Fossé,Graben
+griet,ledge,varotin,Rippe
+Grondplaat,Soleplate,Semelle,Balkenschlüssel
+Grondspoor,Feature,Inconnu,Unbekannt
+grootboom,main\ boom,gui\ de\ grand\ voile,Großbaum
+grootbramra,main\ topgallant\ yard,vergue\ de\ grand\ perroquet,großbramrah
+grootbramsteng,main\ topgallant\ mast,grand\ mât\ de\ perroquet,Großbramstenge
+grootmars,main\ top,grand-hune,Großmars
+grootmarsra,main\ topsail\ yard,vergue\ de\ grand\ hunier,großmarsrah
+grootmarssteng,main\ topmast,grand\ mât\ de\ hune,Großstenge
+grootra,main\ yard,grand-vergue,großrah
+grootrust,main\ channel,porte-haubans\ de\ grand\ mât,Großrüste
+grote\ mast,main\ lower\ mast,grand\ mât,Großmast
+haaklas,splayed\ joint\ with\ part\ abutments,joint\ en\ (forme\ de)\ crochet,Hakenlasche
+haaklas,splayed\ joint\ with\ part\ abutments,trait\ de\ Jupiter,Hakenlasche
+haaklas,splayed\ joint\ with\ part\ abutments,joint\ en\ (forme\ de)\ crochet,Klammerlasche
+haaklas,splayed\ joint\ with\ part\ abutments,trait\ de\ Jupiter,Klammerlasche
+hakkebord,taffrail,couronnement,Krönung
+hakkebordsbeeld,taffrail\ figure,figure\ couronnement,Krönungfigur
+hakkebordsmedaillon,taffrail\ medallion,médaillon\ couronnement,Krönungmedaillon
+hakkebordsrandbeeld,taffrail\ side\ figure,figure\ lateral\ couronnement,Krönungseitenfigur
+halfspant,half\ frame,demi-couple,Halbspant
+handlijst,handrail,main\ courante,Handlauf
+Hanenbalk,Collar,entrait,Hahnenbalken
+Hanenbalk,Collar\ beam,entrait,Hahnenbalken
+Hanenbalk,Collar,entrait,Kehlbalken
+Hanenbalk,Collar\ beam,entrait,Kehlbalken
+Hanenbalkfliering,Collarpurlin,Sous-faîtière,Kehlbalkenunterzug
+Hangstijl,Kingpost,Aiguille\ pendante,Hängesäule
+Hangstijl,Queenpost,Aiguille\ pendante,Hängesäule
+Hangwerk,Hanging\ truss,Comble\ à\ placher,Hängewerk
+harde\ kim,chine,bouchain\ vif,eckige\ Kimm
+harde\ kim,chine,bouchain\ vif,scharfe\ Kimm
+Havezate,Manor\ house,Manoir,Landsitz
+Havezate,Manorial\ farm,Manoir,Landsitz
+Heiligdom,Sanctuary,Sanctuaire,Heiligtum
+Heipaal,Driven\ pile,Pilot,Rammpfahl
+hek-,stern-,arrière,Heck-
+hek-,stern-,poupe,Heck-
+hek-,stern-,tableau,Heck-
+hekbalk,transom\ timber,barre\ d'\ hourdi,Heckbalken
+hekbalk,transom\ timber,lisse\ d'\ hourdi,Heckbalken
+hekbalk,wing\ transom,barre\ d'\ hourdi,Heckbalken
+hekbalk,wing\ transom,lisse\ d'\ hourdi,Heckbalken
+hekbalkon,stern\ balcony,balcon\ arrière,Heckbalkon
+hekboot,hagboat,Inconnu,Heckboot
+hekspiegel,stern\ transom,tableau\ arrière,Heckspiegel
+hekvleugel,stern\ wing,aile\ arrière,Heckflügel
+helmstok,tiller,barre\ de\ gouvernail,Helmstock
+helmstok,tiller,barre\ franche,Helmstock
+helmstok,tiller,barre\ de\ gouvernail,Pinne
+helmstok,tiller,barre\ franche,Pinne
+Hengsel,Handle,Levier,Henkel
+heve,swim-head,élancement,Kaffe
+hoeker,hooker,houcre,Hukboot?
+hoeker,hooker,hourque,Hukboot?
+hoeker,howker,houcre,Hukboot?
+hoeker,howker,hourque,Hukboot?
+hoeker,hooker,houcre,Huker
+hoeker,hooker,hourque,Huker
+hoeker,howker,houcre,Huker
+hoeker,howker,hourque,Huker
+Hoekkeper,Corner\ rafter,arêtier,Gratbalken
+Hoekkeper,Hip\ rafter,arêtier,Gratbalken
+Hoekkeper,Corner\ rafter,arêtier,Gratsparren
+Hoekkeper,Hip\ rafter,arêtier,Gratsparren
+hoofd,head,tête,Kopf
+Horreum,Horreum,Horreum,Horreum
+houten\ constructie,wooden\ construction,construction\ en\ bois,Holzkonstruction
+houten\ pen\ (klein\ /\ dun),peg,cheville,Holzstift
+huid,outer\ hull,bordage,Außenhülle
+huid,outer\ hull,bordé,Außenhülle
+huid,outer\ hull,bordé\ extérieur,Außenhülle
+huid,shell,bordage,Außenhülle
+huid,shell,bordé,Außenhülle
+huid,shell,bordé\ extérieur,Außenhülle
+huid,outer\ hull,bordage,Haut
+huid,outer\ hull,bordé,Haut
+huid,outer\ hull,bordé\ extérieur,Haut
+huid,shell,bordage,Haut
+huid,shell,bordé,Haut
+huid,shell,bordé\ extérieur,Haut
+huid,outer\ hull,bordage,Schale
+huid,outer\ hull,bordé,Schale
+huid,outer\ hull,bordé\ extérieur,Schale
+huid,shell,bordage,Schale
+huid,shell,bordé,Schale
+huid,shell,bordé\ extérieur,Schale
+huidbeplating,sheathing,doublage,Plankenbeslag
+huidbeplating,sheathing,revêtement,Plankenbeslag
+huidgang,hull\ strake,bordage,Hautgang
+huidgang,hull\ strake,virure\ de\ bordage,Hautgang
+huidplank,hull\ plank,bordage,Hautplanke
+huidplank,hull\ plank,planche\ de\ bordage,Hautplanke
+huis,house,maison,haus
+huisplattegrond,house\ plan,Plan\ de\ la\ maison,grundriss\ (haus)
+Icoon,Icon,Icône,Ikone
+Infrastructuur,Infrastructure,Infrastructure,Infrastruktur
+inhout,internal,(pièce\ de)\ membrure,Inholz
+insteker,stealer,virure\ perdue,Splissgang
+insteker,stealer,virure\ perdue,Totgang
+inzetstuk,graving\ piece,romaillet,Spund
+inzetstuk,graving\ piece,rombaillet,Spund
+inzetstuk,graving\ piece,romaillet,Spunt
+inzetstuk,graving\ piece,rombaillet,Spunt
+jacht,yacht,yacht,Jacht
+jagen,hauling,haler,treideln
+jol,jolly,petit\ canot,Jolle
+jol,jolly\ boat,petit\ canot,Jolle
+jol,yawl,canot,yole,Jolle
+jufferblok,deadeye,cap\ de\ mouton,Jungfer
+Juk,Truss,Ferme,Binder
+Juk,Truss,Ferme,Dachgebinde
+Juk,Yoke,Joug,Joch
+Juk,Truss,Ferme,Pfahlreihe
+kaapstander,capstan,cabestan,Gangspill
+Kaapstander,Capstan,Cabestan,Haspel
+Kabinet,Cabinet,Buffet,Kabinettschrank
+Kade,Quay,Quai,Kai
+Kade,Wharf,Quai,Kai
+Kade,Quay,Quai,Steg
+Kade,Wharf,Quai,Steg
+kalf,bolster,coussin,Kalb
+Kalf,Transom\ (bar),Traverse,Kämpferriegel
+kam,Unknown,Inconnu,Unbekannt
+kampanjedek,halfdek,quarter\ deck,gaillard\ d'arrière,Kampanjedeck
+Kanaal,Canal,Canal,Kanal
+Kanaal,Channel,Canal,Kanal
+Kanaalschip,Canalboat,Inconnu,Unbekannt
+Kanaalschip,Narrow\ boat,Inconnu,Unbekannt
+Kano,Canoe,Canoë,Kanu
+Kano,Canoe,canot,Kanu
+Kano,Canoe,pirogue,Kanu
+Kap,Roof,Charpente,Dachstuhl
+Kapconstructie,Roof\ construction,combles,Dachstuhl
+Kapconstructie,Roof\ construction,combles,Dachstuhl
+Kapconstructie,Roof\ framing,combles,Dachwerk
+Kapconstructie,Roof\ framing,combles,Dachwerk
+Kapel,Chapel,Chapelle,Kapelle
+Kapgebint,Truss,troquet,Binder
+Kapgebint,Truss,troquet,Dachstuhl
+Karbeel,Jack\ rafter,Moise,Unbekannt
+karveel,carvel,bordé\ à\ franc-bord,Kraweel(bauart)
+karveel,carvelbuilt,bordé\ à\ franc-bord,Kraweel(bauart)
+Kast,Case,armoire,Kästchen
+Kast,Closet,armoire,Kästchen
+Kast,Cupboard,armoire,Kästchen
+Kast,Cupboard,armoire,Kästchen
+Kast,Case,armoire,Kisten
+Kast,Closet,armoire,Kisten
+Kast,Cupboard,armoire,Kisten
+Kast,Cupboard,armoire,Kisten
+Kast,Case,armoire,Schrank
+Kast,Closet,armoire,Schrank
+Kast,Cupboard,armoire,Schrank
+Kast,Cupboard,armoire,Schrank
+Kast,Case,armoire,Schrein
+Kast,Closet,armoire,Schrein
+Kast,Cupboard,armoire,Schrein
+Kast,Cupboard,armoire,Schrein
+Kasteel,Castle,Château(-fort),Burg
+kasteel,castel,château,Kastell
+Kastmeubilair,Case\ furniture,Armoire,Schrank
+katblok,cat\ block,poulie\ capon,Kattaljeblock
+katrol,pulley,poulie,Block
+katschip,cat,chat,Kattschiff
+kattenrug,hog,navire\ arqué,Katzenbuckel
+kattenrug,hogged\ vessel,navire\ arqué,Katzenbuckel
+kattenrug,hog,navire\ arqué,Katzenbuckelschiff
+kattenrug,hogged\ vessel,navire\ arqué,Katzenbuckelschiff
+kattesporen,hold\ rider,porque,porque\ longue,Kattspur
+kattesporen,rider,porque,porque\ longue,Kattspur
+Kazerne,Barracks,Caserne,Kaserne
+Keg,Wedge,Coin,Keil
+Kelder,Cellar,Cellier,Keller
+Keper,Common\ rafter,Chevron,Dachsparren
+Keper,rafter,Chevron,Dachsparren
+Keper,Common\ rafter,Chevron,Rafe
+Keper,rafter,Chevron,Rafe
+Keper,Common\ rafter,Chevron,Rofe
+Keper,rafter,Chevron,Rofe
+Kerk,Church,Église,Kirche
+Kerkhof,Churchyard,Cimetière,Kirchhof
+Kerkruimte,Nave,nef,Kirchenschiff
+Kerktoren,campanile,campanile,Kirchturm
+Kerktoren,Churchtower,tour\ d'une\ église,Kirchturm
+Kiel,Keel,Quille,Kiel
+kiel,keel,quille,Kiel
+Kiel\ (wig),Boaster,Coin,Keil
+kielbalk,keel\ beam,barrot\ de\ quille,Kielbalken
+kielplank,keel\ plank,bordage\ de\ quille,Kielplanke
+kielplank\ (?),king\ plank,coursie,Mittelplanke
+kikker,cleat,taquet,Klampe
+kikker,mast\ cleat,taquet\ mâts,Mastenklampe
+Kil,Channel,Noue,Kehle
+Kil,Valley,Noue,Kehle
+Kilkeper,Valley\ rafter,Arâtier\ (de\ noue),Kehlsparre
+kim,bilge,bouchain,Aufkimmung
+kim,bilge,bouchain,Bilge
+kim,bilge,bouchain,Kimm
+kim,bilge,bouchain,Kimmung
+kimklamp,chine\ cleat,Inconnu,Unbekannt
+kimstuk,chine\ block,pièce\ de\ bouchain,Kimmstück
+kimweger,bilge\ stringer,bordage\ de\ bouchain,Kimmstringer
+Kinderbalk,Bridging\ joist,Solive,Dielenträg
+Kinderbalk,Bridging\ joist,Solive,Dielenträg
+Kinderbalk,Common\ joist,Solive,Kinderbalken
+Kinderbalk,Common\ joist,Solive,Kinderbalken
+kipstuk,fish\ davit,davier,Fischdavit
+kipstuk,fish\ davit,davier\ minot,Fischdavit
+kipstuk,fish\ davit,homme\ de\ bois,Fischdavit
+kipstuk,fish\ davit,petit\ bossoir,Fischdavit
+Kist,Box,huche,Kasten
+Kist,Box,huche,Kiste
+Kist,Chest,huche,Kiste
+Kist,Chest,huche,Truhe
+klamaai,carling,traversin,Rippe,Schlinge
+klamp,bracket,fourche,Gabel
+Klamp,Clamp,patte,Hirnliste,Verschlagbrett
+Klamp,Cleat,taquet,Klampe
+klamp,cleat,étrier\ (en\ bois),Klampe
+klamp,cleat,taquet,Klampe
+klamp,kevel,taquet\ à\ coeur,Knechte
+Klankbord,Baffle(-board),abat-son,Schalldeckel
+Klankbord,Baffle(-board),abat-voix,Schalldeckel
+Klankbord,soundboard,abat-son,Schalldeckel
+Klankbord,soundboard,abat-voix,Schalldeckel
+Klankbord,Sounding\ board,abat-son,Schalldeckel
+Klankbord,Sounding\ board,abat-voix,Schalldeckel
+Klankkast,Sound\ box,caisse\ de\ résonance,Schallkasten
+klinkerbouw,clinker,bordage\ à\ clin,Klinkerbau(art)
+klinkerbouw,clinker,construction\ à\ clin,Klinkerbau(art)
+klinkerbouw,clinker\ built,bordage\ à\ clin,Klinkerbau(art)
+klinkerbouw,clinker\ built,construction\ à\ clin,Klinkerbau(art)
+Klok,Clock,Horloge,Uhr
+Klokkenstoel,Belfry,Beffroi,Glockenstuhl
+Klooster,Convent,Couvent,Kloster
+Klooster,Monastery,monastère,Kloster
+kloot,mast\ truck,pomme,Knopf
+kloot,parral\ truck,pommes\ racages,Rackklotjies
+klootrak,parral,racages,Rack
+Klos,Chock,Bûche,Klotz
+Klos,Cleat,Bûche,Klotz
+kluisgat,hawse\ hole,écubier,Klüse
+kluisgatbekleding,hawse\ hole\ lining,renfort\ écubiers,Klüsenschalung
+kluishout,hawse\ hole\ bolster,bloc\ écubiers,Klüsenholz
+kluiverblok,bee\ block,conduit\ violon,violinegatklampe
+kluiverboom,jibboom,bâton\ de\ foc,Klüverbaum
+kluiverboom\ zadel,jibboom\ saddle,croisillon\ bâton\ de\ foc,Klüverbaumabstandhalter
+knecht,kevel-head,biton,Knechte
+knecht,kevel-head,taquet,Knechte
+knie,knee,courbe,Knie
+knikspant,knuckle\ frame,couple\ cassé,Knickspant
+knikspantvaartuig,knuckle\ framed\ ship,navire\ aux\ couples\ cassés,Knickspantfahrzeug
+Kogge,Cog,Nef,Kogge
+kogge,cog\ ship,nef,Kogge
+Koker,Case,étui,Behälter
+Koker,Quiver,étui,Behälter
+Koker,Sheat,étui,Behälter
+Koker,Case,étui,Köcher
+Koker,Quiver,étui,Köcher
+Koker,Sheat,étui,Köcher
+Kokerbalk,Box\ beam,Inconnu,Hohlkasten
+kolderstok,kanterstok,whipstaff,manuelle,Kolderstock
+Kom,Bowl,Récipient,Schale
+Kom,Bowl,Récipient,Schüssel
+kombuis,galley,cuisine,Kombüse
+Koningsstijl,King\ post,Pivot\ central,Kaiserstil
+Koopvaardijschip,Merchant\ vessel,Navire\ de\ commerce,Handelsschiff
+Koopvaardijschip,Merchant\ vessel,Navire\ marchand,Handelsschiff
+Koopvaardijschip,Trader,Navire\ de\ commerce,Handelsschiff
+Koopvaardijschip,Trader,Navire\ marchand,Handelsschiff
+Koopvaardijschip,Trading\ ship/vessel,Navire\ de\ commerce,Handelsschiff
+Koopvaardijschip,Trading\ ship/vessel,Navire\ marchand,Handelsschiff
+Koopvaardijschip,Merchant\ vessel,Navire\ de\ commerce,Kauffahrer
+Koopvaardijschip,Merchant\ vessel,Navire\ marchand,Kauffahrer
+Koopvaardijschip,Trader,Navire\ de\ commerce,Kauffahrer
+Koopvaardijschip,Trader,Navire\ marchand,Kauffahrer
+Koopvaardijschip,Trading\ ship/vessel,Navire\ de\ commerce,Kauffahrer
+Koopvaardijschip,Trading\ ship/vessel,Navire\ marchand,Kauffahrer
+Koopvaardijschip,Merchant\ vessel,Navire\ de\ commerce,Kauffahrteischiff
+Koopvaardijschip,Merchant\ vessel,Navire\ marchand,Kauffahrteischiff
+Koopvaardijschip,Trader,Navire\ de\ commerce,Kauffahrteischiff
+Koopvaardijschip,Trader,Navire\ marchand,Kauffahrteischiff
+Koopvaardijschip,Trading\ ship/vessel,Navire\ de\ commerce,Kauffahrteischiff
+Koopvaardijschip,Trading\ ship/vessel,Navire\ marchand,Kauffahrteischiff
+Koor,Chancel,Choeur,Chor
+Koor,Choir,Choeur,Chor
+Koorsluiting,Chevet,Chevet,Chorhaupt/-schluss
+Koorstoel/koorgestoelte,Choir\ stall,Stalles,Chorstuhl,Chorgestühl
+Korbeel,Arch\ brace,Aisselier,Kopfband
+Korbeel,Curved\ brace,Aisselier,Kopfband
+Korbeel,Arch\ brace,Aisselier,Kopfbug
+Korbeel,Curved\ brace,Aisselier,Kopfbug
+Korenmolen,Corn-mill,Moulin\ à\ blé,Getreidemühle
+Korenmolen,Corn-mill,Moulin\ à\ céréales,Getreidemühle
+Korenmolen,Flour\ mill,Moulin\ à\ blé,Getreidemühle
+Korenmolen,Flour\ mill,Moulin\ à\ céréales,Getreidemühle
+Korteling,Putlog,Boulin,Gerüstholz
+korvijnagel,belaying\ pin,cabillot,Belegnagel
+korvijnagel,belaying\ pin,cabillot\ de\ tournage,Belegnagel
+korvijnagel,belaying\ pin,cheville\ de\ tournage,Belegnagel
+korvijnagel,belaying\ pin,chevillot,Belegnagel
+korvijnagel,belaying\ pin,tolet\ de\ tournage,Belegnagel
+korvijnagel,clout\ nail,cabillot,Belegnagel
+korvijnagel,clout\ nail,cabillot\ de\ tournage,Belegnagel
+korvijnagel,clout\ nail,cheville\ de\ tournage,Belegnagel
+korvijnagel,clout\ nail,chevillot,Belegnagel
+korvijnagel,clout\ nail,tolet\ de\ tournage,Belegnagel
+korvijnagel,belaying\ pin,cabillot,Koffeynagel
+korvijnagel,belaying\ pin,cabillot\ de\ tournage,Koffeynagel
+korvijnagel,belaying\ pin,cheville\ de\ tournage,Koffeynagel
+korvijnagel,belaying\ pin,chevillot,Koffeynagel
+korvijnagel,belaying\ pin,tolet\ de\ tournage,Koffeynagel
+korvijnagel,clout\ nail,cabillot,Koffeynagel
+korvijnagel,clout\ nail,cabillot\ de\ tournage,Koffeynagel
+korvijnagel,clout\ nail,cheville\ de\ tournage,Koffeynagel
+korvijnagel,clout\ nail,chevillot,Koffeynagel
+korvijnagel,clout\ nail,tolet\ de\ tournage,Koffeynagel
+kotter,cutter,cutter,Kutter
+kraak,carrack,caraque,Karake
+kraanbalk,cathead,bossoir\ capon,Kranbalken
+kraanbalkklamp,cat\ kevel,conduit\ capon,Krangatklampe
+Krat,Crate,caisse,Kiste
+Kreek,Brook,Ruisseau,Priel
+Kreek,Cove,Crique,Priel
+Kreek,Creek,Crique,Priel
+Kreek,Stream,Ruisseau,Priel
+Kreek,Brook,Ruisseau,Rinne
+Kreek,Cove,Crique,Rinne
+Kreek,Creek,Crique,Rinne
+Kreek,Stream,Ruisseau,Rinne
+Kreupele\ stijl,Ashlar\ post,Jambe\ de\ force,Stützholz
+Kreupele\ stijl,Sling\ brace,Jambe\ de\ force,Stützholz
+krommer,crock,bois\ courbe,Krummer
+krommer,crock,courbe,Krummer
+kromwulf,counter,contre-arcasse,Gilling
+kromwulf,counter,vôute,Gilling
+kromwulf,counter,vôute\ d'arcasse,Gilling
+kromwulf,fantail,contre-arcasse,Gilling
+kromwulf,fantail,vôute,Gilling
+kromwulf,fantail,vôute\ d'arcasse,Gilling
+kromwulf,vault,contre-arcasse,Gilling
+kromwulf,vault,vôute,Gilling
+kromwulf,vault,vôute\ d'arcasse,Gilling
+kromwulf,counter,contre-arcasse,Gillung
+kromwulf,counter,vôute,Gillung
+kromwulf,counter,vôute\ d'arcasse,Gillung
+kromwulf,fantail,contre-arcasse,Gillung
+kromwulf,fantail,vôute,Gillung
+kromwulf,fantail,vôute\ d'arcasse,Gillung
+kromwulf,vault,contre-arcasse,Gillung
+kromwulf,vault,vôute,Gillung
+kromwulf,vault,vôute\ d'arcasse,Gillung
+Kroonlijst,Cornice,Corniche,Kranzgesims
+Kroonlijst,Corona,Corniche,Kranzgesims
+kruisbramra,mizzen\ topgallant\ yard,vergue\ de\ perruche,Kreuzbramrah
+kruisbramsteng,mizzen\ topgallant\ mast,mât\ de\ perruche,Kreuzbramstenge
+kruishout,kevel\ bitt,bitte,Schanzkleidknechte
+Kruising,Crossing,Croisée,Vierung
+kruisra,mizzen\ topsail\ yard,vergue\ de\ perroquet\ de\ fougue,Kreuzrah
+Kruisschoor,Cross\ brace,étai\ en\ croix,Kruezstrebe
+Kruisschoor,Passing\ brace,étai\ en\ croix,Kruezstrebe
+Kruisschoor,Scissors\ brace,étai\ en\ croix,Kruezstrebe
+Kruisschoor,Cross\ brace,étai\ en\ croix,Schere
+Kruisschoor,Passing\ brace,étai\ en\ croix,Schere
+Kruisschoor,Scissors\ brace,étai\ en\ croix,Schere
+Kruisschoor,Cross\ brace,étai\ en\ croix,Schwertung
+Kruisschoor,Passing\ brace,étai\ en\ croix,Schwertung
+Kruisschoor,Scissors\ brace,étai\ en\ croix,Schwertung
+kruissteng,mizzen\ topmast,mât\ de\ perroquet\ de\ fougue,Kreuzstenge
+Kuil,Hole,Fosse,Grube
+Kuil,Hole,Trou,Grube
+Kuil,Pit,Fosse,Grube
+Kuil,Pit,Trou,Grube
+Kuil,Hole,Fosse,Loch
+Kuil,Hole,Trou,Loch
+Kuil,Pit,Fosse,Loch
+Kuil,Pit,Trou,Loch
+Kuil,Hole,Fosse,Mulde
+Kuil,Hole,Trou,Mulde
+Kuil,Pit,Fosse,Mulde
+Kuil,Pit,Trou,Mulde
+Kuil,Hole,Fosse,Vertiefung
+Kuil,Hole,Trou,Vertiefung
+Kuil,Pit,Fosse,Vertiefung
+Kuil,Pit,Trou,Vertiefung
+Kuip,Barrel,tonneau,Fass
+Kuip,Barrel,tonneau,Fass
+Kuip,Tub,Cuve,Tonne
+Kuip,Tub,Cuve,Tonne
+Kussenkast,Dutch\ bombé\ chest,Inconnu,Kussenkast
+kwartierboom\ (van\ een\ trap),ladder\ side,côté\ échelle,Treppewange
+Labrisering,Paneling,boiserie,Getäfel
+Labrisering,Paneling,Lambris,Getäfel
+Labrisering,Wainscoting,boiserie,Getäfel
+Labrisering,Wainscoting,Lambris,Getäfel
+Labrisering,Paneling,boiserie,Tafelwerk
+Labrisering,Paneling,Lambris,Tafelwerk
+Labrisering,Wainscoting,boiserie,Tafelwerk
+Labrisering,Wainscoting,Lambris,Tafelwerk
+Labrisering,Paneling,boiserie,Vertäfelung
+Labrisering,Paneling,Lambris,Vertäfelung
+Labrisering,Wainscoting,boiserie,Vertäfelung
+Labrisering,Wainscoting,Lambris,Vertäfelung
+Ladder,Ladder,Échelle,Leiter
+Lade,Drawer,Tiroir,Schublade
+land,overlap,recouvrement\ des\ bordages,Überlappung
+Landgoed,Country\ estate,Domaine,Landgut
+Landhoofd,Bridge\ head,Butée,Brückenwiderlager
+Landhoofd,Land\ abutment,culée,Brückenwiderlager
+Langschoor,Brace,Décharge,Schwert
+Langsverband,Longitudinal\ bracing,entretoisement\ longitudinal,Längsverband
+langsverbinding,longitudinal\ stiffener,renfort\ longitudinal,Längsversteifung
+langsversterking,longitudinal\ stiffener,renfort\ longitudinal,Längsversteifung
+langszaling,trestle\ tree,elongis,Längssaling
+Lans,Lance,Lance,Lanze
+las,joint,écart,Lasche
+las,joint,enture,Lasche
+las,joint,joint,Lasche
+las,scarf,écart,Lasche
+las,scarf,enture,Lasche
+las,scarf,joint,Lasche
+las,joint,écart,Schäftung
+las,joint,enture,Schäftung
+las,joint,joint,Schäftung
+las,scarf,écart,Schäftung
+las,scarf,enture,Schäftung
+las,scarf,joint,Schäftung
+Latei,Lintel,Linteau,Sturz
+latrine,latrine,latrine,Latrine
+Legerplaats,Military\ camp,Camp,Truppenlager
+Legerplaats,Military\ camp,campement,Truppenlager
+legger,floor\ timber\ (straight),varangue\ plate,Bodenwrange
+leggerknie,floor\ timber\ knee,courbe\ de\ varangue,Korbenarm
+Lepel,Spoon,Cuillère,Löffel
+Leuning,Handrail,main-courante,Geländer
+Leuning,Handrail,rampe,Geländer
+Leuning,Railing,Garde-corps,Geländer
+Leuning,Balustrade,Appui,Schutzgeländer
+Lier,Lyre,Lyre,Leier
+lier,winch,treuil,Spill,Winde
+ligger,floortimber,varangue,Bauchstück
+ligger,floortimber,varangue,Lieger
+Ligger,Beam,Longeron,Streckbalken
+Ligger,Girder,Longeron,Streckbalken
+Ligger,Beam,Longeron,Träger
+Ligger,Girder,Longeron,Träger
+Lijst,Moulding,moulure,Gesims
+lijzeilspier,stunsail\ boom,boute-hors,Leesegelspiere
+liseen,pilaster,pilastre,Lisene
+loggat,limber\ hole,watercourse,anguiller,Nüstergatt
+luikhoofd,coaming,surbau\ d'\ écoutille,Lukenquersüll
+luikhoofd,coaming,vassole,Lukenquersüll
+luikhoofd,hatch\ coaming,surbau\ d'\ écoutille,Lukenquersüll
+luikhoofd,hatch\ coaming,vassole,Lukenquersüll
+luikhoofd,headledge,surbau\ d'\ écoutille,Lukenquersüll
+luikhoofd,headledge,vassole,Lukenquersüll
+luikhoofd,coaming,surbau\ d'\ écoutille,Lukensüll
+luikhoofd,coaming,vassole,Lukensüll
+luikhoofd,hatch\ coaming,surbau\ d'\ écoutille,Lukensüll
+luikhoofd,hatch\ coaming,vassole,Lukensüll
+luikhoofd,headledge,surbau\ d'\ écoutille,Lukensüll
+luikhoofd,headledge,vassole,Lukensüll
+luikhoofd,coaming,surbau\ d'\ écoutille,Scherstock
+luikhoofd,coaming,vassole,Scherstock
+luikhoofd,hatch\ coaming,surbau\ d'\ écoutille,Scherstock
+luikhoofd,hatch\ coaming,vassole,Scherstock
+luikhoofd,headledge,surbau\ d'\ écoutille,Scherstock
+luikhoofd,headledge,vassole,Scherstock
+Luit,Lute,Luth,Laute
+luiwagen,sweep,croissant,Leitwagen
+luiwagen,sweep,demi-lune,Leitwagen
+luiwagen,sweep,quart\ de\ rond,Leitwagen
+luiwagen,sweep,tamisalle,Leitwagen
+luiwagen,sweep,croissant,Leuwagen
+luiwagen,sweep,demi-lune,Leuwagen
+luiwagen,sweep,quart\ de\ rond,Leuwagen
+luiwagen,sweep,tamisalle,Leuwagen
+L-vormige\ kim,chine-block,cornière\ de\ bouchain,L-förmige\ Kimmholz
+L-vormige\ kim,chine-block,île\ bouchain\ en\ forme\ de\ L,L-förmige\ Kimmholz
+L-vormige\ kim,L-shaped\ chine,cornière\ de\ bouchain,L-förmige\ Kimmholz
+L-vormige\ kim,L-shaped\ chine,île\ bouchain\ en\ forme\ de\ L,L-förmige\ Kimmholz
+Makelaar,Central\ vertical\ post,poinçon,Firstständer
+Makelaar,King\ post,poinçon,Firstständer
+Makelaar,Spire\ mast,poinçon,Firstständer
+Makelaar,Central\ vertical\ post,poinçon,Spitzsäule
+Makelaar,King\ post,poinçon,Spitzsäule
+Makelaar,Spire\ mast,poinçon,Spitzsäule
+mal,mould,gabarit,Mall
+mal,mould,modèle,Mall
+mal,shape,gabarit,Mall
+mal,shape,modèle,Mall
+mal,mould,gabarit,Schablone
+mal,mould,modèle,Schablone
+mal,shape,gabarit,Schablone
+mal,shape,modèle,Schablone
+Mariabeeld,Statue\ of\ the\ Virgin\ Mary,Madone,Marienstatue
+Mast,Mast,Mât,Mast
+mast,mast,mât,Mast
+Mast,Mast,Pilotis,Pfahl
+Mast,Mast,Pilotis,Säule
+Mast,Mast,Pilotis,Ständer
+Mast,Mast,Pilotis,Stiel
+mastbank,mast\ thwart,banc\ d’étambrai,Mastducht
+mastbank,mast\ thwart,banc\ d’étambrai,banc\ de\ mât,Mastducht
+mastblok,mast\ step,carlingue\ de\ mât,Mastblock
+mastdoft,mast\ thwart,banc\ d’étambrai,Mastducht
+mastdoft,mast\ thwart,banc\ de\ mât,Mastducht
+mastspant,mast\ frame,couple\ de\ mât,Mastspant
+mastspant,mast\ frame,membre\ d’emplanture,Mastspant
+mastspoor,foundation\ hole,emplanture\ de\ mât,Mastspur
+mastspoor,mast\ step,emplanture\ de\ mât,Mastspur
+mastvoet,mast\ heel,pied\ de\ mât,Mastfuß
+mastvoet,mast\ heel,ton\ de\ mât,Mastfuß
+mastwang,cheek,jottereau,Backe
+Mes,Knife,Couteau,Messer
+Meubel,Piece\ of\ furniture,Meuble,Möbel
+Meubilair,Furniture,ameublement,Mobiliar
+Meubilair,Furniture,Mobilier,Mobiliar
+Mezzanine,Mezzanine,Entresol,Halbgeschoss
+midscheeps,amidships,au\ centre\ du\ navire,mittschiffs
+midscheeps,amidships,au\ milieu\ du\ navire,mittschiffs
+mik,boom\ cradle,corne\ de\ gui,Baumträger
+mik,boom\ cradle,croissant\ de\ gui,Baumträger
+mik,boom\ crutch,corne\ de\ gui,Baumträger
+mik,boom\ crutch,croissant\ de\ gui,Baumträger
+mik,boom\ cradle,corne\ de\ gui,Mick
+mik,boom\ cradle,croissant\ de\ gui,Mick
+mik,boom\ crutch,corne\ de\ gui,Mick
+mik,boom\ crutch,croissant\ de\ gui,Mick
+Moerbalk,Binder,Soupoutre,Mutterbalken
+Moerbalk,Bridging,Soupoutre,Mutterbalken
+Moerbalk,Crossbeam,Soupoutre,Mutterbalken
+Molen,Mill,Moulin,Mühle
+Molenrad,Mill\ wheel,Roue\ de\ moulin,Mühlrad
+Molenrad,Mill\ wheel,tournant,Mühlrad
+Molenrad,Water\ wheel,Roue\ de\ moulin,Mühlrad
+Molenrad,Water\ wheel,tournant,Mühlrad
+Montant,Mullion,montant,Pfosten
+mortise-and-tenon,mortice-and-tenon,tenons\ et\ mortaises,Nut-Feder-Verbindung
+mortise-and-tenon,mortise-and-tenon\ joint,tenons\ et\ mortaises,Nut-Feder-Verbindung
+Motte,Motte,Mound,Burghügel
+Museum,Museum,Musée,Museum
+Muur,Wall,Mur,Mauer
+Muurplaat,Sole\ piece,Sablière,Mauerlatte
+Muurplaat,Wall\ plate,Sablière,Mauerlatte
+Muurstijl,Wall\ piece,Poteau\ accolé,Wandpfosten
+Muurstijl,Wall\ post,Poteau\ contre\ le\ mur,Wandpfosten
+Muurstijl,Wall\ piece,Poteau\ accolé,Wandständer
+Muurstijl,Wall\ post,Poteau\ contre\ le\ mur,Wandständer
+Muziekinstrument,Musical\ instrument,Instrument\ de\ musique,Musikinstrument
+naad,seam,couture,Naht
+Naaf,Hub,Moyeu,Nabe
+nachthuis,binnacle,habitacle,Kompasshäuschen
+Nagel,Dowel,cheville,Nagel
+Nagel,Nail\ (wooden),cheville,Nagel
+Nagel,Peg,cheville,Nagel
+Nagel,Trenail,cheville,Nagel
+nagel,nail,cabillot,Nagel
+nagelbank,belaying\ rack,lisse\ de\ râtelier\ à\ cabillots,Fallknecht
+nagelbank,belaying\ rack,râtelier,Fallknecht
+nagelbank,belaying\ rack,râtelier\ à\ cabillots,Fallknecht
+nagelbank,fife\ rail,lisse\ de\ râtelier\ à\ cabillots,Fallknecht
+nagelbank,fife\ rail,râtelier,Fallknecht
+nagelbank,fife\ rail,râtelier\ à\ cabillots,Fallknecht
+nagelbank,belaying\ rack,lisse\ de\ râtelier\ à\ cabillots,Nagelbank
+nagelbank,belaying\ rack,râtelier,Nagelbank
+nagelbank,belaying\ rack,râtelier\ à\ cabillots,Nagelbank
+nagelbank,fife\ rail,lisse\ de\ râtelier\ à\ cabillots,Nagelbank
+nagelbank,fife\ rail,râtelier,Nagelbank
+nagelbank,fife\ rail,râtelier\ à\ cabillots,Nagelbank
+Nederzetting,Settlement,Etablissement,Siedlung
+nok,Ridge,Faîte,Dachfirst
+nok,Ridge,Faîte,Dachreiter
+Nokbalk,Ridge\ (pole/beam/piece),Faîte,Firstbalken
+Nokgording,Ridge\ purlin,Faîtage,Firstpfette
+Nokgording,Ridgepiece,Faîtage,Firstpfette
+Nokstijl,Central\ post,Support\ central,Firstsäule
+Nokstijl,Central\ post,Support\ central,Hausbaum
+Oksaal,Rood\ gallery,Jubé,Doksal
+Oksaal,Rood\ loft,Jubé,Doksal
+Oksaal,Rood\ screen,Jubé,Doksal
+Oksaal,Rood\ gallery,Jubé,Lettner
+Oksaal,Rood\ loft,Jubé,Lettner
+Oksaal,Rood\ screen,Jubé,Lettner
+Omheining,Enclosure,Clôture,Zaun
+Omwalling,Rampart,Rempart,Schutzwall
+Onbekend,Unknown,Inconnu,Unbekannt
+Onderdeur,Hatch,Puce,Untertür
+Onderdorpel,Sill,Seuil,Schwelle
+Onderslag,Girder,Soupoutre,Unterzug
+Onderslag,Supporting\ beam,Soupoutre,Unterzug
+Onderslagbalk,Girder,Soupoutre,Unterzug
+Onderslagbalk,Supporting\ beam,Soupoutre,Unterzug
+Oorlogsschip,Warship,Navire\ de\ querre,Kriegsschiff
+opboeisel,bulwark,coulisses,Dollbord
+opboeisel,bulwark,plat-bord,Dollbord
+opboeisel,wash\ strake,coulisses,Dollbord
+opboeisel,wash\ strake,plat-bord,Dollbord
+opgraving,excavation,excavation,Ausgrabung
+oplanger,futtock,allonge,Auflänger
+Oplanger\ (dakspar),Furring\ rafter,Coyau,Auflanger
+Oplanger\ (dakspar),Trimming\ rafter,Coyau,Auflanger
+Oplanger\ (dakspar),Furring\ rafter,Coyau,Aufschiebling
+Oplanger\ (dakspar),Trimming\ rafter,Coyau,Aufschiebling
+Oplanger\ (molenroede),Whip,Scion,Flügelrute
+Oplanger\ (steigerpaal),Upright\ extension,Rallonge,Verlängerungsstück
+oppervlaktebehandeling,coating,traitement\ de\ la\ coque,Anstrich
+Orgel,Organ,Orgue,Orgel
+Ornament,Ornament,Ornement,Ornament
+overlap,overlap,recouvrement\ des\ bordages,Überlappung
+overloopdek,main\ deck,pont\ principal,Großdeck
+overnaads,lap\ strake,bordage\ à\ clin,Klinkerbau
+Paal,Pile,Pilotis,Pfahl
+Paal,Pile,Pilotis,Pfahl
+Paal,Pile,Poteau,Pfahl
+Paal,Pile,Poteau,Pfahl
+Paal,Post,Pilotis,Pfahl
+Paal,Post,Poteau,Pfahl
+Paal,Pile,Pilotis,Säule
+Paal,Pile,Pilotis,Säule
+Paal,Pile,Poteau,Säule
+Paal,Pile,Poteau,Säule
+Paal,Post,Pilotis,Säule
+Paal,Post,Poteau,Säule
+Paal,Pile,Pilotis,Ständer
+Paal,Pile,Pilotis,Ständer
+Paal,Pile,Poteau,Ständer
+Paal,Pile,Poteau,Ständer
+Paal,Post,Pilotis,Ständer
+Paal,Post,Poteau,Ständer
+Paal,Pile,Pilotis,Stiel
+Paal,Pile,Pilotis,Stiel
+Paal,Pile,Poteau,Stiel
+Paal,Pile,Poteau,Stiel
+Paal,Post,Pilotis,Stiel
+Paal,Post,Poteau,Stiel
+Paalgat,Post\ hole,Inconnu,Pfostenloch
+Paalkuil,Post\ hole,Inconnu,Pfostenloch
+pakketboot,packet,packet\ boat,paquebot,Paketboot
+Paleis,Palace,Palais,Palast
+Palissade,Palisade,Palissade,Palisade
+Palissade,Piling,Palissade,Palisade
+Palissade,Timber\ stockade,Palissade,Pfahlwerk
+Paneel,Pane,Panneau,Feld
+Paneel,Panel,Panneau,Feld
+Paneel,Pane,Panneau,Füllung
+Paneel,Panel,Panneau,Füllung
+Paneel,Pane,Panneau,Paneel
+Paneel,Panel,Panneau,Paneel
+Panlat,Tile\ lath,Liteau,Dachlatte
+Panlat,Tile\ lath,Volige,Dachlatte
+pardoen,backstay,galhauban,Pardune
+Pastorie,Parsonage,Cure,Pfarrei
+Pastorie,Parsonage,Presbytère,Pfarrei
+Pastorie,Vicarage,Cure,Pfarrei
+Pastorie,Vicarage,Presbytère,Pfarrei
+Paviljoen,Pavillion,Pavillon,Pavillon
+Peddel,Paddle,Pagaie,Paddel
+peddel,paddle,pagaye,Paddel
+Pen,Tenon,Tenon,Zapf
+Pen/pin,Peg,Cheville,Nagel
+penterbalk,fish\ davit,davier,Fischdavit
+penterbalk,fish\ davit,davier\ minot,Fischdavit
+penterbalk,fish\ davit,homme\ de\ bois,Fischdavit
+penterbalk,fish\ davit,petit\ bossoir,Fischdavit
+Philibertskap,Philibert\ roof,ferme\ Philibert,Bohlendach
+Philibertspant,Philibert\ truss,Charpente\ à\ la\ Philibert\ de\ l’Orme,Bohlenbinder
+piekstuk,crutch,cornet,eingezogenes\ Bauchstück
+piekstuk,crutch,fourcat,eingezogenes\ Bauchstück
+piekstuk,crutch,varangué\ acculée,eingezogenes\ Bauchstück
+piekstuk,rising\ floor\ timber,cornet,eingezogenes\ Bauchstück
+piekstuk,rising\ floor\ timber,fourcat,eingezogenes\ Bauchstück
+piekstuk,rising\ floor\ timber,varangué\ acculée,eingezogenes\ Bauchstück
+Pijler,Pier,Pile,Pfeiler
+Pijler,Pier,Pilier,Pfeiler
+Pijlkoker,Quiver,Carquois,Pfeilköcher
+Pijlkoker,Arrow\ shaft,Carquois,Pfeilschaft
+Pilaster,Pilaster,Pilastre,Pilaster
+pinas,pinnace,pinasse,Pinass
+pink,pink,pinque,Pink
+Plaat,Plate,feuille,Bohle
+Plaat,Plate,Panneau,Bohle
+Plaat,Plate,feuille,Rähm
+Plaat,Plate,Panneau,Rähm
+Plaat,Plaque,Plaque,Tafel
+Plafond,Ceiling,Plafond,Decke
+Plafondbalk,Joist,Poutre,Deckenbalken
+Plafondbalk,Joist,Poutre,Deckenbohle
+Plank,Board,Planche,Brett
+Plank,Plank,madrier,Brett
+Plank,Plank,Planche,Brett
+plank,plank,bordage,Planke
+plank,plank,planche,Planke
+Plat\ dak,Flat\ roof,Toit\ plate-forme,Flaches\ Dach
+platbodem,flat\ bottomed\ vessel,navire\ à\ fond\ plat,Plattbode(schiff)
+Platbodem/platboomd\ schip,Flatboat,Bateau\ à\ fond\ plat,Plattbodenboot
+Platbodem/platboomd\ schip,Flat-bottomed\ vessel/boat,Bateau\ à\ fond\ plat,Plattbodenboot
+platboomd\ schip,flat\ bottomed\ vessel,navire\ à\ fond\ plat,Plattbodenschiff
+Platform,Platform,Plateforme,Plattform
+platte\ bodem,flat\ bottom\ [GB],sole,Plattboden\ [All.]
+plecht,after\ deck,tille,Plicht
+plecht,cuddy,tille,Plicht
+plecht,forward\ deck,tille,Plicht
+Podium,Platform,Estrade,Plattform
+pomp,pump,pompe,Pumpe
+pompdaal,pump\ dale,manche\ en\ bois\ d'une\ pompe,Unbekannt
+Poort,Doorway,Porte,Tor
+Poort,Gateway,Porte,Tor
+Poort,Portal,Porte,Tor
+Poortgebouw,Gatehouse,Porte,Torhaus
+Poppenhuis,Dollhouse,Maison\ de\ poupée,Puppenhaus
+Post,Mullion,Montant,Pfosten
+potdeksel,covering\ board,plat-bord,Schandeck(el)
+potdekseldraager,L-shaped\ covering\ board,Inconnu,Unbekannt
+Praam,Flatboat,Gabare,Flacher\ Lastkahn
+Praam,Flatboat,Gabarre,Flacher\ Lastkahn
+Praam,Pram,Gabare,Flacher\ Lastkahn
+Praam,Pram,Gabarre,Flacher\ Lastkahn
+praam,flatboat,barque\ sans\ carène,Plattboot
+praam,flatboat,prame,Plattboot
+praam,praam,barque\ sans\ carène,Plattboot
+praam,praam,prame,Plattboot
+praam,pram,barque\ sans\ carène,Plattboot
+praam,pram,prame,Plattboot
+praam,flatboat,barque\ sans\ carène,Platte
+praam,flatboat,prame,Platte
+praam,praam,barque\ sans\ carène,Platte
+praam,praam,prame,Platte
+praam,pram,barque\ sans\ carène,Platte
+praam,pram,prame,Platte
+Praam,Flat,Gabare,Prahm
+Praam,Flat,Gabarre,Prahm
+praam,flatboat,barque\ sans\ carène,Prahm
+praam,flatboat,prame,Prahm
+praam,praam,barque\ sans\ carène,Prahm
+praam,praam,prame,Prahm
+Praam,Pram,Gabare,Prahm
+Praam,Pram,Gabarre,Prahm
+praam,pram,barque\ sans\ carène,Prahm
+praam,pram,prame,Prahm
+praam,flatboat,barque\ sans\ carène,Zille
+praam,flatboat,prame,Zille
+praam,praam,barque\ sans\ carène,Zille
+praam,praam,prame,Zille
+praam,pram,barque\ sans\ carène,Zille
+praam,pram,prame,Zille
+Preekstoel,Pulpit,Chaire\ (à\ prêcher),Kanzel
+Pui,Lower\ façade,Façade,Fassade
+Pui,Lower\ front,Façade,Fassade
+Pui,Lower\ façade,Façade,Front
+Pui,Lower\ front,Façade,Front
+punter,punt,plate,Pünte
+Punter,Punt,Barge,Stechkahn
+Punter-achtig\ vaartuig,Punt-like\ vessel,Inconnu,Unbekannt
+punter-achtig\ vaartuig,punt-like\ vessel,navire\ aux\ elements\ constructifs\ de\ plate,Pünte-artiges\ Fahrzeug
+puttingijzer,deadeye\ chain,cadène,Püttingeisen
+puttingijzer,deadeye\ chain,chaines\ de\ haubans,Püttingeisen
+puttingijzer,puttingband\ (?),channel\ capping\ strip,lisse\ porte-haubans,Rüstenband
+ra,yard,vergue,Rah
+raadkamer,coach,chambre\ de\ conseil,Halbrundlatrine\ (?)
+raadkamer,coach,latrine\ semi-circulaire\ (?),Halbrundlatrine\ (?)
+raadkamer,round\ house,chambre\ de\ conseil,Halbrundlatrine\ (?)
+raadkamer,round\ house,latrine\ semi-circulaire\ (?),Halbrundlatrine\ (?)
+raadkamer,coach,chambre\ de\ conseil,Ratkammer
+raadkamer,coach,latrine\ semi-circulaire\ (?),Ratkammer
+raadkamer,round\ house,chambre\ de\ conseil,Ratkammer
+raadkamer,round\ house,latrine\ semi-circulaire\ (?),Ratkammer
+Rad,Wheel,Roue,Rad
+rahout,channel\ wale\ (frigate),second\ préciente\ (frégate),Raheholz
+rahout,sheer\ rail,lisse\ de\ vibord,préciente\ de\ vibord,Raheholz
+rahout,upper\ channel\ wale\ (ship\ of\ the\ line),troisième\ préciente\ (vaisseau),Raheholz
+rahout,channel\ wale\ (frigate),second\ préciente\ (frégate),Raheleiste
+rahout,sheer\ rail,lisse\ de\ vibord,préciente\ de\ vibord,Raheleiste
+rahout,upper\ channel\ wale\ (ship\ of\ the\ line),troisième\ préciente\ (vaisseau),Raheleiste
+rahout,channel\ wale\ (frigate),second\ préciente\ (frégate),Sprungleiste
+rahout,sheer\ rail,lisse\ de\ vibord,préciente\ de\ vibord,Sprungleiste
+rahout,upper\ channel\ wale\ (ship\ of\ the\ line),troisième\ préciente\ (vaisseau),Sprungleiste
+rakkeslede,parral\ rib,bigot,Rackschlitten
+rakkeslede,parral\ rib,bigot\ racages,Rackschlitten
+rakkeslede,parral\ rib,gaburon,Rackschlitten
+rakkeslede,parrel\ rib,bigot,Rackschlitten
+rakkeslede,parrel\ rib,bigot\ racages,Rackschlitten
+rakkeslede,parrel\ rib,gaburon,Rackschlitten
+rakkeslede,rib,bigot,Rackschlitten
+rakkeslede,rib,bigot\ racages,Rackschlitten
+rakkeslede,rib,gaburon,Rackschlitten
+raklamp,yard\ cleat,taquet\ vergues,Rahenklampe
+ram,ram,éperon,Rammsporn
+rantsoenhouten,fashion\ frame,cornière,Achterspant
+rantsoenhouten,fashion\ frame,couple\ d'arrière,Achterspant
+rantsoenhouten,fashion\ frame,couple\ de\ façon,Achterspant
+rantsoenhouten,fashion\ frame,estain,Achterspant
+rantsoenhouten,fashion\ piece,cornière,Achterspant
+rantsoenhouten,fashion\ piece,couple\ d'arrière,Achterspant
+rantsoenhouten,fashion\ piece,couple\ de\ façon,Achterspant
+rantsoenhouten,fashion\ piece,estain,Achterspant
+rantsoenhouten,fashion\ frame,cornière,Randzomholz
+rantsoenhouten,fashion\ frame,couple\ d'arrière,Randzomholz
+rantsoenhouten,fashion\ frame,couple\ de\ façon,Randzomholz
+rantsoenhouten,fashion\ frame,estain,Randzomholz
+rantsoenhouten,fashion\ piece,cornière,Randzomholz
+rantsoenhouten,fashion\ piece,couple\ d'arrière,Randzomholz
+rantsoenhouten,fashion\ piece,couple\ de\ façon,Randzomholz
+rantsoenhouten,fashion\ piece,estain,Randzomholz
+Raveelbalk,Header,Chevêtre,Wechselbalken
+Raveelbalk,Trimmer,Chevêtre,Wechselbalken
+Raveling,Trimming,Travelure,trémie,Wechsel
+reehout,channel\ wale\ (frigate),second\ préciente\ (frégate),Raheholz
+reehout,sheer\ rail,lisse\ de\ vibord,Raheholz
+reehout,sheer\ rail,préciente\ de\ vibord,Raheholz
+reehout,upper\ channel\ wale\ (ship\ of\ the\ line),troisième\ préciente\ (vaisseau),Raheholz
+reehout,channel\ wale\ (frigate),second\ préciente\ (frégate),Raheleiste
+reehout,sheer\ rail,lisse\ de\ vibord,Raheleiste
+reehout,sheer\ rail,préciente\ de\ vibord,Raheleiste
+reehout,upper\ channel\ wale\ (ship\ of\ the\ line),troisième\ préciente\ (vaisseau),Raheleiste
+reehout,channel\ wale\ (frigate),second\ préciente\ (frégate),Sprungleiste
+reehout,sheer\ rail,lisse\ de\ vibord,Sprungleiste
+reehout,sheer\ rail,préciente\ de\ vibord,Sprungleiste
+reehout,upper\ channel\ wale\ (ship\ of\ the\ line),troisième\ préciente\ (vaisseau),Sprungleiste
+reep,strip,bande,Streifen
+Refectorium,Fraterhouse,Réfectoire,Refektorium
+Refectorium,Refectory,Réfectoire,Refektorium
+Refugehuis,Refugium,Refugium,Refugium
+Rei,Darby,Règle,Leiste
+Rei,Long\ floating\ rule,Règle,Leiste
+Reliëf,Relief,Relief,Relief
+reling,planksheer,lisse\ de\ pavois,Schanzkleidreling
+relingstijl,rail\ timber,allonge\ batayole,Relingstütze
+Retabel,Reredos,Retable,Altaraufsatz
+Retabel,Retabel,Retable,Altaraufsatz
+retourschip,homeward\ bounder,navire\ de\ retour,Retourschiff
+Revêtement,Revetment,Revêtement,Mauerbekleidung
+Rib,Herve,Solive,Rippe
+Rib,Joist,Solive,Rippe
+Rib,Scantling,Solive,Rippe
+rib,whelp,tasseau,Rippe
+Ridderhofstad,Manor,Manoir,Herrensitz
+riem,oar,rame,Riemen
+riempoort,oar\ port,ouverture\ de\ rame,Riemenpforte
+Roede\ (hooiberg),Rod,Poteau,Rute
+roef,deckhouse,rouf,Roof
+Roeflat,Woodroll,Tasseau,Dachleiste
+roeibank,thwart,banc\ de\ nage,Ducht
+roeibanksteun,thwart\ stanchion,montant\ de\ banc\ de\ nage,Duchtstütze
+roeibanksteun,thwart\ stanchion,support\ de\ banc\ de\ nage,Duchtstütze
+roeibankstut,thwart\ stanchion,montant\ de\ banc\ de\ nage,Duchtstütze
+roeibankstut,thwart\ stanchion,support\ de\ banc\ de\ nage,Duchtstütze
+roeidol,oar\ lock,dame\ (de\ nage),Dollpflock
+roeidol,rowlock,dame\ (de\ nage),Dollpflock
+roeidol,oar\ lock,dame\ (de\ nage),Ruderdolle
+roeidol,rowlock,dame\ (de\ nage),Ruderdolle
+roeien,rowing,ramer,rudern
+Roeiriem,Oar,Aviron,Ruder
+Roeiriem,Oar,Rame,Ruder
+roeispaan,oar,rame,Riemen
+Roeispaan,Oar,Aviron,Ruder
+Roeispaan,Oar,Rame,Ruder
+roer,rudder,gouvernail,Ruder
+roerpen,tiller,barre\ de\ gouvernail,Helmstock
+roerpen,tiller,barre\ franche,Helmstock
+roerpen,tiller,barre\ de\ gouvernail,Pinne
+roerpen,tiller,barre\ franche,Pinne
+Romeinse\ villa\ (rustica),Villa\ (rustica),Villa\ (rustica),Villa\ (rustica)
+romp,hull,coque,Rumpf
+Rondbodem,Round\ bottomed\ vessel,Inconnu,Unbekannt
+rondbodem,round\ bottomed\ vessel,navire\ à\ fond\ arrondi,Rundbodenschiff
+ronde\ bodem,round\ bottom,fond\ arrondi,Rundboden
+rondhout,spar,espar,Rundholz
+rooster,grating,caillebotis,Gräting
+ruim,hold,cale,Frachtraum
+ruim,hold,cale,Laderaum
+ruim,hold,cale,Raum
+rust,channel,porte-haubans,Rüste
+Rustica,Rustication,Bossage,Rustika
+Rustiekwerk,Rustic\ work,Bossage,Rustiken
+rustijzer,chain\ plate,etrier\ cadènes,Gekröpftes\ Glied
+rustknie,channel\ knee,courbe\ port-haubans,Rüstenknie
+Sacristie,Sacristy,Sacristie,Almerei
+Sacristie,Vestry,Sacristie,Almerei
+Sacristie,Sacristy,Sacristie,Gerbekammer
+Sacristie,Vestry,Sacristie,Gerbekammer
+Sacristie,Sacristy,Sacristie,Sakristei
+Sacristie,Vestry,Sacristie,Sakristei
+scepter,stanchion,chandelier,bügel
+Schaal,Dish,coupe,Schale
+Schaal,Dish,Plat,Schale
+Schaal,Dish,coupe,Schüssel
+Schaal,Dish,Plat,Schüssel
+Schaaldeel,Sheeting\ board,Dosse,Schalbrett
+Schaarbalk/-bint,Collar\ beam,Entretoise,Stuhlbalken
+schaarstok,binding\ strake,hiloire,Schärstock
+schaarstok,binding\ strake,hiloire\ de\ point,Schärstock
+schaarstok,binding\ strake,hiloire,Scherstock
+schaarstok,binding\ strake,hiloire\ de\ point,Scherstock
+Schans,Entrenchment,enceinte,Schanze
+Schans,Entrenchment,Fortification,Schanze
+Schans,Entrenchment,ouvrage\ de\ campagne,Schanze
+Schans,Entrenchment,retranchement,Schanze
+Schans,Redoubt,enceinte,Schanze
+Schans,Redoubt,Fortification,Schanze
+Schans,Redoubt,ouvrage\ de\ campagne,Schanze
+Schans,Redoubt,retranchement,Schanze
+Schans,Sconse,enceinte,Schanze
+Schans,Sconse,Fortification,Schanze
+Schans,Sconse,ouvrage\ de\ campagne,Schanze
+Schans,Sconse,retranchement,Schanze
+scheenrand,top\ rim,guérite\ hunes,Marsenrand
+Scheepshelling,Slipway,Cale\ de\ carénage,Schiffwerft
+scheepshuid,ship’s\ shell,bordé,Schiffshaut
+scheepshuid,ship’s\ shell,bordé,Schiffshülle
+Scheepskiel,Keel,Quille,Kiel
+scheepsromp,hull,coque,Rumpf
+scheepstype,ship\ type,type\ du\ navire,Schiffstyp
+scheepsvorm,ship\ shape,forme\ du\ navire,Schiffsform
+Scheepswerf,Shipbuilding\ yard,Chantier\ naval,Schiffswerft
+Scheepswerf,Shipyard,Chantier\ naval,Schiffswerft
+scheerhout,euphroe,bois\ d'araignée,Spinnkloben
+scheerhout,euphroe,hernier,Spinnkloben
+scheerhout,euphroe,moque\ d'araignée,Spinnkloben
+scheerhout,uphroe,bois\ d'araignée,Spinnkloben
+scheerhout,uphroe,hernier,Spinnkloben
+scheerhout,uphroe,moque\ d'araignée,Spinnkloben
+scheerhout,euphroe,bois\ d'araignée,Spinnkopfblock
+scheerhout,euphroe,hernier,Spinnkopfblock
+scheerhout,euphroe,moque\ d'araignée,Spinnkopfblock
+scheerhout,uphroe,bois\ d'araignée,Spinnkopfblock
+scheerhout,uphroe,hernier,Spinnkopfblock
+scheerhout,uphroe,moque\ d'araignée,Spinnkopfblock
+Scheg,Wedge,Coin,Keil
+scheg,knee\ of\ the\ head,éperon,Schegg
+scheg,knee\ of\ the\ head,guibre,Schegg
+schegbord,trailboard,aiguille,Liegerfutter
+scheidingswand,bulkhead,cloison,Schott
+Schenkel,Arch\ brace,Reins,Schenkel
+Schenkel,Flank,Reins,Schenkel
+Schenkel,Haunche,Reins,Schenkel
+Schenkelkap,Philibert\ truss,Charpente\ à\ la\ Philibert\ de\ l’Orme,Bohlenbinder
+Schenkelkap,Philibert\ roof,ferme\ Philibert,Bohlendach
+Schijfwiel,Disc\ wheel,Roue\ pleine,Scheibenrad
+Schild,Buckler,Bouclier,Schild
+Schild,Shield,Bouclier,Schild
+Schild,Shield,écu,Schild
+Schild,Shield,Panneau,Schild
+Schilddak,Hip\ roof,toit\ en\ croupe,Schild
+Schilderij,Painting,Peinture,Gemälde
+Schildering,Painting,Peinture,Bemahlung
+Schildering,Painting,Peinture,Malerei
+Schip,Nave,Nef,Schiff
+Schip,Ship,Bateau,Schiff
+Schip\ (kerk),Nave,Nef,Kirchenschiff
+schoen,shoe,sockle,Sockel
+Schoep,Blade,Aube,Schaufel
+Schoep,Blade,Pale,Schaufel
+Schoep,Paddle,Aube,Schaufel
+Schoep,Paddle,Pale,Schaufel
+Schoep,Scoop,Aube,Schaufel
+Schoep,Scoop,Pale,Schaufel
+Schoepenrad,Paddle\ wheel,roue\ à\ aubes,Schaufel
+School,School,École,Schule
+Schoolgebouw,School\ building,École,Schulhaus
+Schoor,Brace,Décharge,Schwert
+Schoorbalk,Shore,contrefiche,Strebebalken
+Schoorbalk,Summerbeam,contrefiche,Strebebalken
+Schoorbalk,Shore,contrefiche,Stützbalk
+Schoorbalk,Summerbeam,contrefiche,Stützbalk
+Schoorbalk,Shore,Guette,Stütze
+Schoorbalk,Shore,Guette,Träger
+Schop,Shovel,Pelle,Schaufel
+schot,bulkhead,cloison,Schott
+Schotbalk,Stop\ log,Palplanche,Dammbalken
+Schotbalk,Stop\ log,Pontrelle\ de\ bâtardeau,Dammbalken
+Schraagbeeld,Supporting\ statue,Inconnu,Unbekannt
+Schrankhout,Counter\ brace,Écharpe,Windlatte
+Schuine\ haaklas,Scarf\ joint,Assemblage\ en\ trait\ de\ Jupiter,schiefes\ Hakenblatt
+Schuine\ haaklas,Splayed-and-tabled,Assemblage\ en\ trait\ de\ Jupiter,schiefes\ Hakenblatt
+schuine\ las,splayed\ scarf-joint,joint\ oblique,schräge\ Lasche
+schuit,barge,canot\ de\ parade,Kahn
+schuit,boat,canot\ de\ parade,Kahn
+Schuur,Barn,Grange,Scheune,Stadel
+shell\ first,shell\ first,construction\ à\ bordage\ en\ premier,Shell\ first
+Skelet,Frame,Charpente,Gefüge
+Skelet,Frame,squelette,Gefüge
+Skelet,Skeleton,Nervure,Gefüge
+Skelet,Skeleton,squelette,Gefüge
+Skelet,Structure,Charpente,Gefüge
+Skelet,Structure,Structure,Gefüge
+Skelet,Frame,Charpente,Gerüst
+Skelet,Frame,squelette,Gerüst
+Skelet,Skeleton,Nervure,Gerüst
+Skelet,Skeleton,squelette,Gerüst
+Skelet,Structure,Charpente,Gerüst
+Skelet,Structure,Structure,Gerüst
+Skelet,Frame,Charpente,Rahmen
+Skelet,Frame,squelette,Rahmen
+Skelet,Skeleton,Nervure,Rahmen
+Skelet,Skeleton,squelette,Rahmen
+Skelet,Structure,Charpente,Rahmen
+Skelet,Structure,Structure,Rahmen
+slagzij,heel,bande,Neigung
+slagzij,heel,gîte,Neigung
+slagzij,heeling,bande,Neigung
+slagzij,heeling,gîte,Neigung
+slagzij,list,bande,Neigung
+slagzij,list,gîte,Neigung
+slagzij,heel,bande,Schlagseite
+slagzij,heel,gîte,Schlagseite
+slagzij,heeling,bande,Schlagseite
+slagzij,heeling,gîte,Schlagseite
+slagzij,list,bande,Schlagseite
+slagzij,list,gîte,Schlagseite
+slede,slide\ (for\ carronade\ carriage),glissière,Schlitten
+slemphout,deadwood,massif,Schlempholz
+slemphout,deadwood,massif,Totholz
+Sleutelstuk,Bolster,semelle,Balkenschlüssel
+Sleutelstuk,Corbel\ piece,Corbeau,Balkenschlüssel
+Slikhout,Capping,Chapeau\ de\ pilotis,Schwellholz
+sloep,pinnace,canot\ des\ officiers,Schlup
+sloep,pinnace,chaloupe,Schlup
+sloep,pinnace,pinnace,Schlup
+Slof,Heel\ beam\ cap,Semelle,Sattelholz
+slooiknie,head\ cheek,dauphin,Schloiknieregel
+Sloot,Ditch,Fossé,Wassergraben
+slothout,mast\ fid,clef\ mâts,Schloßholz
+Sluis,Lock,Écluse,Schleuse
+Sluis,Sluice,Écluse,Schleuse
+Spade,Shovel,Bêche,Spaten
+Spade,Shovel,pelle,Spaten
+Spade,Spade,Bêche,Spaten
+Spade,Spade,pelle,Spaten
+Spanrib,Tie\ beam,Entrait,Spannbalken
+Spanrib,Tie\ beam,tirant,Spannbalken
+Spanrib,Tie\ beam,Entrait,Zugbalken
+Spanrib,Tie\ beam,tirant,Zugbalken
+Spant,Rafter,Ferme,Binder
+Spant,Soulace,Ferme,Binder
+Spant,Truss,Ferme,Binder
+Spant,Underrafter,Ferme,Binder
+spant,frame,couple,gebautes\ Spant
+spant,frame,couple,Spant
+spantafstand,frame\ spacing,écartement\ des\ couples,Spantenabstand
+spantafstand,frame\ spacing,maille,Spantenabstand
+Spantbalk,Collar\ beam,Entretoise,Stuhlbalken
+Spantbalk,Truss\ beam,Entretoise,Stuhlbalken
+Spantbalk,Truss\ beam,Tirant,Stuhlbalken
+Spantbeen,Principal\ rafter,Arbalétrier,Stuhlsäule
+Spantbeen,Truss\ post,Arbalétrier,Stuhlsäule
+spantenstelsel,set\ of\ frames,membrure,Spanten
+Spar,Rafter,Chevron,Sparren
+Spar,Spar,Chevron,Sparren
+speelgoed,toys,jouets,Spielzeug
+Spie,Wedge,Cale,Keil
+Spie,Wedge,Coin,Keil
+spiegel,transom,tableau,Spiegel
+spiegelbeeld,transom\ side\ figure,figure\ lateral\ tableau,Spiegelfigur
+spiegelschip,square\ sterned\ ship,navire\ à\ arcasse\ carrée,Spiegelschiff
+Spieker,Storehouse,Grenier,Speicher
+Spieker,Warehouse,Grenier,Speicher
+spijker,nail\ (small),clou,Nagel\ (klein)
+Spijker,Storehouse,Grenier,Speicher
+Spijker,Warehouse,Grenier,Speicher
+spijkergat,nail\ hole,trou\ de\ clou,Nagelloch\ (klein)
+spijkerpen,nail\ dowel,cheville\ pour\ remplir\ des\ trous\ de\ clous,Holznagel\ zur\ dichtung\ Nägellöcher
+spijkerpen,nail\ dowel,cheville\ pour\ remplir\ des\ trous\ de\ clous,Holzstift
+Spijl,Bar,Barre,Stab
+Spijl,Bar,grille,Stab
+Spijl,Bar,Barre,Stakete
+Spijl,Bar,grille,Stakete
+Spijl,Bar,Barre,Tralje
+Spijl,Bar,grille,Tralje
+spil,winch,treuil,Spill
+spil,winch,treuil,Winde
+Spiltrap,Newel-post\ stair,Escalier\ à\ noyeau,Spindeltreppe
+Spiltrap,Newel-post\ stair,Escalier\ à\ vis,Spindeltreppe
+Spiltrap,Solid\ newel\ stair,Escalier\ à\ noyeau,Spindeltreppe
+Spiltrap,Solid\ newel\ stair,Escalier\ à\ vis,Spindeltreppe
+Spiltrap,Spiral\ stair,Escalier\ à\ noyeau,Spindeltreppe
+Spiltrap,Spiral\ stair,Escalier\ à\ vis,Spindeltreppe
+spinthout,sap\ wood,aubier,Spintholz
+Spits,Spits,Péniche,Spitze
+sponning,rabbet,râblure,Sponung
+sponning,rebate,râblure,Sponung
+Spoor,Common\ rafter,Chevron,Sparren
+Spoor,rafter,Chevron,Sparren
+Spoor,Spar,Chevron,Sparren
+Sporenkap,Common\ rafter\ roof,Charpente\ à\ chevrons\ formant\ fermes,Kehlbalkendach
+Sporenkap,Rafter\ single\ roof,Charpente\ à\ chevrons\ formant\ fermes,Kehlbalkendach
+Sporenkap,Common\ rafter\ roof,Charpente\ à\ chevrons\ formant\ fermes,Sparrendach
+Sporenkap,Rafter\ single\ roof,Charpente\ à\ chevrons\ formant\ fermes,Sparrendach
+spriet,sprit,livarde,Spriet
+spuigat,scupper,dalot,Speigat
+Spuisluis,Drainage\ sluice,Écluse\ de\ chasse,Spülschleuse
+Spuisluis,Drainage\ sluice,Écluse\ de\ fuite,Spülschleuse
+Spuisluis,Outlet\ sluice,Écluse\ de\ chasse,Spülschleuse
+Spuisluis,Outlet\ sluice,Écluse\ de\ fuite,Spülschleuse
+Staande\ klok,Long-case\ clock,horloge\ de\ parquet,Standuhr
+Staander,Post,Chandelle,Ständer
+Stad,City,Ville,Stadt
+Stad,Town,Ville,Stadt
+Stadhuis,City\ hall,Hötel\ de\ ville,Rathaus
+Stadhuis,Town\ hall,Hötel\ de\ ville,Rathaus
+Stadhuis,City\ hall,Hötel\ de\ ville,Stadhaus
+Stadhuis,Town\ hall,Hötel\ de\ ville,Stadhaus
+Stadsmuur,Town\ wall,Enceinte\ de\ ville,Stadtmauer
+stag,stay,etai,Stag
+stag,stay,étai,Stag
+Stal,Stable,Écurie,Stalle
+Stam,Trunk,Tronc,Stamm
+Standbeeld,Statue,Statue,Standbild
+Standbeeld,Statue,Statue,Statue
+Standerd,Post,Attache\ pioche,Hausbaum
+Standerd,Post,pivot\ bourdon\ chandelle,Hausbaum
+Standerd,Post,Attache\ pioche,Ständer
+Standerd,Post,pivot\ bourdon\ chandelle,Ständer
+Standerdmolen,Post-mill,Moulin\ à\ pivot,Bockmühle
+Standvink,Stud,Faux\ arbalétrier,Stütze\ mit\ Streben
+Standvink,Stud,poteau\ avec\ des\ bracons,Stütze\ mit\ Streben
+Standvink,Stud,poteau\ de\ décharge,Stütze\ mit\ Streben
+Standvink,Tie-beam\ support,Faux\ arbalétrier,Stütze\ mit\ Streben
+Standvink,Tie-beam\ support,poteau\ avec\ des\ bracons,Stütze\ mit\ Streben
+Standvink,Tie-beam\ support,poteau\ de\ décharge,Stütze\ mit\ Streben
+Standzoon,Ashlar\ piece,Jambe\ de\ force,Sparrenknecht
+Standzoon,Ashlar\ piece,jambette,Sparrenknecht
+Steekbalk,Hammerbeam\ truss,Ferme\ sur\ blochets,Stichbalkengebinde
+Steekbalkenspant,Quarter\ bar,étançon,Standfinke
+Steekbalkenspant,Quarter\ bar,Lien,Standfinke
+Steekbalkenspant,Quarter\ bar,étançon,Stütze
+Steekbalkenspant,Quarter\ bar,Lien,Stütze
+Steekband\ (molen),Inclined\ clamp,Écharpe,Schräger\ Riegel
+Steekband\ (molen),Inclined\ clamp,traverse\ oblique,Schräger\ Riegel
+Steekklamp,Handle,Manche,Stiel
+Steel\ (bijl),Helve,Manche,Helm
+Steiger,Landing,appontement,Steg
+Stellingmolen,Tower\ mill,Moulin\ à\ galerie,Holländermühle
+Steunbalk,Girder,Racinal,Stützbalken,Tragbalken,Träger,Strebe
+Steunbeer,Buttress,Contrefort,Mauer-/Strebepfeiler
+Steunbeer,Buttress,Contrefort,Mauer-/Strebepfeiler
+steunder,futtock\ rider,aiguille,Binnenauflanger
+steunder,futtock\ rider,allonge\ de\ porque,Binnenauflanger
+steunder,truss,aiguille,Binnenauflanger
+steunder,truss,allonge\ de\ porque,Binnenauflanger
+steunder,futtock\ rider,aiguille,Binnenkimstück
+steunder,futtock\ rider,allonge\ de\ porque,Binnenkimstück
+steunder,truss,aiguille,Binnenkimstück
+steunder,truss,allonge\ de\ porque,Binnenkimstück
+steunder,futtock\ rider,aiguille,Diagonalinnenspant
+steunder,futtock\ rider,allonge\ de\ porque,Diagonalinnenspant
+steunder,truss,aiguille,Diagonalinnenspant
+steunder,truss,allonge\ de\ porque,Diagonalinnenspant
+Steven,Stem,Proue,poupe,Steven
+steven,stem\ (fore),proue\ (avant),Steven
+steven,stern\ (aft),poupe\ (arrière),Steven
+stevenbalk,stem\ post\ (fore),barrot\ de\ proue\ (avant),Stevenbalken
+stevenbalk,stern\ post\ (aft),barrot\ de\ poupe\ (arrière),Stevenbalken
+stevenknie,stemson,marsouin,Reitknie
+stevenknie,sternson,marsouin,Reitknie
+stevenknie,stemson,marsouin,Stevenknie
+stevenknie,sternson,marsouin,Stevenknie
+stevenplaat,prow\ Block,épaulure,Bugholz
+Stijl,Jamb,Pilotis,Pfahl
+Stijl,Jamb,Poteau,Pfahl
+Stijl,Pile,Pilotis,Pfahl
+Stijl,Pile,Poteau,Pfahl
+Stijl,Post,attache\ pioche,Pfahl
+Stijl,Post,Chandelle,Pfahl
+Stijl,Post,Pilotis,Pfahl
+Stijl,Post,pivot\ bourdon\ chandelle,Pfahl
+Stijl,Post,Poteau,Pfahl
+Stijl,Puncheon,Pilotis,Pfahl
+stijl,post,battant,Pfosten
+Stijl,Jamb,Pilotis,Säule
+Stijl,Jamb,Poteau,Säule
+Stijl,Pile,Pilotis,Säule
+Stijl,Pile,Poteau,Säule
+Stijl,Post,attache\ pioche,Säule
+Stijl,Post,Chandelle,Säule
+Stijl,Post,Pilotis,Säule
+Stijl,Post,pivot\ bourdon\ chandelle,Säule
+Stijl,Post,Poteau,Säule
+Stijl,Puncheon,Pilotis,Säule
+Stijl,Jamb,Pilotis,Ständer
+Stijl,Jamb,Poteau,Ständer
+Stijl,Pile,Pilotis,Ständer
+Stijl,Pile,Poteau,Ständer
+Stijl,Post,attache\ pioche,Ständer
+Stijl,Post,Chandelle,Ständer
+Stijl,Post,Pilotis,Ständer
+Stijl,Post,pivot\ bourdon\ chandelle,Ständer
+Stijl,Post,Poteau,Ständer
+Stijl,Puncheon,Pilotis,Ständer
+Stijl,Jamb,Pilotis,Stiel
+Stijl,Jamb,Poteau,Stiel
+Stijl,Pile,Pilotis,Stiel
+Stijl,Pile,Poteau,Stiel
+Stijl,Post,attache\ pioche,Stiel
+Stijl,Post,Chandelle,Stiel
+Stijl,Post,Pilotis,Stiel
+Stijl,Post,pivot\ bourdon\ chandelle,Stiel
+Stijl,Post,Poteau,Stiel
+Stijl,Puncheon,Pilotis,Stiel
+Stoel,Chair,Chaise,Stuhl
+Stoelpoot,Chairleg,Pied\ de\ chaisse,Stuhlbein
+Stookplaats,Fireplace,Foyer,Feuerstelle
+Stookplaats,Hearth,Foyer,Feuerstelle
+Stookplaats,Fireplace,Foyer,Herd
+Stookplaats,Hearth,Foyer,Herd
+stoothout,fender,défense,Fender
+Strijkbalk,Border\ joist,Gîte\ de\ rive,Giebelbalken
+Strijkbalk,Border\ joist,lambourde,Giebelbalken
+Strijkbalk,Border\ joist,poutre\ de\ bordure,Giebelbalken
+Strijkbalk,Border\ joist,Gîte\ de\ rive,Ortbalken
+Strijkbalk,Border\ joist,lambourde,Ortbalken
+Strijkbalk,Border\ joist,poutre\ de\ bordure,Ortbalken
+Strijkbalk,Border\ joist,Gîte\ de\ rive,Streichbalken
+Strijkbalk,Border\ joist,lambourde,Streichbalken
+Strijkbalk,Border\ joist,poutre\ de\ bordure,Streichbalken
+stringer,inwale,stringer,serre,Stringer
+Stronk,Stump,souche,Strunk
+stut,pillar,stanchion,epontille,Stütze
+stuurboord,starboard,tribord,Steuerbord
+stuurboordzijde,starboard\ side,côté\ tribord,Steuerbordseite
+stuurinrichting,steering\ gear,appareillage\ à\ gouverner,Ruderanlage
+stuurriem,steering\ oar,aviron\ de\ queue,Steuerriemen
+stuurriem,steering\ oar,gouvernail-rame,Steuerriemen
+stuurwiel,steering\ wheel,roue\ de\ gouvernail,Steuerrad
+Synagoge,Synagogue,Synagogue,Synagoge
+Tafel,Table,Table,Tisch
+Tafelment,Tabling,Chaise\ stercoraire,Balkenlage\ worauf\ Zimmerwerk\ ruht
+Tafelpoot,Leg\ of\ a\ table,Pied\ de\ table,Tischbein
+Tafelpoot,Table-leg,Pied\ de\ table,Tischbein
+Tak,Branch,Embranchement,Ast
+Tak,Branch,Embranchement,Zweig
+tandlas,splayed\ indent\ scarf,joint\ denté,Klammer
+tandlas,splayed\ indent\ scarf,joint\ denté,Zahnlasche
+Tempel,Temple,Temple,Tempel
+tengel,lath,tringle,Leiste
+tengel,ribband,tringle,Leiste
+tengel,lath,tringle,Tingel
+tengel,ribband,tringle,Tingel
+Terp,Hillock,Butte,Terp
+Terp,Hillock,monticule,Terp
+Terp,Hillock,tetre,Terp
+Terp,Knoll,Butte,Terp
+Terp,Knoll,monticule,Terp
+Terp,Knoll,tetre,Terp
+Terp,Terp,Butte,Terp
+Terp,Terp,monticule,Terp
+Terp,Terp,tetre,Terp
+Terp,Hillock,Butte,Warf
+Terp,Hillock,monticule,Warf
+Terp,Hillock,tetre,Warf
+Terp,Knoll,Butte,Warf
+Terp,Knoll,monticule,Warf
+Terp,Knoll,tetre,Warf
+Terp,Terp,Butte,Warf
+Terp,Terp,monticule,Warf
+Terp,Terp,tetre,Warf
+Terp,Hillock,Butte,Wurte
+Terp,Hillock,monticule,Wurte
+Terp,Hillock,tetre,Wurte
+Terp,Knoll,Butte,Wurte
+Terp,Knoll,monticule,Wurte
+Terp,Knoll,tetre,Wurte
+Terp,Terp,Butte,Wurte
+Terp,Terp,monticule,Wurte
+Terp,Terp,tetre,Wurte
+Theekoepel,Pavillion,Pavillon\ de\ thé,Teepavillon
+Theekoepel,Summerhouse,Pavillon\ de\ thé,Teepavillon
+tilling,dead\ rise,angle\ de\ quille,Aufkimmung
+Ton,Barrel,tonneau,Fass
+Ton,Tun,Cuve,Fass
+Ton,Tun,Tonneau,Fass
+Ton,Barrel,tonneau,Kübel
+Ton,Tun,Cuve,Kübel
+Ton,Tun,Tonneau,Kübel
+Ton,Barrel,tonneau,Tonne
+Ton,Tun,Cuve,Tonne
+Ton,Tun,Tonneau,Tonne
+Toog,Arch,Arc,Bogen
+Toog,Arch,arche\ (d'un\ pont),Bogen
+Toog,Arch,cintre,Bogen
+Toognagel,Nail,Broche\ d'assemblage,Zapfen
+Toognagel,Nail,cheville\ de\ tournage,Zapfen
+Toognagel,Nail,clavette\ en\ bois,Zapfen
+Toognagel,Peg,Broche\ d'assemblage,Zapfen
+Toognagel,Peg,cheville\ de\ tournage,Zapfen
+Toognagel,Peg,clavette\ en\ bois,Zapfen
+Top,Crown,Pointe,Spitze
+Toren,Tower,Tour,Turm
+Torenspits,Spire,Flèche\ de\ tour,Spitzhelm
+Torenspits,Steeple,Flèche\ de\ tour,Spitzhelm
+Torenspits,Spire,Flèche\ de\ tour,Turmspitze
+Torenspits,Steeple,Flèche\ de\ tour,Turmspitze
+Tralie,Bar,Barre,grille,Stab
+Tralie,Bar,Barre,grille,Stakete
+Tralie,Bar,Barre,grille,Tralje
+Transept,Transept,Transept,Querschiff
+Trap,Staircase,Escalier,Treppe
+a,Strair,Escalier,Treppe
+Trapboom,Slingpiece,Limon,Holm
+Trapboom,String,Limon,Holm
+Trapboom,Slingpiece,Limon,Treppenbaum
+Trapboom,String,Limon,Treppenbaum
+Trapspil,Newel\ (post),Noyeau,Spindel
+Traptoren,Stair\ tower,Tourelle\ d'escalier,Treppenturm
+Traptoren,Stair\ tower,Tour-escalier,Treppenturm
+Traptoren,Staircase\ turret,Tourelle\ d'escalier,Treppenturm
+Traptoren,Staircase\ turret,Tour-escalier,Treppenturm
+Traptrede,Stair,degré\ d'escalier,Treppenstufe
+Traptrede,Stair,Marche\ d'escalier,Treppenstufe
+Traptrede,Step,degré\ d'escalier,Treppenstufe
+Traptrede,Step,Marche\ d'escalier,Treppenstufe
+Traptrede,Tread,degré\ d'escalier,Treppenstufe
+Traptrede,Tread,Marche\ d'escalier,Treppenstufe
+Travee,Bay,Travée,Joch
+Trede,Step,Giron,Stufe
+Trede,Step,marche,Stufe
+Trede,Tread,Giron,Stufe
+Trede,Tread,marche,Stufe
+trede,sport,step\ (in\ ladder),gradin,Stufe
+Treeplank,Footboard,Marchepied,Trittbrett
+Treeplank,Running-board,Marchepied,Trittbrett
+Trekbalk,Tie\ beam,Entrait,Spannbalken
+Trekbalk,Tie\ beam,Tirant,Spannbalken
+Trekbalk,Tie\ beam,Entrait,Zugbalken
+Trekbalk,Tie\ beam,Tirant,Zugbalken
+Trekplaat,Tie,Filière,Zange
+Triptiek,Triptych,Triptyque,Triplik
+tuig,rig,gréement,Takelage
+tuig,rigging,gréement,Takelage
+Tussenbalk,Link\ beam,Faux-entrait,Zwischenbalken
+Tussenbalk,Link\ beam,poutre\ intermédiaire,Zwischenbalken
+Tussenbalk,Tier,Faux-entrait,Zwischenbalken
+Tussenbalk,Tier,poutre\ intermédiaire,Zwischenbalken
+Tussenmuur,Partition,Mur\ de\ refend,Scheidemauer
+Tussenmuur,Partition,Mur\ de\ séparation,Scheidemauer
+Tussenmuur,Partition\ wall,Mur\ de\ refend,Scheidemauer
+Tussenmuur,Partition\ wall,Mur\ de\ séparation,Scheidemauer
+Tussenmuur,Partition,Mur\ de\ refend,Trennwand
+Tussenmuur,Partition,Mur\ de\ séparation,Trennwand
+Tussenmuur,Partition\ wall,Mur\ de\ refend,Trennwand
+Tussenmuur,Partition\ wall,Mur\ de\ séparation,Trennwand
+Tussenwand,Partition,Mur\ de\ refend,Scheidemauer
+Tussenwand,Partition,Mur\ de\ séparation,Scheidemauer
+Tussenwand,Partition\ wall,Mur\ de\ refend,Scheidemauer
+Tussenwand,Partition\ wall,Mur\ de\ séparation,Scheidemauer
+Tussenwand,Partition,Mur\ de\ refend,Trennwand
+Tussenwand,Partition,Mur\ de\ séparation,Trennwand
+Tussenwand,Partition\ wall,Mur\ de\ refend,Trennwand
+Tussenwand,Partition\ wall,Mur\ de\ séparation,Trennwand
+twil,crutch,cornet,eingezogenes\ Bauchstück
+twil,crutch,fourcat,eingezogenes\ Bauchstück
+twil,crutch,varangué\ acculée,eingezogenes\ Bauchstück
+twil,rising\ floor\ timber,cornet,eingezogenes\ Bauchstück
+twil,rising\ floor\ timber,fourcat,eingezogenes\ Bauchstück
+twil,rising\ floor\ timber,varangué\ acculée,eingezogenes\ Bauchstück
+uitlegger,head\ rail,herpe,Galionsregel
+Vakwerk,Timber\ framing,Pan\ de\ bois,Fachwerk
+Vakwerkbouw,Framed\ building,Charpente\ à\ treilis,Fachwerkbau
+Vakwerkbouw,Framed\ building,Charpente\ triangulée,Fachwerkbau
+Vakwerkbouw,Half\ timber\ work,Charpente\ à\ treilis,Fachwerkbau
+Vakwerkbouw,Half\ timber\ work,Charpente\ triangulée,Fachwerkbau
+valling,raking,inclinaison,Fall
+valling,raking,inclinaison,Schrägwinkel
+valling,raking,inclinaison,Überfall
+Vat,Vat,Cuve,Fass
+Vat,Vat,tonneau,Fass
+Vat,Vat,Cuve,Tonne
+Vat,Vat,tonneau,Tonne
+veer,mortice,mortaise,Feder
+veer,mortise,mortaise,Feder
+veer-en-deuvel(-verbinding),mortice-and-tenon,tenons\ et\ mortaises,Nut-Feder-Verbindung
+veer-en-deuvel(-verbinding),mortise-and-tenon\ (joint),tenons\ et\ mortaises,Nut-Feder-Verbindung
+Venster,Window,Fenêtre,Fenster
+Vensterstijl,Mullion,Meneau,Pfosten
+Vensterstijl,Mullion,Montant,Pfosten
+Verbindingsrib,Lierne\ rib,Lierne,Nebenrippe
+Verdedigingsmuur,Defensive\ wall,Muraille,Unbekannt
+Verdedigingswerk,Defensive\ work,Construction\ défensive,Befestigungsanlage
+Verdedigingswerk,Defensive\ work,ouvrage\ de\ défense,Befestigungsanlage
+Verdedigingswerk,Fortification,Construction\ défensive,Befestigungsanlage
+Verdedigingswerk,Fortification,ouvrage\ de\ défense,Befestigungsanlage
+Verdedigingswerk,Defensive\ work,Construction\ défensive,Festungswerk
+Verdedigingswerk,Defensive\ work,ouvrage\ de\ défense,Festungswerk
+Verdedigingswerk,Fortification,Construction\ défensive,Festungswerk
+Verdedigingswerk,Fortification,ouvrage\ de\ défense,Festungswerk
+Verdedigingswerk,Defensive\ work,Construction\ défensive,Wehrbau
+Verdedigingswerk,Defensive\ work,ouvrage\ de\ défense,Wehrbau
+Verdedigingswerk,Fortification,Construction\ défensive,Wehrbau
+Verdedigingswerk,Fortification,ouvrage\ de\ défense,Wehrbau
+Verdieping,Floor,Étage,Geschoss
+Verdieping,Storey,Étage,Geschoss
+Verdieping,Story,Étage,Geschoss
+Verdieping,Floor,Étage,Stock
+Verdieping,Storey,Étage,Stock
+Verdieping,Story,Étage,Stock
+Verdieping,Floor,Étage,Stockwerk
+Verdieping,Storey,Étage,Stockwerk
+Verdieping,Story,Étage,Stockwerk
+verschansing,bulwark,pavois,Schanzkleid
+Versterking,Fortification,Fortification,Befestigung
+Versterkt\ huis,Manor\ house,Inconnu,Unbekannt
+Verstijving,Stiffening,Contreventement,Aussteifung
+Verstijving,Stiffening,Contreventement,Versteifung
+Vertakking,Branching,Embranchement,Verästelung
+Vertrek,Chamber,Chambre,Kammer
+Vertrek,Chamber,Pièce,Kammer
+Vertrek,Room,Chambre,Kammer
+Vertrek,Room,Pièce,Kammer
+Vertrek,Chamber,Chambre,Raum
+Vertrek,Chamber,Pièce,Raum
+Vertrek,Room,Chambre,Raum
+Vertrek,Room,Pièce,Raum
+Vesting,Fortress,Forteresse,Festung
+Viool,Violin,Violon,Viola
+vioolblok,long\ tackle\ block,poulie\ violon,Violinblock
+vioolstuk,bowsprit\ bees,tarquet\ de\ beaupré,Bugsprietklampe
+vioolstuk,bowsprit\ bees,violon\ de\ beaupré,Bugsprietklampe
+vioolstuk,bowsprit\ bees,tarquet\ de\ beaupré,Bugsprietvioline
+vioolstuk,bowsprit\ bees,violon\ de\ beaupré,Bugsprietvioline
+viskaar,creel,boutique,Fishkasten
+Visweer,Fish\ weir,temps\ pour\ la\ pêche,Fischwehr
+vlaggenmast,ensign\ staff,mât\ de\ pavillon\ arrière,Flaggenmast
+vlak,bottom,floor,carène,Boden
+vlak,bottom,floor,fond,Boden
+vlak,bottom,floor,sole,Boden
+vlak,bottom,floor,carène,Schiffsboden
+vlak,bottom,floor,fond,Schiffsboden
+vlak,bottom,floor,sole,Schiffsboden
+vlakgang,bottom\ strake,virure\ de\ bordage,Bodengang
+vlakplank,bottom\ plank,bordage\ de\ la\ carène,Bodenplanke
+Vlechtwerk,Mat\ work,Treillis,Ausstakung
+Vlechtwerk,Mat\ work,Treillis,Flechtwerk
+Vlechtwerk,Interweaving,Traveau\ de\ nattage,Geflecht
+Vlechtwerk,Interweaving,Traveau\ de\ tressage,Geflecht
+Vlechtwerk,Plaiting,Traveau\ de\ nattage,Geflecht
+Vlechtwerk,Plaiting,Traveau\ de\ tressage,Geflecht
+Vlechtwerk,Wattle,Traveau\ de\ nattage,Geflecht
+Vlechtwerk,Wattle,Traveau\ de\ tressage,Geflecht
+Vleugel,Aisle,Aile,Flügel
+Vliedberg,Refuge\ hill,Place-refuge,Fliehberg
+Vliering,Attic,Soupente,Oberboden
+Vliering,Attic,Soupente,Oberboden
+Vliering,Cockloft,Soupente,Oberboden
+Vliering,Cockloft,Soupente,Oberboden
+Vliering,Attic,Soupente,Oberes\ Dachgeschoss
+Vliering,Attic,Soupente,Oberes\ Dachgeschoss
+Vliering,Cockloft,Soupente,Oberes\ Dachgeschoss
+Vliering,Cockloft,Soupente,Oberes\ Dachgeschoss
+Vloer,Floor,Sol,Fussboden
+Vloerbalk,Floor\ joist,Solive,Flurträger
+vloerlegger,floortimber,varangue,Bauchstück
+vloerlegger,floortimber,varangue,Lieger
+vloerwrang,floortimber,varangue,Bauchstück
+vloerwrang,floortimber,varangue,Lieger
+Vluchtberg,Refuge\ hill,Place-refuge,Fliehberg
+Voertuig,Vehicle,Véhicule,Fahrzeug
+Voertuig,Vehicle,Véhicule,Wagen
+Voetplaat,Sill,Seuil,Schwelle
+volling\ (?)\ =\ vulling,limberpassage,anguiller,Füllung
+volling\ (?)\ =\ vulling,limberpassage,canal\ des\ anguillers,Füllung
+volling\ (?)\ =\ vulling,limberpassage,vitonnière\ de\ cale,Füllung
+volling\ (?)\ =\ vulling,limbers,anguiller,Füllung
+volling\ (?)\ =\ vulling,limbers,canal\ des\ anguillers,Füllung
+volling\ (?)\ =\ vulling,limbers,vitonnière\ de\ cale,Füllung
+voorbramra,fore\ topgallant\ yard,vergue\ de\ petit\ perroquet,Vorbramrah
+voorbramsteng,fore\ topgallant\ mast,petit\ mât\ de\ perroquet,Vorbramstenge
+Voorburcht,bailey,Château-bas,Niederburg
+Voorburcht,bailey,ouvrage\ avancé,Niederburg
+Voorburcht,Outer\ bailey,Château-bas,Niederburg
+Voorburcht,Outer\ bailey,ouvrage\ avancé,Niederburg
+Voorburcht,bailey,Château-bas,Vorburg
+Voorburcht,bailey,ouvrage\ avancé,Vorburg
+Voorburcht,Outer\ bailey,Château-bas,Vorburg
+Voorburcht,Outer\ bailey,ouvrage\ avancé,Vorburg
+Voorgevel,Front\ facade,Façade,Fassade
+Voorgevel,Front\ facade,Façade,Schauseite
+Voorhuis,Entrance\ hall,Aire,Diele
+Voorhuis,Entrance\ hall,Aire,Flur
+Voorhuis,Entrance\ hall,Aire,Tenne
+voormarsra,fore\ topsail\ yard,vergue\ de\ petit\ hunier,Vormarsrah
+voormarssteng,fore\ topmast,mât\ de\ hune,Fockstenge
+voormarssteng,fore\ topmast,petit\ mât\ de\ hune,Fockstenge
+voorraadkamer,pantry,dépense,Speisekammer
+voorsteven,stem,étrave,Vordersteven
+voorsteven,stem,étrave,Vorsteven
+voorstevenplaat,prow\ block\ (stem),épaulure\ (de\ proue),Bugholz\ (Vorderschiff)
+Vorst,Rooftop,Faîtage,First
+Vorst,Rooftop,piece\ faitière,First
+Vorst,Ridge\ (purlin),Faîtage,Firstpfette
+Vorst,Ridge\ (purlin),piece\ faitière,Firstpfette
+Vorst,Ridgepiece,Faîtage,Firstpfette
+Vorst,Ridgepiece,piece\ faitière,Firstpfette
+Vorstbalk,Ridge-beam,Faîtage,Firstbalken
+Vorstbalk,Ridge-beam,Faîte,Firstbalken
+Vrachtschip,Cargo\ vessel,bâtiment\ de\ commerce,Frachter
+Vrachtschip,Cargo\ vessel,Cargo,Frachter
+Vrachtschip,Freighter,bâtiment\ de\ commerce,Frachter
+Vrachtschip,Freighter,Cargo,Frachter
+Vrachtschip,Cargo\ vessel,bâtiment\ de\ commerce,Frachtschiff
+Vrachtschip,Cargo\ vessel,Cargo,Frachtschiff
+Vrachtschip,Freighter,bâtiment\ de\ commerce,Frachtschiff
+Vrachtschip,Freighter,Cargo,Frachtschiff
+Vrachtschip,Cargo\ vessel,bâtiment\ de\ commerce,Lastschiff
+Vrachtschip,Cargo\ vessel,Cargo,Lastschiff
+Vrachtschip,Freighter,bâtiment\ de\ commerce,Lastschiff
+Vrachtschip,Freighter,Cargo,Lastschiff
+vulstuk,filler,cale\ de\ serrage,Futterholz
+vulstuk,filler,languette,Futterholz
+Waaggebouw,Weighhouse,Poids\ public,Waage
+Waaggebouw,Weighhouse,Poids\ public,Wiegehaus
+Wachtpost,Guard\ post,Poste\ de\ garde,Wachtposten
+Wachtpost,Guard\ post,Poste\ de\ guet,Wachtposten
+Wachtpost,Sentry,Poste\ de\ garde,Wachtposten
+Wachtpost,Sentry,Poste\ de\ guet,Wachtposten
+Wachtpost,Watch,Poste\ de\ garde,Wachtposten
+Wachtpost,Watch,Poste\ de\ guet,Wachtposten
+Wachttoren,Lookout\ tower,Tour\ de\ garde,Wachtturm
+Wachttoren,Watchtower,Tour\ de\ garde,Wachtturm
+Wagen,Vehicle,Véhicule,Fahrzeug
+Wagen,Vehicle,Véhicule,Wagen
+wagenschot,wainscot,merrain,Wagenschoß
+Wal,Rampart,Rempart,Schutzwall
+Wand,Wall,Pan\ de\ mur,Mauer
+Wand,Wall,Paroi,Mauer
+Wand,Wall,Pan\ de\ mur,Wand
+Wand,Wall,Paroi,Wand
+Wandstijl,Wall\ piece,Poteau\ accolé,Wandpfosten
+Wandstijl,Wall\ post,Poteau\ contre\ le\ mur,Wandpfosten
+Wandstijl,Wall\ piece,Poteau\ accolé,Wandständer
+Wandstijl,Wall\ post,Poteau\ contre\ le\ mur,Wandständer
+wang,hound,jottereau,Backe
+wang,tapered\ cheek,jumelle,Schalung
+wangkraag,bibb,console\ jottereau,Backenkrage
+Wankant,Bad\ bevel,Déverse,Baumkante
+Wankant,Dull\ edge,Déverse,Baumkante
+Wankant,Wane,Déverse,Baumkante
+Wankant,Bad\ bevel,Déverse,Waldkante
+Wankant,Dull\ edge,Déverse,Waldkante
+Wankant,Wane,Déverse,Waldkante
+want,shroud,hauban,Want
+Wapen,Weapon,Arme,Waffe
+Waterburcht,Watercastle,Château-fort\ à\ douves,Wasserburg
+watergang,waterway,fourrure\ de\ gouttière,Wassergang
+Waterleiding,Canal,canalisation\ d'eau,Wasserleitung
+Waterleiding,Canal,Conduite\ d'eau,Wasserleitung
+Waterleiding,Canal,rigole,Wasserleitung
+Waterleiding,Water\ conduit,canalisation\ d'eau,Wasserleitung
+Waterleiding,Water\ conduit,Conduite\ d'eau,Wasserleitung
+Waterleiding,Water\ conduit,rigole,Wasserleitung
+Waterleiding,Water\ pipe,canalisation\ d'eau,Wasserleitung
+Waterleiding,Water\ pipe,Conduite\ d'eau,Wasserleitung
+Waterleiding,Water\ pipe,rigole,Wasserleitung
+waterlijn,line\ of\ flotation,ligne\ de\ flottaison,Wasserlinie
+Watermolen,Water\ mill,Moulin\ à\ eau,Wassermühle
+Watermolen,Water\ mill,Moulin\ hydraulique,Wassermühle
+Watermolen,Water\ mill,pompe\ d'épuisement,Wassermühle
+Waterput,Water\ well,Cisterne,Brunnen
+Waterput,Well,Cisterne,Brunnen
+Waterradmolen,Water\ mill,Moulin\ hydraulique,Wassermühle
+waterschip\ (niet\ het\ vissersschip),water\ carrier,bateau\ citerne,Wasserschiff
+waterschip\ (niet\ het\ vissersschip),water\ hoy,bateau\ citerne,Wasserschiff
+Waterweg,Waterway,Voie\ d'eau,Wasserstrasse
+Waterweg,Waterway,Voie\ navigable,Wasserstrasse
+Weermuur,Defence\ wall,Courtine,Wehrmauer
+Weermuur,Defence\ wall,Mur\ de\ défense,Wehrmauer
+Weeshuis,Orphanage,Orphelinat,Waisenhaus
+Weg,Road,chemin,Weg,Strasse
+Weg,Road,Route,Weg,Strasse
+Weg,Way,chemin,Weg,Strasse
+Weg,Way,Route,Weg,Strasse
+weger,ceiling\ plank,vaigre,Weger
+wegering,ceiling,feuilles\ bretonnes,Innenplanke
+wegering,ceiling,seuillet,Innenplanke
+wegering,ceiling,vaigrage,Innenplanke
+wegering,spirketting,feuilles\ bretonnes,Innenplanke
+wegering,spirketting,seuillet,Innenplanke
+wegering,spirketting,vaigrage,Innenplanke
+wegering,ceiling,feuilles\ bretonnes,Wegerung
+wegering,ceiling,seuillet,Wegerung
+wegering,ceiling,vaigrage,Wegerung
+wegering,spirketting,feuilles\ bretonnes,Wegerung
+wegering,spirketting,seuillet,Wegerung
+wegering,spirketting,vaigrage,Wegerung
+wegeringplank,ceiling\ plank,vaigre,Wegerplanke
+wiel,truck\ (for\ gun\ cariage),roue,Rad
+Wiel,Wheel,Roue,Rad
+Wiel,Wheel,Roue,Wagenrad
+Wielnaaf,Hub,Moyeu,Radnabe
+Wierde,Terp,Tertre,Warft
+Wig,Boaster,Coin,Keil
+Wig,Wedge,Coin,Keil
+Wig,Boaster,Coin,Splint
+Wig,Wedge,Coin,Splint
+windas,winch,treuil,Winde
+Windlat,Counter\ brace,Écharpe,Schwertlatte
+Windlat,Passing\ brace,Écharpe,Schwertlatte
+Windlat,Counter\ brace,Écharpe,Sturmlatte
+Windlat,Passing\ brace,Écharpe,Sturmlatte
+Windlat,Counter\ brace,Écharpe,Windlatte
+Windlat,Passing\ brace,Écharpe,Windlatte
+Windlat,Counter\ brace,Écharpe,Windrispe
+Windlat,Passing\ brace,Écharpe,Windrispe
+Windmolen,Windmill,Moulin\ à\ vent,Windmühle
+Windschoor,Windbrace,Contrefiche,Kopfstrebe
+Windschoor,Windbrace,Contreventement,Kopfstrebe
+Windschoor,Windbrace,Contrefiche,Windrispe
+Windschoor,Windbrace,Contreventement,Windrispe
+woeling,mast\ woolding,rousture\ mâts,Mastenwulinge
+Woning,Dwelling,Demeure,Wohnung
+Woning,Dwelling,Domicile,Wohnung
+Woning,Dwelling,habitation,Wohnung
+Woning,House,Demeure,Wohnung
+Woning,House,Domicile,Wohnung
+Woning,House,habitation,Wohnung
+Woning,Residence,Demeure,Wohnung
+Woning,Residence,Domicile,Wohnung
+Woning,Residence,habitation,Wohnung
+Woonhuis,Dwelling,Maison\ d'habitation,Wohnhaus
+Woonhuis,Dwelling,Maison\ d'habitation,Wohnhaus
+Woonhuis,House,Maison\ d'habitation,Wohnhaus
+Worm,Roof\ plate,Filière,Pfette
+Worm,Roof\ plate,panne,Pfette
+Worm,Roof\ plate,Filière,Stuhlrähm
+Worm,Roof\ plate,panne,Stuhlrähm
+Wortel,Root,Racine,Wurzel
+Wortelstelsel,Root\ system,Racines,Wurzelwerk
+wrang,floor\ timber\ (V-shaped),varangue,Wrange
+Wrikriem,Scull,Godille,Riemen
+wulf,counter,contre-arcasse,Gilling
+wulf,counter,vôute,Gilling
+wulf,counter,vôute\ d'arcasse,Gilling
+wulf,fantail,contre-arcasse,Gilling
+wulf,fantail,vôute,Gilling
+wulf,fantail,vôute\ d'arcasse,Gilling
+wulf,vault,contre-arcasse,Gilling
+wulf,vault,vôute,Gilling
+wulf,vault,vôute\ d'arcasse,Gilling
+wulf,counter,contre-arcasse,Gillung
+wulf,counter,contre-arcasse,Gillung
+wulf,counter,vôute,Gillung
+wulf,counter,vôute,Gillung
+wulf,counter,vôute\ d'\ arcasse,Gillung
+wulf,counter,vôute\ d'arcasse,Gillung
+wulf,faintail,contre-arcasse,Gillung
+wulf,faintail,vôute,Gillung
+wulf,faintail,vôute\ d'\ arcasse,Gillung
+wulf,fantail,contre-arcasse,Gillung
+wulf,fantail,vôute,Gillung
+wulf,fantail,vôute\ d'arcasse,Gillung
+wulf,vault,contre-arcasse,Gillung
+wulf,vault,contre-arcasse,Gillung
+wulf,vault,vôute,Gillung
+wulf,vault,vôute,Gillung
+wulf,vault,vôute\ d'\ arcasse,Gillung
+wulf,vault,vôute\ d'arcasse,Gillung
+Zaal,Best\ room,Salle,Saal
+Zaal,Hall,Salle,Saal
+zaathout,keelson,carlingue,Kielschwein
+zachte\ kim,bilge,bouchain,runde\ Kimm
+zandstrook,garboard\ strake,galbord,Kielgang
+zeeg,sheer,torture,Sprung
+zeeg,sheer,torture,Strack
+zeilbalk,mast\ beam,barrot\ de\ mât,Mastbalken
+zeilbank,mast\ thwart,banc\ d’étambrai,Mastducht
+zeilbank,mast\ thwart,banc\ de\ mât,Mastducht
+zeiluitrusting,sailing\ gear,équipement\ de\ voilure,Segelausrüstung
+Ziekenhuis,Hospital,Hôpital,Krankenhaus
+Zijbeuk,Flanking\ aisle,Aile,Seitenschiff
+Zijbeuk,Flanking\ aisle,baie\ latérale,Seitenschiff
+Zijbeuk,Flanking\ aisle,bas-coté,Seitenschiff
+Zijbeuk,Side\ aisle,Aile,Seitenschiff
+Zijbeuk,Side\ aisle,baie\ latérale,Seitenschiff
+Zijbeuk,Side\ aisle,bas-coté,Seitenschiff
+zijde,side,côté,Seite
+zijde,side,flanc,Seite
+zijgalerij,quarter\ gallery,bouteilles,Galerien
+Zijtak,Branch,branche\ latérale,Zeitenast
+Zijtak,Branch,branche\ latérale,Zeitenzweig
+zitter,first\ futtock,genou\ de\ couple,Sitter
+zitter,first\ futtock,genou\ de\ couple,Sitzer
+zogstuk,crutch,cornet,eingezogenes\ Bauchstück
+zogstuk,crutch,fourcat,eingezogenes\ Bauchstück
+zogstuk,crutch,varangué\ acculée,eingezogenes\ Bauchstück
+zogstuk,rising\ floor\ timber,cornet,eingezogenes\ Bauchstück
+zogstuk,rising\ floor\ timber,fourcat,eingezogenes\ Bauchstück
+zogstuk,rising\ floor\ timber,varangué\ acculée,eingezogenes\ Bauchstück
+Zolder,Attic,Comble,Dachboden
+Zolder,Attic,grenier,Dachboden
+Zolder,Loft,Comble,Dachboden
+Zolder,Loft,grenier,Dachboden
+Zolder,Attic,Comble,Dachgeschoss
+Zolder,Attic,grenier,Dachgeschoss
+Zolder,Loft,Comble,Dachgeschoss
+Zolder,Loft,grenier,Dachgeschoss
+Zolderbalk,Joist,Poutre,Deckenbalken
+Zoldering,Ceiling,Plafond,Decke
+Zonneblok\ (standerdmolen),Template,Bloc,Mauerklotz
+Zwaard,Trimmer,Gousset,Wechsel
+Zwaard,Trimmer,linçoir,Wechsel
+Zwaardschede,Scabbard,fourreau,Schwertscheide
+Zwaardschede,Sheat,fourreau,Schwertscheide

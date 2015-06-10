@@ -1,0 +1,24 @@
+A new candidate DCCD member has registered. Please approve the membership request here:
+~UserRegistration.getActivationUrl~
+
+Account details:
+
+Account
+Username: ~DccdUserImpl.getId~
+E-mail: ~DccdUserImpl.getEmail~
+
+Person
+Title: ~DccdUserImpl.getTitle~
+Initials: ~DccdUserImpl.getInitials~
+Prefixes: ~DccdUserImpl.getPrefixes~
+Surname: ~DccdUserImpl.getSurname~
+Function: ~DccdUserImpl.getFunction~
+Telephone: ~DccdUserImpl.getTelephone~
+DAI: ~DccdUserImpl.getDigitalAuthorIdentifier~
+
+Organization
+Name: ~DccdUserImpl.getOrganization~
+Address: ~DccdOrganisationImpl.getAddress~
+Postal code: ~DccdOrganisationImpl.getPostalCode~
+City: ~DccdOrganisationImpl.getCity~
+Country: ~DccdOrganisationImpl.getCountry~

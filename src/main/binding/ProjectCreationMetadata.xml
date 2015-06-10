@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+
+<include path="DccdUser.xml" />
+<include path="DccdOrganisation.xml" />
+
+<mapping name="projectcreationmetadata" class="nl.knaw.dans.dccd.model.ProjectCreationMetadata"
+ ns="http://dans.knaw.nl/dccd/projectcreationmetadata/" default="elements">
+   <namespace prefix="pcm" uri="http://dans.knaw.nl/dccd/projectcreationmetadata/" />
+
+   <structure name="user" field="user" usage="optional" type="nl.knaw.dans.dccd.model.DccdUserImpl" />
+   <structure name="organisation" field="organisation" usage="optional" type="nl.knaw.dans.dccd.model.DccdOrganisationImpl" />
+
+</mapping>
+</binding>

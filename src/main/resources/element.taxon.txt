@@ -1,0 +1,766 @@
+1	Plantae	
+2	Pinophyta	1
+3	Pinopsida	2
+4	Pinales	3
+5	Pinaceae	4
+6	Abies	5
+7	Abies alba Mill.	6
+8	Abies amabilis Douglas ex J. Forbes	6
+9	Abies balsamea (L.) Mill.	6
+10	Abies borisii-regis Mattf.	6
+11	Abies bracteata (D. Don) A. Poit.	6
+12	Abies cephalonica Loudon	6
+13	Abies cilicica (Antoine & Kotschy) Carrière	6
+14	Abies concolor (Gordon) Lindl. ex Hildebr.	6
+15	Abies nordmanniana	6
+16	Abies nordmanniana subsp. equi-trojani (Asch. & Sint. ex Boiss.) Coode & Cullen	15
+17	Abies fargesii	6
+18	Abies fargesii var. faxoniana (Rehder & E. H. Wilson) Tang S. Liu	17
+19	Abies firma Siebold & Zucc.	6
+20	Abies fraseri (Pursh) Poir.	6
+21	Abies holophylla Maxim.	6
+22	Abies kawakamii (Hayata) T. Itô	6
+23	Abies koreana E. H. Wilson	6
+24	Abies magnifica A. Murray bis	6
+25	Abies pinsapo	6
+26	Abies pinsapo var. marocana (Trab.) Ceballos & Bolaño	25
+27	Abies nebrodensis (Lojac.) Mattei	6
+28	Abies nephrolepis (Trautv. ex Maxim.) Maxim.	6
+29	Abies numidica de Lannoy ex Carrière	6
+30	Abies pindrow (Royle ex D. Don) Royle	6
+31	Abies procera Rehder	6
+32	Abies recurvata Mast.	6
+33	Abies religiosa (Kunth) Schltdl. & Cham.	6
+34	Abies sachalinensis	6
+35	Abies sachalinensis var. mayriana Miyabe & Kudô	34
+36	Abies sibirica Ledeb.	6
+37	Abies spectabilis (D. Don) Mirb.	6
+38	Abies squamata Mast.	6
+39	Magnoliophyta	1
+40	Magnoliopsida	39
+41	Fabales	40
+42	Fabaceae	41
+43	Acacia	42
+44	Acacia alpina F.Muell.	43
+45	Acacia nilotica (L.)Delile	43
+46	Acacia tortilis	43
+47	Acacia tortilis subsp. raddiana (Savi)Brenan	46
+48	Sapindales	40
+49	Aceraceae	48
+50	Acer	49
+51	Acer campestre L.	50
+52	Acer negundo L.	50
+53	Acer pensylvanicum L.	50
+54	Acer platanoides L.	50
+55	Acer pseudoplatanus L.	50
+56	Acer rubrum L.	50
+57	Acer saccharinum L.	50
+58	Acer saccharum Marsh.	50
+59	Acer spicatum Lam.	50
+60	Malvales	40
+61	Bombacaceae	60
+62	Adansonia	61
+63	Adansonia digitata L.	62
+64	Rosales	40
+65	Rosaceae	64
+66	Adenostoma	65
+67	Adenostoma fasciculatum Hook. & Arn.	66
+68	Adesmia	42
+69	Adesmia horrida Hook. & Arn.	68
+70	Adesmia uspallatensis Hook. & Arn.	68
+71	Hippocastanaceae	48
+72	Aesculus	71
+73	Aesculus hippocastanum L.	72
+74	Afzelia	42
+75	Afzelia africana Pers.	74
+76	Afzelia quanzensis Welw.	74
+77	Araucariaceae	4
+78	Agathis	77
+79	Agathis australis (D. Don) Lindl.	78
+80	Agathis macrophylla (Lindl.) Mast.	78
+81	Agathis moorei (Lindl.) Mast.	78
+82	Agathis ovata (Vieill.) Warb.	78
+83	Agathis robusta (C. Moore ex F. Muell.) F. Muell.	78
+84	Simaroubaceae	48
+85	Ailanthus	84
+86	Ailanthus altissima (P. Mill.) Swingle	85
+87	Casuarinales	40
+88	Casuarinaceae	87
+89	Allocasuarina	88
+90	Allocasuarina verticillata (Lam.) L.A.S. Johnson	89
+91	Fagales	40
+92	Betulaceae	91
+93	Alnus	92
+94	Alnus glutinosa (L.) Gaertn.	93
+95	Alnus hirsuta (Spach) Rupr.	93
+96	Alnus incana (L.) Moench	93
+97	Alnus maximowiczii Callier	93
+98	Alnus rhombifolia Nutt.	93
+99	Alnus serrulata (Aiton) Willd.	93
+100	Alnus viridis	93
+101	Alnus viridis subsp. sinuata (Regel) Á.Löve & D.Löve	100
+102	Alnus viridis subsp. crispa (Aiton) Turrill	100
+103	Andira	42
+104	Andira coriacea Pulle	103
+105	Magnoliales	40
+106	Annonaceae	105
+107	Annona	106
+108	Annona spraguei Saff.	107
+109	Araucaria	77
+110	Araucaria angustifolia (Bertol.) Kuntze	109
+111	Araucaria araucana (Molina) K. Koch	109
+112	Araucaria cunninghamii Aiton ex A. Cunn.	109
+113	Araucaria heterophylla (Salisb.) Franco	109
+114	Araucaria hunsteinii K. Schum.	109
+115	Ericales	40
+116	Ericaceae	115
+117	Arctostaphylos	116
+118	Arctostaphylos glauca Lindl.	117
+119	Asterales	40
+120	Asteraceae	119
+121	Artemisia	120
+122	Artemisia tridentata Nutt.	121
+123	Cupressaceae	4
+124	Athrotaxis	123
+125	Athrotaxis cupressoides D. Don	124
+126	Athrotaxis selaginoides D. Don	124
+127	Austrocedrus	123
+128	Austrocedrus chilensis (D. Don) Pic. Serm. & Bizzarri	127
+129	Lecythidales	40
+130	Lecythidaceae	129
+131	Bertholletia	130
+132	Bertholletia excelsa Bonpl.	131
+133	Betula	92
+134	Betula albosinensis Burkill	133
+135	Betula alleghaniensis Britton	133
+136	Betula ermanii Cham.	133
+137	Betula grossa Siebold & Zucc.	133
+138	Betula nigra L.	133
+139	Betula papyrifera Marshall	133
+140	Betula neoalaskana Sarg.	133
+141	Betula pendula Roth	133
+142	Betula platyphylla Sukaczev	133
+143	Betula pubescens Ehrh.	133
+144	Betula utilis D.Don	133
+145	Betula pendula var. pendula	141
+146	Bombax	61
+147	Bombax ceiba L.	146
+148	Burseraceae	48
+149	Bursera	148
+150	Bursera simaruba (L.) Sarg.	149
+151	Euphorbiales	40
+152	Buxaceae	151
+153	Buxus	152
+154	Buxus sempervirens L.	153
+155	Callitris	123
+156	Callitris columellaris F. Muell.	155
+157	Callitris macleayana (F. Muell.) F. Muell.	155
+158	Callitris preissii Miq.	155
+159	Calocedrus	123
+160	Calocedrus decurrens (Torr.) Florin	159
+161	Rubiales	40
+162	Rubiaceae	161
+163	Afrocanthium	162
+164	Afrocanthium burttii (Bullock) Lantz	163
+165	Carpinus	92
+166	Carpinus betulus L.	165
+167	Juglandales	40
+168	Juglandaceae	167
+169	Carya	168
+170	Carya glabra (P. Mill.) Sweet	169
+171	Carya alba (L.) Nutt. ex Ell.	169
+172	Fagaceae	91
+173	Castanea	172
+174	Castanea crenata Siebold & Zucc.	173
+175	Castanea dentata (Marshall) Borkh.	173
+176	Castanea sativa Mill.	173
+177	Scrophulariales	40
+178	Bignoniaceae	177
+179	Catalpa	178
+180	Catalpa speciosa (Warder) Warder ex Engelm.	179
+181	Rhamnales	40
+182	Rhamnaceae	181
+183	Ceanothus	182
+184	Ceanothus crassifolius Torr.	183
+185	Meliaceae	48
+186	Cedrela	185
+187	Cedrela odorata L.	186
+188	Cedrus	5
+189	Cedrus atlantica (Endl.) Manetti ex Carrière	188
+190	Cedrus libani	188
+191	Cedrus libani var. brevifolia Hook. f.	190
+192	Cedrus deodara (Roxb.) G. Don	188
+193	Urticales	40
+194	Ulmaceae	193
+195	Celtis	194
+196	Celtis laevigata Willd.	195
+197	Celtis occidentalis L.	195
+198	Celtis laevigata var. reticulata (Torr.) L. Benson	196
+199	Cercidium	42
+200	Cercidium microphyllum (Torr.)Rose & I.M.Johnst.	199
+201	Cercocarpus	65
+202	Cercocarpus montanus	201
+203	Cercocarpus montanus var. glaber (S.Watson) F.L.Martin	202
+204	Cercocarpus ledifolius Nutt. ex Torr. & A.Gray	201
+205	Chamaecyparis	123
+206	Chamaecyparis formosensis Matsum.	205
+207	Chamaecyparis lawsoniana (A. Murray bis) Parl.	205
+208	Xanthocyparis	123
+209	Xanthocyparis nootkatensis (D. Don) Farjon & Harder	208
+210	Chamaecyparis obtusa (Siebold & Zucc.) Endl.	205
+211	Chamaecyparis pisifera (Siebold & Zucc.) Endl.	205
+212	"Chamaecyparis thyoides (L.) Britton, Sterns & Poggenb."	205
+213	Moraceae	193
+214	Chlorophora	213
+215	Chlorophora excelsa (Welw.) Benth.	214
+216	Lamiales	40
+217	Verbenaceae	216
+218	Citharexylum	217
+219	Citharexylum fruticosum L.	218
+220	Cornales	40
+221	Cornaceae	220
+222	Cornus	221
+223	Cornus florida L.	222
+224	Cornus sanguinea L.	222
+225	Corylus	92
+226	Corylus avellana L.	225
+227	Corylus sieboldiana Blume	225
+228	Anacardiaceae	48
+229	Cotinus	228
+230	Cotinus coggygria Scop.	229
+231	Cryptomeria	123
+232	Cryptomeria japonica (Thunb. ex L. f.) D. Don	231
+233	Cupressus	123
+234	Cupressus arizonica Greene	233
+235	Cupressus dupreziana	233
+236	Cupressus dupreziana var. atlantica (Gaussen) Silba	235
+237	Cupressus torulosa	233
+238	Cupressus torulosa var. gigantea (W. C. Cheng & L. K. Fu) Farjon	237
+239	Cupressus arizonica var. glabra (Sudw.) Little	234
+240	Cupressus lusitanica Mill.	233
+241	Cupressus sempervirens L.	233
+242	Cyrillaceae	115
+243	Cyrilla	242
+244	Cyrilla racemiflora L.	243
+245	Podocarpaceae	4
+246	Dacrycarpus	245
+247	Dacrycarpus dacrydioides (A. Rich.) de Laub.	246
+248	Halocarpus	245
+249	Halocarpus bidwillii (Hook. f. ex Kirk) Quinn	248
+250	Halocarpus biformis (Hook.) Quinn	248
+251	Manoao	245
+252	Manoao colensoi (Hook.) Molloy	251
+253	Dacrydium	245
+254	Dacrydium cupressinum Sol. ex G. Forst.	253
+255	Lagarostrobos	245
+256	Lagarostrobos franklinii (Hook. f.) Quinn	255
+257	Dicorynia	42
+258	Dicorynia guianensis Amshoff	257
+259	Ebenales	40
+260	Ebenaceae	259
+261	Diospyros	260
+262	Diospyros virginiana L.	261
+263	Winteraceae	105
+264	Drimys	263
+265	Drimys winteri Forster & Forster f.	264
+266	Gnetophyta	1
+267	Gnetopsida	266
+268	Ephedrales	267
+269	Ephedraceae	268
+270	Ephedra	269
+271	Myrtales	40
+272	Myrtaceae	271
+273	Eucalyptus	272
+274	Eucalyptus camaldulensis Dehnh.	273
+275	Eucalyptus delegatensis R. Baker	273
+276	Eucalyptus globulus Labill.	273
+277	Eucalyptus marginata Donn ex Sm.	273
+278	Eucalyptus miniata A. Cunn. ex Schauer	273
+279	Corymbia	272
+280	Corymbia nesophila (Blakely) K.D. Hill & L.A.S Johnson	279
+281	Eucalyptus oreades R. Baker	273
+282	Eucalyptus stellulata Sieber ex DC.	273
+283	Fagus	172
+284	Fagus crenata Blume	283
+285	Fagus grandifolia Ehrh.	283
+286	Fagus orientalis Lipsky	283
+287	Fagus sylvatica L.	283
+288	Fitzroya	123
+289	Fitzroya cupressoides (Molina) I. M. Johnst.	288
+290	Oleaceae	177
+291	Fraxinus	290
+292	Fraxinus americana L.	291
+293	Fraxinus caroliniana P. Mill.	291
+294	Fraxinus excelsior L.	291
+295	Fraxinus nigra Marsh.	291
+296	Fraxinus pennsylvanica Marsh.	291
+297	Fraxinus velutina Torr.	291
+298	Gleditsia	42
+299	Gleditsia triacanthos L.	298
+300	Gmelina	217
+301	Gmelina arborea Roxb.	300
+302	Theales	40
+303	Theaceae	302
+304	Gordonia	303
+305	Gordonia lasianthus (L.) Ellis	304
+306	Halocarpus kirkii (F. Muell. ex Parl.) Quinn	248
+307	Malpighiales	40
+308	Euphorbiaceae	307
+309	Hevea	308
+310	Hevea brasiliensis (Willd. ex A.Juss.) Müll.Arg.	309
+311	Celastrales	40
+312	Aquifoliaceae	311
+313	Ilex	312
+314	Ilex aquifolium L.	313
+315	Ilex cassine L.	313
+316	Ilex coriacea (Pursh) Chapman	313
+317	Ilex glabra (L.) Gray	313
+318	Ilex opaca Ait.	313
+319	Juglans	168
+320	Juglans cinerea L.	319
+321	Juglans nigra L.	319
+322	Juglans regia L.	319
+323	Juniperus	123
+324	Juniperus communis L.	323
+325	Juniperus rigida	323
+326	Juniperus rigida subsp. conferta (Parl.) Kitam.	325
+327	Juniperus deppeana Steud.	323
+328	Juniperus drupacea Labill.	323
+329	Juniperus foetidissima Willd.	323
+330	Juniperus excelsa	323
+331	Juniperus excelsa subsp. polycarpos (K. Koch) Takht.	330
+332	Juniperus monosperma (Engelm.) Sarg.	323
+333	Juniperus osteosperma (Torr.) Little	323
+334	Juniperus oxycedrus L.	323
+335	Juniperus pinchotii Sudw.	323
+336	Juniperus procera Hochst. ex Endl.	323
+337	Juniperus przewalskii Kom.	323
+338	Juniperus recurva Buch.-Ham. ex D. Don	323
+339	Juniperus scopulorum Sarg.	323
+340	Juniperus semiglobosa Regel	323
+341	Juniperus thurifera L.	323
+342	Juniperus pseudosabina Fisch. & C. A. Mey.	323
+343	Juniperus virginiana L.	323
+344	Sapotaceae	115
+345	Pouteria	344
+346	Pouteria glomerata	345
+347	Pouteria glomerata subsp. glomerata	346
+348	Laburnum	42
+349	Laburnum anagyroides Medik.	348
+350	Larix	5
+351	Larix gmelinii	350
+352	Larix gmelinii var. gmelinii	351
+353	Larix decidua Mill.	350
+354	Larix griffithii	350
+355	Larix griffithii var. griffithii	354
+356	Larix laricina (Du Roi) K. Koch	350
+357	Larix lyallii Parl.	350
+358	Larix occidentalis Nutt.	350
+359	Larix sibirica Ledeb.	350
+360	Lecythis	130
+361	Lecythis corrugata Poit.	360
+362	Lepidothamnus	245
+363	Lepidothamnus intermedius (Kirk) Quinn	362
+364	Libocedrus	123
+365	Libocedrus bidwillii Hook. f.	364
+366	Libocedrus plumosa (D. Don) Sarg.	364
+367	Ligustrum	290
+368	Ligustrum vulgare L.	367
+369	Hamamelidales	40
+370	Hamamelidaceae	369
+371	Liquidambar	370
+372	Liquidambar styraciflua L.	371
+373	Magnoliaceae	105
+374	Liriodendron	373
+375	Liriodendron tulipifera L.	374
+376	Dipsacales	40
+377	Caprifoliaceae	376
+378	Lonicera	377
+379	Lonicera xylosteum L.	378
+380	Magnolia	373
+381	Magnolia grandiflora L.	380
+382	Magnolia virginiana L.	380
+383	Manilkara	344
+384	Manilkara bidentata (A.DC.) A.Chev.	383
+385	Magnolia champaca (L.) Baill. ex Pierre	380
+386	Magnolia nilagirica (Zenker) Figlar	380
+387	Morus	213
+388	Morus alba L.	387
+389	Morus rubra L.	387
+390	Myricales	40
+391	Myricaceae	390
+392	Morella	391
+393	Morella cerifera (L.) Small	392
+394	Myrica	391
+395	Myrica gale L.	394
+396	Nothofagaceae	91
+397	Nothofagus	396
+684	Tiliaceae	60
+398	Nothofagus alpina (Poepp. & Endl.) Oerst.	397
+399	Nothofagus antarctica (G.Forst.) Oerst.	397
+400	Nothofagus betuloides (Mirb.) Oerst.	397
+401	Nothofagus cunninghamii (Hook.) Oerst.	397
+402	Nothofagus dombeyi (Mirb.) Oerst.	397
+403	Nothofagus fusca (Hook.f.) Oerst.	397
+404	Nothofagus gunnii (Hook.f.) Oerst.	397
+405	Nothofagus menziesii (Hook.f.) Oerst.	397
+406	Nothofagus nitida (Phil.) Krasser	397
+407	Nothofagus obliqua (Mirb.) Oerst.	397
+408	Nothofagus pumilio (Poepp. & Endl.) Krasser	397
+409	Nothofagus solanderi (Hook.f.) Oerst.	397
+410	Nyssaceae	220
+411	Nyssa	410
+412	Nyssa sylvatica Marsh.	411
+413	Ostrya	92
+414	Ostrya carpinifolia Scop.	413
+415	Oxydendrum	116
+416	Oxydendrum arboreum (L.) DC.	415
+417	Parapiptadenia	42
+418	Parapiptadenia rigida (Benth.)Brenan	417
+419	Parkia	42
+420	Parkia discolor Benth.	419
+421	Scrophulariaceae	177
+422	Paulownia	421
+423	Paulownia tomentosa (Thunb.) Sieb. & Zucc. ex Steud.	422
+424	Laurales	40
+425	Lauraceae	424
+426	Persea	425
+427	Persea borbonia (L.) Spreng.	426
+428	Phyllocladaceae	4
+429	Phyllocladus	428
+430	Phyllocladus trichomanoides	429
+431	Phyllocladus trichomanoides var. alpinus (Hook. f.) Parl.	430
+432	Phyllocladus aspleniifolius (Labill.) Hook. f.	429
+433	Picea	5
+434	Picea abies (L.) H. Karst.	433
+435	Picea asperata Mast.	433
+436	Picea likiangensis	433
+437	Picea likiangensis var. rubescens Rehder & E. H. Wilson	436
+438	Picea brachytyla (Franch.) E. Pritz.	433
+439	Picea chihuahuana Martínez	433
+440	Picea engelmannii Parry ex Engelm.	433
+441	Picea glauca (Moench) Voss	433
+442	Picea glehnii (F. Schmidt) Mast.	433
+443	Picea jezoensis (Siebold & Zucc.) Carrière	433
+444	Picea mariana (Mill.) Britton & al.	433
+445	Picea obovata Ledeb.	433
+446	Picea omorika (Pancic) Purk.	433
+447	Picea orientalis (L.) Peterm.	433
+448	Picea pungens Engelm.	433
+449	Picea purpurea Mast.	433
+450	Picea rubens Sarg.	433
+451	Picea schrenkiana Fisch. & C. A. Mey.	433
+452	Picea smithiana (Wall.) Boiss.	433
+453	Pilgerodendron	123
+454	Pilgerodendron uviferum (D. Don) Florin	453
+455	Pinus	5
+456	Pinus albicaulis Engelm.	455
+457	Pinus aristata Engelm.	455
+458	Pinus armandii Franch.	455
+459	Pinus balfouriana Balf.	455
+460	Pinus banksiana Lamb.	455
+461	Pinus brutia Ten.	455
+462	Pinus bungeana Zucc. ex Endl.	455
+463	Pinus canariensis C. Sm.	455
+464	Pinus contorta Douglas ex Loudon	455
+465	Pinus coulteri D. Don	455
+466	Pinus densata Mast.	455
+467	Pinus densiflora Siebold & Zucc.	455
+468	Pinus echinata Mill.	455
+469	Pinus edulis Engelm.	455
+470	Pinus elliottii Engelm.	455
+471	Pinus flexilis E. James	455
+472	Pinus gerardiana Wall. ex D. Don	455
+473	Pinus halepensis Mill.	455
+474	Pinus hartwegii Lindl.	455
+475	Pinus heldreichii H. Christ	455
+476	Pinus jeffreyi Balf.	455
+477	Pinus kesiya Royle ex Gordon	455
+478	Pinus koraiensis Siebold & Zucc.	455
+479	Pinus cembroides	455
+480	Pinus cembroides subsp. lagunae (Rob.-Pass.) D. K. Bailey	479
+481	Pinus lambertiana Douglas	455
+482	Pinus leiophylla	455
+483	Pinus leiophylla var. chihuahuana (Engelm.) Shaw	482
+484	Pinus longaeva D. K. Bailey	455
+485	Pinus merkusii Jungh. & de Vriese	455
+486	Pinus pinaster	455
+487	Pinus pinaster subsp. escarena (Risso) K. Richt.	486
+488	Pinus monophylla Torr. & Frém.	455
+489	Pinus monticola Douglas ex D. Don	455
+490	Pinus mugo Turra	455
+491	Pinus oocarpa Schiede ex Schltdl.	455
+492	Pinus nigra	455
+493	Pinus nigra subsp. pallasiana (Lamb.) Holmboe	492
+494	Pinus palustris Mill.	455
+495	Pinus peuce Griseb.	455
+496	Pinus pinea L.	455
+497	Pinus ponderosa Douglas ex C. Lawson	455
+498	Pinus pumila (Pall.) Regel	455
+499	Pinus pungens Lamb.	455
+500	Pinus quadrifolia Parl. ex Sudw.	455
+501	Pinus radiata D. Don	455
+502	Pinus roxburghii Sarg.	455
+503	Pinus strobiformis Engelm.	455
+504	Pinus sylvestris L.	455
+505	Pinus thunbergii Parl.	455
+506	Pinus torreyana Parry ex Carrière	455
+507	Pinus mugo subsp. uncinata (Ramond ex DC.) Domin	490
+508	Pinus virginiana Mill.	455
+509	Pinus wallichiana A. B. Jacks.	455
+510	Caryophyllales	40
+511	Nyctaginaceae	510
+512	Pisonia	511
+513	Pisonia grandis R. Br.	512
+514	Pistacia	228
+515	Pistacia atlantica Desf.	514
+516	Pistacia vera L.	514
+517	Platanaceae	369
+518	Platanus	517
+519	Platanus occidentalis L.	518
+520	Platanus racemosa Nutt.	518
+521	Clusiaceae	302
+522	Platonia	521
+523	Platonia esculenta (Arruda) Rickett & Stafleu	522
+524	Afrocarpus	245
+525	Afrocarpus falcatus (Thunb.) C. N. Page	524
+526	Podocarpus	245
+527	Podocarpus cunninghamii Colenso	526
+528	Podocarpus lawrencei Hook. f.	526
+529	Podocarpus neriifolius D. Don	526
+530	Podocarpus nivalis Hook.	526
+531	Podocarpus parlatorei Pilg.	526
+532	Podocarpus totara G. Benn. ex D. Don	526
+533	Salicales	40
+534	Salicaceae	533
+535	Populus	534
+536	Populus alba L.	535
+537	Populus angustifolia James	535
+538	Populus balsamifera L.	535
+539	Populus deltoides Bartr. ex Marsh.	535
+540	Populus fremontii S. Wats.	535
+541	Populus grandidentata Michx.	535
+542	Populus nigra L.	535
+543	Populus tremuloides Michx.	535
+544	Populus balsamifera subsp. trichocarpa (Torr. & Gray ex Hook.) Brayshaw	538
+545	Prosopis	42
+546	Prosopis flexuosa DC.	545
+547	Prosopis glandulosa	545
+548	Prosopis glandulosa var. glandulosa Torr.	547
+549	Prumnopitys	245
+550	Prumnopitys andina (Poepp. ex Endl.) de Laub.	549
+551	Prumnopitys taxifolia (Banks & Sol. ex D. Don) de Laub.	549
+552	Prunus	65
+553	Prunus mahaleb L.	552
+554	Prunus pensylvanica L.f.	552
+555	Pseudotsuga	5
+556	Pseudotsuga japonica (Shiras.) Beissn.	555
+557	Pseudotsuga macrocarpa (Vasey) Mayr	555
+558	Pseudotsuga menziesii (Mirb.) Franco	555
+559	Pseudoxandra	106
+560	Pseudoxandra polyphleba (Diels) R. E. Fr.	559
+561	Pterocarpus	42
+562	Pterocarpus angolensis DC.	561
+563	Purshia	65
+564	Purshia tridentata (Pursh) DC.	563
+565	Quercus	172
+566	Quercus afares Pomel	565
+567	Quercus alba L.	565
+568	Quercus bicolor Willd.	565
+569	Quercus infectoria	565
+570	Quercus infectoria subsp. veneris (A.Kern.) Meikle	569
+571	Quercus brantii Lindl.	565
+572	Quercus kelloggii Newb.	565
+573	Quercus coccifera L.	565
+574	Quercus canariensis Willd.	565
+575	Quercus coccinea Münchh.	565
+576	Quercus frainetto Ten.	565
+577	Quercus copeyensis C.H.Mull.	565
+578	Quercus costaricensis Liebm.	565
+579	Quercus douglasii Hook. & Arn.	565
+580	Quercus ellipsoidalis E.J.Hill	565
+581	Quercus engelmannii Greene	565
+582	Quercus falcata Michx.	565
+583	Quercus garryana Douglas ex Hook.	565
+584	Quercus grisea Liebm.	565
+685	Tilia	684
+585	Quercus hartwissiana Steven	565
+586	Quercus ithaburensis Decne.	565
+587	Quercus lobata Née	565
+588	Quercus lusitanica Lam.	565
+589	Quercus ithaburensis subsp. macrolepis (Kotschy) Hedge & Yalt.	586
+590	Quercus marilandica (L.) Münchh.	565
+591	Quercus michauxii Nutt.	565
+592	Quercus mongolica Fisch. ex Ledeb.	565
+593	Quercus mongolica subsp. crispula (Blume) Menitsky	592
+594	Quercus muehlenbergii Engelm.	565
+595	Quercus nigra L.	565
+596	Quercus petraea (Matt.) Liebl.	565
+597	Quercus pontica K.Koch	565
+598	Quercus robur L.	565
+599	Quercus rubra L.	565
+600	Quercus shumardii Buckley	565
+601	Quercus stellata Wangenh.	565
+602	Quercus suber L.	565
+603	Primulales	40
+604	Myrsinaceae	603
+605	Myrsine	604
+606	Myrsine floridana A. DC.	605
+607	Frangula	182
+608	Frangula caroliniana (Walt.) Gray	607
+609	Rhamnus	182
+610	Rhamnus cathartica L.	609
+611	Rhamnus crocea Nutt.	609
+612	Rhus	228
+613	Rhus ovata S. Wats.	612
+614	Robinia	42
+615	Robinia neomexicana A.Gray	614
+616	Robinia pseudoacacia L.	614
+617	Juniperus recurva var. recurva	338
+618	Juniperus saltuaria Rehder & E. H. Wilson	323
+619	Juniperus tibetica Kom.	323
+620	Juniperus indica	323
+621	Juniperus indica var. indica	620
+622	Salix	534
+623	Salix arbusculoides Anderss.	622
+624	Salix amygdaloides Anderss.	622
+625	Salix pendulina Wenderoth	622
+626	Salix candida Flueggé ex Willd.	622
+627	Salix caprea L.	622
+628	Salix caroliniana Michx.	622
+629	Salix discolor Muhl.	622
+630	Salix elaeagnos Scop.	622
+631	Salix exigua Nutt.	622
+632	Salix glauca L.	622
+633	Salix interior Rowlee	622
+634	Salix lanata L.	622
+635	Salix lasiolepis Benth.	622
+636	Salix myrsinifolia Salisb.	622
+637	Salix planifolia Pursh	622
+638	Salix purpurea L.	622
+639	Salix viminalis L.	622
+640	Santalales	40
+641	Santalaceae	640
+642	Santalum	641
+643	Santalum album L.	642
+644	Saxegothaea	245
+645	Saxegothaea conspicua Lindl.	644
+646	Sciadopityaceae	4
+647	Sciadopitys	646
+648	Sciadopitys verticillata (Thunb.) Siebold & Zucc.	647
+649	Sequoia	123
+650	Sequoia sempervirens (D. Don) Endl.	649
+651	Sequoiadendron	123
+652	Sequoiadendron giganteum (Lindl.) J. Buchholz	651
+653	Dipterocarpaceae	302
+654	Shorea	653
+655	Shorea robusta Gaertner f.	654
+656	Swartzia	42
+657	Swartzia laevicarpa Amshoff	656
+658	Swietenia	185
+659	Swietenia macrophylla King	658
+660	Swietenia mahagoni (L.) Jacq.	658
+661	Violales	40
+662	Tamaricaceae	661
+663	Tamarix	662
+664	Tamarix chinensis Lour.	663
+665	Taxodium	123
+666	Taxodium distichum	665
+667	Taxodium distichum var. imbricatum (Nutt.) Croom	666
+668	Taxodium mucronatum Ten.	665
+669	Taxaceae	4
+670	Taxus	669
+671	Taxus cuspidata Siebold & Zucc.	670
+672	Tectona	217
+673	Tectona grandis L. f.	672
+674	Tetraclinis	123
+675	Tetraclinis articulata (Vahl) Mast.	674
+676	Thuja	123
+677	Thuja occidentalis L.	676
+678	Platycladus	123
+679	Platycladus orientalis (L.) Franco	678
+680	Thuja plicata Donn ex D. Don	676
+681	Thuja standishii (Gordon) Carrière	676
+682	Thujopsis	123
+683	Thujopsis dolabrata (Thunb. ex L. f.) Siebold & Zucc.	682
+686	Tilia americana L.	685
+687	Tilia cordata P. Mill.	685
+688	Tilia platyphyllos Scop.	685
+689	Torreya	669
+690	Torreya californica Torr.	689
+691	Tsuga	5
+692	Tsuga canadensis (L.) Carrière	691
+693	Tsuga caroliniana Engelm.	691
+694	Tsuga chinensis (Franch.) E. Pritz.	691
+695	Tsuga diversifolia (Maxim.) Mast.	691
+696	Tsuga dumosa (D. Don) Eichler	691
+697	Tsuga heterophylla (Raf.) Sarg.	691
+698	Tsuga mertensiana (Bong.) Carrière	691
+699	Tsuga sieboldii Carrière	691
+700	Ulmus	194
+701	Ulmus glabra Huds.	700
+702	Ulmus procera Salisb.	700
+703	Ulmus pumila L.	700
+704	Ulmus rubra Muhl.	700
+705	Vouacapoua	42
+706	Vouacapoua americana Aubl.	705
+707	Widdringtonia	123
+708	Widdringtonia cedarbergensis J. A. Marsh	707
+709	Zygophyllaceae	48
+710	Zygophyllum	709
+711	Abies chensiensis Tiegh.	6
+712	Abies mariesii Mast.	6
+713	Abies veitchii Lindl.	6
+714	Araucaria bidwillii Hook.	109
+715	Balanites	709
+716	Balanites aegyptiaca (L.) Del.	715
+717	Ranunculales	40
+718	Berberidaceae	717
+719	Berberis	718
+720	Berberis vulgaris L.	719
+721	Betula glandulosa Michx.	133
+722	Carya cordiformis (Wangenh.) K. Koch	169
+723	Carya illinoinensis (Wangenh.) K. Koch	169
+724	Allocasuarina littoralis (Salisb.) L.A.S. Johnson	89
+725	Guibourtia	42
+726	Guibourtia coleosperma (Benth.)Leonard	725
+727	Boraginaceae	216
+728	Cordia	727
+729	Cordia alliodora (Ruiz & Pavón) Oken	728
+730	Alnus viridis (Chaix) DC.	93
+731	Elaeoluma	344
+732	Elaeoluma glabrescens (Mart. & Eichler ex Miq.) Aubrév.	731
+733	Ginkgophyta	1
+734	Ginkgoopsida	733
+735	Ginkgoales	734
+736	Ginkgoaceae	735
+737	Ginkgo	736
+738	Ginkgo biloba L.	737
+739	Hamamelis	370
+740	Hamamelis virginiana L.	739
+741	Larix potaninii Batalin	350
+742	Magnolia acuminata (L.) L.	380
+743	Nyssa ogeche Bartr. ex Marsh.	411
+744	Picea schrenkiana subsp. tianschanica (Rupr.) Bykov	451
+745	Pinus caribaea Morelet	455
+746	Pinus tabuliformis Carrière	455
+747	Prumnopitys ferruginea (G. Benn. ex D. Don) de Laub.	549
+748	Podocarpus nubigenus Lindl.	526
+749	Apiales	40
+750	Araliaceae	749
+751	Polyscias	750
+752	Polyscias sambucifolia (Sieber ex DC.) Harms	751
+753	Juniperus pingii	323
+754	Juniperus pingii var. pingii	753
+755	Sassafras	425
+756	Sassafras albidum (Nutt.) Nees	755
+757	Tamarix aphylla (L.) Karst.	663
+758	Viburnum	377
+759	Viburnum lantana L.	758
+801	Leucaena	42
+802	Leucaena leucocephala (Lam.)de Wit	801
+803	Quercus cerris L.	565
+805	Annelida	
+806	Polychaeta	805
+807	Aciculata	806
+808	Typhloscolecidae	807

@@ -1,0 +1,690 @@
+/*---------------------------------------------------*/
+/*-------------- main CSS settings ------------------*/
+/*---------------------------------------------------*/
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,
+address,big,cite,code,del,dfn,em,font,img,ins,kbd,
+q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,
+ol,ul,li,fieldset,form,label,legend,table,caption,tbody,
+tfoot,thead,tr,th,td {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+html {
+	height: 100%; /* this is an IE 6 bugfix */
+	width: 100%; /* this is an IE 6 bugfix */
+}
+
+body {
+	font-size: 10pt;
+	line-height: 1.2;
+	
+	/* pboon: fix some problems with content sticking out 
+	and also wrapping content (like tabs) when the screen width is made to small */
+	min-width: 800px; /* TODO maybe need IE fix ! */
+}
+
+h1 {
+	font-size: 22px;
+	/*font-style: italic;
+	/* pboon: black is to dark here */
+	/*color: #404040;*/
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	margin-bottom: 1em;
+}
+
+h2 {
+	font-size: 12px;
+	font-weight: bold;
+	color: black;
+}
+
+h3 {
+	font-size: 11px;;
+	font-weight: bold;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+td {
+	vertical-align: top;
+	border-width: 1px;
+	padding: 3px;
+	border-style: solid;
+	border-color: gray;
+	background-color: white;
+}
+
+th {
+	font-size: 11px;;
+	font-weight: bold;
+	color: black;
+	
+	white-space: nowrap;
+	border-width: 1px;
+	padding: 3px;
+	border-style: solid;
+	border-color: gray;
+	background-color: #f3f5f6;
+}
+
+a { /* color:#00AAD3; */
+	/* pboon: almost cyan is a bit to primary/hard and light*/
+	color: #0E7ADE;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	/*text-decoration: none;*/
+}
+
+a.imgLink {
+	text-decoration: none;
+}
+
+a img {
+	border: 0px;
+}
+
+p,ul,ol,dl,pre,fieldset,blockquote {
+	margin-bottom: 1em;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 1em;
+}
+
+ul,ol {
+	margin: 0;
+	padding-left: 2em;
+}
+
+ul {
+	list-style-type: square;
+}
+
+strong {
+	font-weight: bold;
+}
+
+/* pboon: for two collumn layouts */
+.left {
+	 	float: left;
+} 
+.right {
+	 	float: right;
+} 
+.clear { clear: both; }
+
+/*---------------------------------------------------*/
+/*-------------- for use in each DCCD page  ---------*/
+/*---------------------------------------------------*/
+.required {
+	/*color: red; */
+	color: #0E7ADE; /* dccd blue */
+}
+
+.error {
+	color: #9E0B0E;
+}
+
+.table_standard,.table_standard td {
+	padding: 0.3em 0.3em 0.3em 0.3em;
+}
+
+/*---------------------------------------------------*/
+/*------------------ forms  -------------------------*/
+/*---------------------------------------------------*/
+input.standard {
+	width: 120px;
+}
+
+textarea,input {
+	
+}
+
+textarea.readonly,input.readonly {
+	background-color: transparent;
+	border: 0;
+	color: #575756;
+}
+
+.radio input {
+	display: block;
+	float: left;
+}
+
+.radio label {
+	display: block;
+	margin-left: 30px;
+}
+
+/*---------------------------------------------------*/
+/*------- panel and sub-(sub-sub-)panels styles  ----*/
+/*---------------------------------------------------*/
+.panel {
+	background-color: #f3f5f6;
+	border: 1px solid #f3f5f6;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 7px;
+}
+
+.panel td {
+	padding: 0.3em 0.8em 0.3em 0.3em;
+}
+
+.panel h1 {
+	font-size: 12px;
+	color: black;
+
+	font-weight: bold;
+	
+	/* font-style: italic; */
+
+		background: transparent;
+	display: block;
+	margin-left: -7px;
+	margin-right: 0px;
+	padding-left: 7px;
+	padding-bottom: 0em;
+	padding-top: 0em;
+	margin-bottom: 0em;
+}
+
+.panel a,.panel td a { /* color:#9E0B0E; */
+	/* pboon: one color, not both red and blue for links */
+	
+}
+
+/* sub panel */
+.panel .panel {
+	background-color: #f3f5f6;
+	border: 1px solid #f3f5f6;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	/* padding-left: 5px; */ /* pboon: default looks better */
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
+.panel .panel h1 {
+	font-size: 120%;
+	/* pboon: black is to dark here */
+	color: #404040;
+}
+
+.panel .panel h2,.panel .panel h3 {
+	font-size: 110%;
+	/* pboon: black is to dark here */
+	color: #404040;
+}
+
+.panel .panel td {
+	padding: 0.3em 0.8em 0.3em 0.3em;
+}
+
+.panel .panel a,.panel .panel td a { /* color: #9E0B0E; */
+	/* pboon: one color, not both red and blue for links */
+	
+}
+
+/*---------------------------------------------------*/
+/*------------- main page layout --------------------*/
+/*---------------------------------------------------*/
+#header {
+	margin: 10px 10px 0px 10px;
+	/*padding: 10px 10px 0px 10px;*/
+	
+	/*border: solid #999 1px;*/
+	/*background-image: url('../images/dccd-banner.png');*/
+	/*background-repeat: no-repeat;*/
+}
+
+#content {
+	margin: 0px 10px 10px 10px;
+	padding: 10px;
+	border-top: solid #0E7ADE 1px;
+}
+
+#footer {
+	margin: 10px;
+	padding: 10px;
+	border-top: solid #0E7ADE 1px;
+
+	color: #767676;
+}
+
+#footer #dccdVersion {
+	float: right;
+	position: relative;
+	text-align: right;
+}
+	
+.headerctrl {
+/*	background-image: url('../images/transp-white.gif'); */
+}
+
+#headerLogo {
+	display:block;
+	border:0px;
+	padding:0;
+	margin:0;
+	width:197px;
+	height:130px;
+	background-position:top left;
+	background-image: url('../images/dccd_logo.png');
+	background-repeat: no-repeat;
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px;
+}
+
+.displayName {
+	color:#0E7ADE;
+}
+
+.headerctrl a {
+	color:#535353;
+	line-height:1.5;
+}
+.headerctrl a:hover {
+	/*background-color:#f2d9e7;*/
+	text-decoration: underline;
+	color:black;
+}
+
+/* unlike the links in headerctrl */
+.advancedSearchLink:hover {
+	text-decoration: underline;
+}
+
+#header .searchPanel input[type=text] {
+	width: 300px;
+}
+.searchPanel {
+	white-space: nowrap;
+}
+
+#mainBar {
+	/*border-bottom: solid 1px #0E7ADE;*/
+	height: 60px; /* push down the search below */
+	
+	background-position:top left;
+	background-image: url('../images/blueline.png');
+	background-repeat: repeat-x;
+}
+
+.infoPageContent {
+	width:650px;
+	margin-left:180px;
+	margin-right:auto;
+}
+
+/* visural-wicket drpdown control*/
+#content span.visural_dropdown_border {
+	border:1px solid darkgrey;
+}
+#content div.visural_dropdown {
+	border:1px solid darkgrey;
+}
+
+/*---------------------------------------------------*/
+/*-------------- feedbackPanel  ---------------------*/
+/*---------------------------------------------------*/
+
+.feedback ul {
+}
+
+#commonFeedbackPanel {
+	border: 1px solid #DDDDDD;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-bottom: 1em;
+	font-size: 100%;
+}
+
+#commonFeedbackPanel ul {
+	margin-left: 15px;
+}
+
+.feedback li {
+	list-style-type:none;
+}
+
+span.feedbackPanelERROR {
+	color: red;
+}
+
+li.feedbackPanelERROR {
+    list-style-image: url(../images/messages/error.gif);
+	list-style-type:square;
+}
+
+span.feedbackPanelINFO {
+	color: green;
+}
+
+li.feedbackPanelINFO {
+    list-style-image: url(../images/messages/info.gif);
+	list-style-type:square;
+}
+
+span.feedbackPanelWARNING {
+	color: black;
+}
+
+li.feedbackPanelWARNING {
+    list-style-image: url(../images/messages/warning.gif);
+	list-style-type:square;
+}
+
+span.feedbackPanelFATAL {
+	color: red;
+}
+
+li.feedbackPanelFATAL {
+    list-style-image: url(../images/messages/fatal.gif);
+	list-style-type:square;
+}
+
+span.feedbackPanelUNDEFINED {
+}
+
+li.feedbackPanelUNDEFINED {
+}
+
+span.feedbackPanelDEBUG {
+}
+
+li.feedbackPanelDEBUG {
+}
+
+/*---------------------------------------------------*/
+/*----------------------BUTTONS----------------------*/
+/*---------------------------------------------------*/
+
+.button {
+	background: #C0C0C0 url(../images/button_shine2.jpg) repeat-x 0 0;
+	color: #000000;
+	border-color: gray;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0;
+	padding: 1px 6px;
+	font-size: 11px;
+	line-height: 11px;
+	text-decoration: none;
+	white-space: nowrap;
+	
+	/* Round corners */
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.button[disabled],.button_disabled {
+	background: #D0D0D0 url(../images/button_shine_disabled2.jpg) repeat-x 0 0;
+	color: #606060;
+	border-color: #909090;
+	text-decoration: none;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0;
+	padding: 1px 6px;
+	font-size: 11px;
+	line-height: 11px;
+	text-decoration: none;
+	white-space: nowrap;
+	/* Round corners */
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.button:hover {
+	background: lightblue url(../images/button_shine_hover2.jpg) repeat-x 0 0;
+	border-color: #8080FF;
+	text-decoration: none;
+}
+
+.button[disabled]:hover,.button_disabled:hover {
+	background: #D0D0D0 url(../images/button_shine_disabled2.jpg) repeat-x 0 0;
+	color: #606060;
+	border-color: #909090;
+	cursor: default;
+	text-decoration: none;
+}
+
+
+/*---------------------------------------------------*/
+/*-------------------TREE----------------------------*/
+/*---------------------------------------------------*/
+
+/* Fixed problem with the Wicket Tree,
+because it's using the table properties set above! */
+.my-tree table {
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px;
+}
+
+.my-tree table td {
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px;
+}
+
+/*
+.my-tree table th {
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px;
+}
+*/
+
+.my-tree {
+	min-width: 16em;
+}
+
+/*---------------------------------------------------*/
+/*-----------more tables and lists-------------------*/
+/*---------------------------------------------------*/
+
+/* slightly improved, specific for the projectinfo */
+#projectinfo table {
+	border-collapse: collapse;
+}
+
+#projectinfo table th {
+	text-align: left;
+	vertical-align: text-top;
+}
+
+#projectinfo table td {
+	vertical-align: text-top;
+}
+
+/* projects_table also, maybe make class for it */
+#projects_table {
+	border-collapse: collapse;
+}
+
+#projects_table th {
+	text-align: left;
+	vertical-align: text-top;
+}
+
+#projects_table td {
+	vertical-align: text-top;
+}
+
+/* generic data tabel */
+#dendro_infotable {
+	border-collapse: collapse;
+}
+
+#dendro_infotable th {
+	text-align: left;
+	vertical-align: top;
+}
+
+#dendro_infotable td {
+	vertical-align: top;
+}
+
+#dendro_infotable table {
+	border-collapse: collapse;
+	/* border: solid 1px grey; */
+	width: 100%; /* NEW expand to full width! */
+}
+
+/*  class for lists in a table, should replace projects_table */
+.list_table {
+	border-collapse: collapse;
+}
+
+.list_table th {
+	text-align: left;
+	vertical-align: text-top;
+}
+
+.list_table td {
+	vertical-align: text-top;
+	/* pboon */
+	border: solid 1px grey;
+}
+
+/* results_table */
+#results_table {
+	border-collapse: collapse;
+	border-width: 0px;
+}
+
+#results_table th {
+	text-align: left;
+	vertical-align: text-top;
+}
+
+#results_table td {
+	vertical-align: text-top;
+}
+
+/* dendro_table  as class*/
+.dendro_table {
+	border-collapse: collapse;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+.dendro_table th {
+	text-align: left;
+	vertical-align: text-top;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+.dendro_table td {
+	vertical-align: text-top;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+.layout_table {
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px;
+	background-color: transparent;
+}
+
+.layout_table td {
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px;
+	background-color: transparent;
+}
+
+.layout_tight_table {
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px;
+	background-color: transparent;
+	
+	padding:0px;
+	margin:0px;
+
+	/* needed to remove unwanted spacing in IE6 & 7 */
+	border-collapse: collapse;
+	/*
+	border-spacing: 0px;
+	cellpadding: 0px;
+	cellspacing: 0px;
+	*/
+}
+
+.layout_tight_table td {
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px;
+	background-color: transparent;
+
+	padding:0px;
+	margin:0px;
+}
+
+/* Upload Files */
+.combined_upload_warnings {
+	margin-top: 5px;
+	padding: 3px;
+	/*
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    */
+}
+
+.advancedSearchInput {
+	background-color: #f3f5f6;
+	padding: 10px;
+}
+
+.advancedSearchFieldsTable {
+	margin-top: 0.5em;
+	margin-right: 1.5em;
+	background-color: transparent;
+/*
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+*/	
+}
+
+.advancedSearchFieldsTable td {
+	background-color: transparent;
+}
+
+.advancedSearchFieldsTable th {
+	background-color: transparent;
+}
+
+/* permission settings */
+aboutLevelsMessage em {
+	text-decoration: underline;
+}
+
+/* used for displaying xml source code, has inner pre element */
+.xml_source {
+	width: 40em;
+	height: 10em;
+	overflow: scroll;
+}

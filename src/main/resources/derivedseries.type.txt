@@ -1,0 +1,6 @@
+en	nl	de	fr
+published chronology	gepubliseerde kalender	publizierte Chronology	chronologie publiée
+individual measurementSeries	individuele meetreeks	individuelle Jahrringserie	mesure individuelle
+unpublished chronology	ongepubliseerde kalender	nicht publizierte Chronology	chronologie inédite
+average of single sample	gemiddelde boomcurve	gemittelte Einzelserien	moyenne dendrochronologique individuelle
+other	anders	andere	autre

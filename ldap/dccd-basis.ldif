@@ -1,0 +1,60 @@
+version: 1
+
+#dn: dc=dans,dc=knaw,dc=nl
+#objectclass: dcObject
+#objectclass: organization
+#dc: dans
+#o: knaw
+#description: DANS-KNAW
+
+dn: ou=dccd,dc=dans,dc=knaw,dc=nl
+objectClass: top
+objectClass: organizationalUnit
+objectClass: extensibleObject
+ou: dccd
+
+dn: ou=organisations,ou=dccd,dc=dans,dc=knaw,dc=nl
+objectClass: top
+objectClass: organizationalUnit
+objectClass: extensibleObject
+ou: organisations
+
+dn: ou=users,ou=dccd,dc=dans,dc=knaw,dc=nl
+objectClass: top
+objectClass: organizationalUnit
+objectClass: extensibleObject
+ou: users
+
+dn: ou=KNAW,ou=organisations,ou=dccd,dc=dans,dc=knaw,dc=nl
+objectClass: top
+objectClass: organizationalUnit
+objectClass: dccdUserOrganisation
+ou: KNAW
+dansState: ACTIVE
+l: Amsterdam
+st: The Netherlands
+uniqueMember: uid=dccduseradmin,ou=users,ou=dccd,dc=dans,dc=knaw,dc=nl
+
+dn: uid=dccduseradmin,ou=users,ou=dccd,dc=dans,dc=knaw,dc=nl
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: dansUser
+objectClass: dccdUser
+cn: dccduseradmin, .
+sn: dccduseradmin
+uid: dccduseradmin
+dansAcceptConditionsOfUse: TRUE
+dansLastLogin: 20150204145907Z
+dansState: ACTIVE
+dccdRoles: USER
+dccdRoles: ADMIN
+displayName: . dccduseradmin
+initials: .
+l: .
+mail: FILL_IN@YOUR_EMAIL
+o: KNAW
+# DEFAULT PASSWORD: root
+userPassword: {SSHA}C6iqKQ2A76f0DYlpkNjTHKZ0c9RmYjTO
+

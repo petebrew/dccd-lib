@@ -1,0 +1,27 @@
+Dear ~DccdUserImpl.getDisplayName~,
+
+
+
+Thank you very much for submitting your project '~Project.getTitle~' to the Digital Collaboratory for Cultural Dendrochronology (DCCD) at DANS. This e-mail contains information regarding your projects availability, implementation of changes in the content of the project, and the License Agreement.
+
+
+Availability
+Your project is now available to the public, according to the permissions indicated by you. DANS guarantees that your data will remain accessible and safely stored for the long term.
+
+
+Implementing changes
+To implement changes to the metadata or upload complementary files, either now or in the future, you create a new project again. If the new project has the same ID as the previous project, please contact the DCCD manager at DANS. The manager will remove the old project, after which you can upload the new version. 
+In the near future you will also have the option of creating a new version of a project using the same ID. Previous versions will then also remain accessible. 
+
+
+License Agreement
+Attached is a copy of the License Agreement with the terms and conditions such as agreed to by you and DCCD/DANS when you deposited the data.
+
+
+
+Data Archiving and Networked Services
+Anna van Saksenlaan 10
+2593 HT The Hague - The Netherlands
+E info@dans.knaw.nl
+T + 31 (0)70 3446484
+W http://www.dans.knaw.nl

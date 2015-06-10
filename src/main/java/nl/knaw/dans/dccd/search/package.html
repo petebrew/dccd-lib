@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dccd.search</title>
+</head>
+<body>
+Profides classes (mostly SearchBeans) for making dccd information searchable (indexing and querying)
+
+<h2>Searching in DCCD</h2>
+
+<h3>Search types</h3>
+<p>
+DCCD supports three types of searches:
+<ul>
+	<li>My Projects search on the "My Projects" page of a logged-in member (refine)<br />
+	finds Projects of the member (archived and draft) and everything can be found and seen. 
+	</li>
+	<li>Public search with the input at the top of each page when NOT logged-in<br />
+	Only archived Objects can be found and the results show only the "open acces" information (with the location exception)
+	When a result is selected for getting more detailed information, the user is redirected to the login page. 
+	</li>
+	<li>Member search with the input at the top of each page when logged-in (also advanced search)<br />
+	Only archived objects, with respect to the permissions described by the next section.
+	When a result is selected for getting more detailed information, 
+	the complete project is made available showing the project structure (entity tree), 
+	but the entities content only when there is permissions
+	</li>
+</ul>
+</p>
+
+<h3>Permission</h3>
+<p>
+Only when logged-in you can have permission to see more than the socalled "open acces" information (with the location exception).
+For each (archived) project the manager can specify by the defaultlevel, what other members can see. 
+What makes the permissions complex is that for each member an exception can be made and 
+more permission then the default can be granted for a specific project. 
+Although the display of information is respecting these complex permission rules, the search add another challenge: <br />
+It should not be possible to find Objects by a match with a piece of information that the user is also not permitted to see!
+
+<!-- 
+ Gaat vooral om door slim te zoeken toch "infer knowleged" over dingen die je niet mag weten
+  
+Ga ervanuit dat extra permissies allen meer rechten geven aan de opgegeven users en niet minder dan de default!
+Het kan wel zo ingevoerd zijn, maar is eigenlijk onzinnig want 
+hij/zij kan snel een ander acount aanmaken en ziet dan automatisch meer. 
+Controle bij het toekennen van membership zou dit nog kunnen tegen gaan, maar dat kost wel veel moeite!
+
+NB: Filteren achteraf kan niet goed samengaan met gepagineerde antwoorden en is bovendien ondoenlijk bij tienduizenden antwoorden.
+
+ -->
+</p>
+
+<hr />
+The searching is facilitated by Solr, 
+and for changes in the SearchBeans we need to edit the Solr configuration files solrconfig.xml and schema.xml.
+ 
+The search results are displayed by the classes in the following package: 
+@see nl.knaw.dans.dccd.web.search
+
+The ProjectEntity and ObjecctEntity classes implement a fillSearchBean method.
+@see nl.knaw.dans.dccd.model.enties
+
+Project and object information is displayd by the datapanels
+@see nl.knaw.dans.dccd.web.datapanels
+
+</body>
+</html>

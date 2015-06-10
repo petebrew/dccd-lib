@@ -1,0 +1,21 @@
+en
+ARSTAN
+bootRes
+CDendro
+CooRecorder
+COREM
+CORINA
+CoRING
+DendroClim
+dplR
+FHX2
+LignoStation
+LignoVision
+MeasureJ2X
+Medir
+PAST
+Precon 5.1
+OpenRWL
+TREERING 3.0
+TSAP
+WinDENDRO

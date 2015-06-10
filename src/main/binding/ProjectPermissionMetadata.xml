@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+<mapping name="projectpermissionmetadata" class="nl.knaw.dans.dccd.model.ProjectPermissionMetadata"
+ ns="http://dans.knaw.nl/dccd/projectpermissionmetadata/" >
+    <namespace prefix="ppm" uri="http://dans.knaw.nl/dccd/projectpermissionmetadata/" />
+    <value name="defaultlevel" type="nl.knaw.dans.dccd.model.ProjectPermissionLevel" get-method="getDefaultLevel" set-method="setDefaultLevel"/>
+    <!--
+    <structure field="userpermissions" name="map" marshaller="org.jibx.extras.HashMapperStringToComplex" unmarshaller="org.jibx.extras.HashMapperStringToComplex" />
+     -->
+
+    <!-- As List -->
+    <collection name="userpermissions" get-method="getUserPermissionsArrayList" set-method="setUserPermissionsArrayList">
+        <structure name="userpermission" type="nl.knaw.dans.dccd.model.UserPermission">
+            <value name="user" field="userId" />
+            <value name="permissionlevel" field="level" />
+        </structure>
+    </collection>
+
+</mapping>
+
+</binding>

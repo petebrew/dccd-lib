@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+#advancedSearchForm {
+	padding-bottom: 15px;
+}
+
+#advancedSearchCloseButton {
+	float: right;
+}
+.search_adv_block {
+	margin: 1em 0 0 0;
+}
+
+#search_adv INPUT[type="text"] {
+	width: 160px; /* 260px; */
+}
+

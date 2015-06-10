@@ -1,0 +1,34 @@
+Dear ~DccdUserImpl.getDisplayName~,
+
+Thank you for your DCCD registration. The account details you supplied are:
+
+Account
+Username: ~DccdUserImpl.getId~
+E-mail: ~DccdUserImpl.getEmail~
+
+Person
+Title: ~DccdUserImpl.getTitle~
+Initials: ~DccdUserImpl.getInitials~
+Prefixes: ~DccdUserImpl.getPrefixes~
+Surname: ~DccdUserImpl.getSurname~
+Function: ~DccdUserImpl.getFunction~
+Telephone: ~DccdUserImpl.getTelephone~
+DAI: ~DccdUserImpl.getDigitalAuthorIdentifier~
+
+Organisation
+Name: ~DccdUserImpl.getOrganization~
+Address: ~DccdOrganisationImpl.getAddress~
+Postal code: ~DccdOrganisationImpl.getPostalCode~
+City: ~DccdOrganisationImpl.getCity~
+Country: ~DccdOrganisationImpl.getCountry~
+
+Note that your account will not be usable until your membership request has been approved.
+Also note that, for security reasons, your password is not included in this message.
+
+
+Data Archiving and Networked Services
+Anna van Saksenlaan 10
+2593 HT The Hague - The Netherlands
+E info@dans.knaw.nl
+T + 31 (0)70 3446484
+W http://www.dans.knaw.nl

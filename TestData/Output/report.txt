@@ -1,0 +1,17 @@
+
+File: dccd-webapp-testdata-maximal-v_1_tridas.xml:
+DCCD archiving validation result (empty when OK):
+The project has the same ID as the existing, archived project 'dccd-webapp-testdata-minimal-v_1': identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #2 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.schema.TridasElement)
+
+File: dccd-webapp-testdata-minimal-v_1_tridas.xml:
+DCCD archiving validation result (empty when OK):
+The project has the same ID as the existing, archived project 'dccd-webapp-testdata-minimal-v_1': identifier (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: category (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type #1 (org.tridas.schema.TridasProject)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.util.TridasObjectEx)
+Invalid DCCD controlled vocabulary term for: type (org.tridas.schema.TridasElement)

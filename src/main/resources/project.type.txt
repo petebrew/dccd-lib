@@ -1,0 +1,18 @@
+en	nl	fr
+anthropology	antropologie	l'anthropologie
+climatology	klimatologie 	climatologie
+dating	datering	datation
+ecology	ecologie	écologie
+entomology	entomologie	entomologie
+forest dynamics	bosdynamiek 	dynamique forestrière
+forest management studies	bosbeheer studies	études de gestion forestière
+forestry	bosbouw	foresterie
+hydrology	hydrologie	hydrologie
+geomorphology	geomorfologie	géomorphologie
+glaciology	glaciologie	glaciologie
+palaeo-ecology	paleo-ecologie	paléo-écologie
+provenancing	herkomst bepaling	provenance
+pyrochronology	pyrochronologie	pyrochronologie
+wood technology	hout technologie	technologie du bois
+wood biology	hout biologie	biologie du bois
+other: go to project.comments	anders: ga naar commentaar (project.commentaar)	autre: allez à commentaires (project.comments)

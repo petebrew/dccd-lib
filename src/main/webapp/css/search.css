@@ -1,0 +1,169 @@
+/*---------------------------------------------------*/
+/*-------------- Search  -----------------------*/
+/*---------------------------------------------------*/
+
+table.searchHits, table.searchHits td {
+    border-style: none;
+    border-color: transparent;
+    border-width: 0px;
+    background-color:transparent;
+}
+.resultMessage {
+	margin-bottom: 1em;
+}
+
+.sortPanel {
+	margin-bottom: 1em;
+}
+
+.refinement_panel {
+	background-color: #f3f5f6;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.refineHead {
+	width: 100%;
+	font-size: 110%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	color: black;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.breadCrumbs {
+	margin-bottom: 1em;
+}
+
+.breadCrumbs {
+}
+
+.breadCrumbs a {
+	color: #DD291E;
+	font-size: 95%;
+}
+
+.breadCrumbSeparator  {
+	margin-right: 1.1em;
+}
+
+.browseFacet .facet_name {
+	color: black;
+	font-size: 110%;
+	margin-bottom: 1em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.refinement_panel .facet_name {
+	/*color: black;*/
+	/* pboon: black is to dark here */
+	color: #404040;	
+	
+	color: black;
+	margin-bottom: 1em;
+}
+
+.pageBrowsePanel {
+	margin-top: 1em;
+}
+
+
+.searchHit {
+	color: black;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	width:100%;
+}
+
+.searchHit2 {
+	margin-right: 15px;
+	margin-left: -7px;
+	padding-left: 8px;
+	
+	/*pboon */
+	margin-top: 1px;
+	padding-top: 8px;
+	border: solid 1px lightgray;
+}
+
+/*.searchHit2:hover, .searchHit2:hover a:hover { */
+.searchHit2:hover {
+		background-color: #ECECFF;
+	
+	/* pboon: make it look more like a link */
+	cursor:pointer;cursor:hand;
+	/*pboon */
+	border: solid 1px lightblue;
+	
+}
+
+.odd {
+	/*background-color: #FFFFFF;*/
+	/* pboon: somehow it's slightly grey */
+	background-color: white;
+}
+
+.even {
+}
+
+
+a.searchHit {
+}
+
+div.searchHit:hover {
+	/*color: #00AAD6;*/
+	/* pboon: don't lower the contrast to much */
+	color: #202060;
+
+	/* pboon: make it look more like a link */
+	cursor:pointer;cursor:hand;
+}
+
+a.searchHit:hover {
+	color: #00AAD6;
+}
+
+.searchHit em {
+	/*background-color: #00EEEE;*/
+	/* pboon: highlighting the search result term seems to be a yellow thing instead of ugly cyan */
+	background-color: #FFD700;
+}
+
+
+.searchHit-header {
+	color: #9E0B0E;
+}
+
+.searchHit-footer {
+	clear:both;
+	font-style: italic;
+}
+
+.searchHit-colmask {
+	clear:both;
+	float:left;
+	width:100%;
+	overflow:hidden;
+	right:50%;
+}
+
+.searchHit-columns {
+	float:left;
+	width:100%;
+	position:relative;
+}
+
+.searchHit-col1,
+.searchHit-col2,
+.searchHit-col3 {
+	float:left;
+	position:relative;
+	width: 50%;
+}
+
+.searchHit-col2 .searchhitTitle {
+	font-weight: bold;
+}
+

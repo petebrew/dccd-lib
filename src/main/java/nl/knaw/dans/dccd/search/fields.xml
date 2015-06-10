@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+ <!-- only for the result, not searchable -->
+ <field name="tridas.project.identifier.domain" type="text" stored="true" multiValued="false" />
+ <field name="tridas.project.laboratory.combined" type="text" stored="true" multiValued="true" />
+
+<!-- Project -->
+   <field name="tridas.project.title" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.identifier" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.comments" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.type" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.project.type.normal" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.project.description" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.laboratory.name" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.project.laboratory.name.acronym" type="text" indexed="true" stored="true" multiValued="true" />
+   <!-- Changed in 1.2.1 -->
+   <field name="tridas.project.laboratory.address.cityOrTown" type="text" indexed="true" stored="true" multiValued="true" />
+   <!-- Changed in 1.2.1 -->
+   <field name="tridas.project.laboratory.address.country" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.project.category" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.category.normal" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.category.normalTridas" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.investigator" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.period" type="text" indexed="true" stored="true" multiValued="false" />
+   <field name="tridas.project.research.identifier" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.project.research.identifier.domain" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.project.research.description" type="text" indexed="true" stored="true" multiValued="true" />
+
+<!-- Object -->
+   <field name="tridas.object.title" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.identifier" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.comments" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.type" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.type.normal" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.description" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.creator" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.coverage.coverageTemporalFoundation" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.location.locationType" type="text" indexed="true" stored="true" multiValued="true" />
+   <field name="tridas.object.location.locationComment" type="text" indexed="true" stored="true" multiValued="true" />
+
+   <field name="tridas.object.genericField" type="text" indexed="true" stored="true" multiValued="true" />
+
+<!-- Element -->
+  <field name="tridas.element.title" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.element.identifier" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.element.type" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.element.type.normal" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.element.description" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.element.taxon" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.element.shape" type="text" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:double -->
+  <field name="tridas.element.altitude" type="double" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:integer -->
+  <field name="tridas.element.slope.angle" type="int" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:integer -->
+  <field name="tridas.element.slope.azimuth" type="int" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.element.soil.description" type="text" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:double -->
+  <field name="tridas.element.soil.depth" type="double" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.element.bedrock.description" type="text" indexed="true" stored="true" multiValued="true" />
+
+<!--  Sample -->
+  <field name="tridas.sample.title" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.sample.identifier" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.sample.type" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.sample.type.normal" type="text" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:date -->
+  <field name="tridas.sample.samplingDate" type="date_utc" indexed="true" stored="true" multiValued="true" />
+
+<!-- Radius -->
+  <field name="tridas.radius.title" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.radius.identifier" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.radius.woodCompleteness.pith" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.radius.woodCompleteness.heartwood" type="text" indexed="true" stored="true" multiValued="true" />
+  <!-- Changed in 1.2.1 -->
+  <field name="tridas.radius.woodCompleteness.heartwood.missingHeartwoodRingsToPith" type="int" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.radius.woodCompleteness.heartwood.missingHeartwoodRingsToPithFoundation" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.radius.woodCompleteness.sapwood" type="text" indexed="true" stored="true" multiValued="true" />
+  <!-- Changed in 1.2.1 -->
+  <field name="tridas.radius.woodCompleteness.sapwood.nrOfSapwoodRings" type="int" indexed="true" stored="true" multiValued="true" />
+  <!-- Changed in 1.2.1 -->
+  <field name="tridas.radius.woodCompleteness.sapwood.missingSapwoodRingsToBark" type="int" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.radius.woodCompleteness.sapwood.missingSapwoodRingsToBarkFoundation" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.radius.woodCompleteness.sapwood.lastRingUnderBark" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.radius.woodCompleteness.bark" type="text" indexed="true" stored="true" multiValued="true" />
+
+<!-- MeasurementSeries -->
+  <field name="tridas.measurementSeries.title" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.identifier" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.analyst" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.dendrochronologist" type="text" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:date -->
+  <field name="tridas.measurementSeries.measuringDate" type="date_utc" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.measuringMethod" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.measuringMethod.normal" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.interpretation.provenance" type="text" indexed="true" stored="true" multiValued="true" />
+  <!-- Changed in 1.2.1
+  <field name="tridas.measurementSeries.interpretation.usedSoftware" type="text" indexed="true" stored="true" multiValued="true" />
+  -->
+  <!-- xs:positiveInteger (year) -->
+  <field name="tridas.measurementSeries.interpretation.deathYear" type="int" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:positiveInteger (year) -->
+  <field name="tridas.measurementSeries.interpretation.firstYear" type="int" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:positiveInteger (year) Changed in 1.2.1 -->
+  <field name="tridas.measurementSeries.interpretation.pithYear" type="int" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:double -->
+  <field name="tridas.measurementSeries.interpretation.statFoundation.statValue" type="double" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.interpretation.statFoundation.usedSoftware" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.interpretation.statFoundation.type" type="text" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.interpretation.statFoundation.type.normal" type="text" indexed="true" stored="true" multiValued="true" />
+  <!-- xs:double -->
+  <field name="tridas.measurementSeries.interpretation.statFoundation.significanceLevel" type="double" indexed="true" stored="true" multiValued="true" />
+  <field name="tridas.measurementSeries.interpretationUnsolved" type="text" indexed="true" stored="true" multiValued="true" />
+
+</fields>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tridas:tridas xmlns:tridas="http://www.tridas.org/1.2.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml">
+    <tridas:project>
+        <tridas:title>dccd-webapp-testdata-maximal-v_1</tridas:title>
+        <tridas:identifier domain="test.org">TEST-P:1</tridas:identifier>
+        <tridas:createdTimestamp>2010-11-16T15:45:44.152+01:00</tridas:createdTimestamp>
+        <tridas:lastModifiedTimestamp>2010-11-16T15:45:45.591+01:00</tridas:lastModifiedTimestamp>
+        <tridas:comments>Comments</tridas:comments>
+        <tridas:type>datering</tridas:type>
+        <tridas:type>anders: ga naar commentaar (project.commentaar)</tridas:type>
+        <tridas:description>Description</tridas:description>
+        <tridas:laboratory>
+            <tridas:identifier domain="test.org">1</tridas:identifier>
+            <tridas:name acronym="acronym">aname</tridas:name>
+            <tridas:address>
+                <tridas:addressLine1>address 1</tridas:addressLine1>
+                <tridas:addressLine2>address 2</tridas:addressLine2>
+                <tridas:cityOrTown>city</tridas:cityOrTown>
+                <tridas:stateProvinceRegion>region</tridas:stateProvinceRegion>
+                <tridas:postalCode>postal code</tridas:postalCode>
+                <tridas:country>country</tridas:country>
+            </tridas:address>
+        </tridas:laboratory>
+        <tridas:laboratory>
+            <tridas:identifier domain="test.org">2</tridas:identifier>
+            <tridas:name acronym="acronym 2">name 2</tridas:name>
+            <tridas:address>
+                <tridas:addressLine1>line 1</tridas:addressLine1>
+                <tridas:addressLine2>line 2</tridas:addressLine2>
+                <tridas:cityOrTown>town</tridas:cityOrTown>
+                <tridas:stateProvinceRegion>state</tridas:stateProvinceRegion>
+                <tridas:postalCode>postalcode 2</tridas:postalCode>
+                <tridas:country>country 2</tridas:country>
+            </tridas:address>
+        </tridas:laboratory>
+        <tridas:category>archeologie</tridas:category>
+        <tridas:investigator>Investigator</tridas:investigator>
+        <tridas:period>Period</tridas:period>
+        <tridas:requestDate certainty="unknown">2010-11-16+01:00</tridas:requestDate>
+        <tridas:commissioner>Commissioner</tridas:commissioner>
+        <tridas:reference>reference 1</tridas:reference>
+        <tridas:reference>reference 2</tridas:reference>
+        <tridas:research>
+            <tridas:identifier domain="test.research.org">1</tridas:identifier>
+            <tridas:description>a research description</tridas:description>
+        </tridas:research>
+        <tridas:research>
+            <tridas:identifier domain="test.research.org">2</tridas:identifier>
+            <tridas:description>description 2</tridas:description>
+        </tridas:research>
+        <tridas:genericField type="xs:boolean" name="test data">1</tridas:genericField>
+        <tridas:genericField type="xs:int" name="number of measurements series">2</tridas:genericField>
+        <tridas:object>
+            <tridas:title>test object 1</tridas:title>
+            <tridas:identifier domain="test.org">TEST-O:1</tridas:identifier>
+            <tridas:createdTimestamp>2010-11-16T15:55:54.564+01:00</tridas:createdTimestamp>
+            <tridas:lastModifiedTimestamp certainty="after">2010-11-16T15:55:55.791+01:00</tridas:lastModifiedTimestamp>
+            <tridas:comments>a comment</tridas:comments>
+            <tridas:type lang="nl">Onbekend</tridas:type>
+            <tridas:description>a description</tridas:description>
+            <tridas:file xlink:href="1987020za001.pdf"/>
+            <tridas:creator>a creator</tridas:creator>
+            <tridas:owner>an owner</tridas:owner>
+            <tridas:coverage>
+                <tridas:coverageTemporal>some period</tridas:coverageTemporal>
+                <tridas:coverageTemporalFoundation>any foundation</tridas:coverageTemporalFoundation>
+            </tridas:coverage>
+            <tridas:location>
+                <tridas:locationGeometry>
+                    <gml:Point srsName="WGS 84">
+                        <gml:pos>4.00969 51.92261</gml:pos>
+                    </gml:Point>
+                </tridas:locationGeometry>
+                <tridas:locationType>growth location</tridas:locationType>
+                <tridas:locationPrecision></tridas:locationPrecision>
+                <tridas:locationComment>some comment</tridas:locationComment>
+                <tridas:address>
+                    <tridas:addressLine1>a1</tridas:addressLine1>
+                    <tridas:addressLine2>a2</tridas:addressLine2>
+                    <tridas:cityOrTown>town</tridas:cityOrTown>
+                    <tridas:stateProvinceRegion>state</tridas:stateProvinceRegion>
+                    <tridas:postalCode>code</tridas:postalCode>
+                    <tridas:country>country</tridas:country>
+                </tridas:address>
+            </tridas:location>
+            <tridas:genericField type="xs:string" name="test">test</tridas:genericField>
+            <tridas:element>
+                <tridas:title>test element 1</tridas:title>
+                <tridas:identifier domain="test.org">TEST-E:1</tridas:identifier>
+                <tridas:createdTimestamp certainty="exact">2010-11-16T16:08:39.230+01:00</tridas:createdTimestamp>
+                <tridas:lastModifiedTimestamp certainty="approximately">2010-11-16T16:08:40.222+01:00</tridas:lastModifiedTimestamp>
+                <tridas:comments>comment</tridas:comments>
+                <tridas:type lang="nl">Onbekend</tridas:type>
+                <tridas:description>description</tridas:description>
+                <tridas:taxon lang="nl">Quercus</tridas:taxon>
+                <tridas:shape normalTridas="unknown"></tridas:shape>
+                <tridas:dimensions>
+                    <tridas:unit normalTridas="millimetres"></tridas:unit>
+                    <tridas:height>0</tridas:height>
+                    <tridas:width>0</tridas:width>
+                    <tridas:depth>0</tridas:depth>
+                </tridas:dimensions>
+                <tridas:authenticity>authenticity</tridas:authenticity>
+                <tridas:location>
+                    <tridas:locationGeometry>
+                        <gml:Point srsName="WGS 84">
+                            <gml:pos>4.00969 51.92261</gml:pos>
+                        </gml:Point>
+                    </tridas:locationGeometry>
+                    <tridas:locationType>growth location</tridas:locationType>
+                    <tridas:locationPrecision></tridas:locationPrecision>
+                    <tridas:locationComment>comment</tridas:locationComment>
+                </tridas:location>
+                <tridas:processing>processing</tridas:processing>
+                <tridas:marks>marks</tridas:marks>
+                <tridas:altitude>0.0</tridas:altitude>
+                <tridas:slope>
+                    <tridas:angle>0</tridas:angle>
+                    <tridas:azimuth>0</tridas:azimuth>
+                </tridas:slope>
+                <tridas:soil>
+                    <tridas:description>Description</tridas:description>
+                    <tridas:depth>0.0</tridas:depth>
+                </tridas:soil>
+                <tridas:bedrock>
+                    <tridas:description>Bedrock</tridas:description>
+                </tridas:bedrock>
+                <tridas:sample>
+                    <tridas:title>test sample 1</tridas:title>
+                    <tridas:identifier domain="test.org">TEST-S:1</tridas:identifier>
+                    <tridas:createdTimestamp certainty="before">2010-11-16T16:10:31.337+01:00</tridas:createdTimestamp>
+                    <tridas:lastModifiedTimestamp certainty="unknown">2010-11-16T16:10:32.320+01:00</tridas:lastModifiedTimestamp>
+                    <tridas:comments>comment</tridas:comments>
+                    <tridas:type>divers</tridas:type>
+                    <tridas:description>description</tridas:description>
+                    <tridas:samplingDate certainty="unknown">2010-11-17+01:00</tridas:samplingDate>
+                    <tridas:position>position</tridas:position>
+                    <tridas:state>state</tridas:state>
+                    <tridas:knots>true</tridas:knots>
+                    <tridas:radius>
+                        <tridas:title>test radius 1</tridas:title>
+                        <tridas:identifier domain="test.org">TEST-R:1</tridas:identifier>
+                        <tridas:createdTimestamp>2010-11-16T16:11:02.318+01:00</tridas:createdTimestamp>
+                        <tridas:lastModifiedTimestamp>2010-11-16T16:11:03.318+01:00</tridas:lastModifiedTimestamp>
+                        <tridas:comments>comments</tridas:comments>
+                        <tridas:woodCompleteness>
+                            <tridas:ringCount>298</tridas:ringCount>
+                            <tridas:pith presence="absent"/>
+                            <tridas:heartwood presence="unknown">
+<tridas:missingHeartwoodRingsToPith>0</tridas:missingHeartwoodRingsToPith>
+<tridas:missingHeartwoodRingsToPithFoundation>0</tridas:missingHeartwoodRingsToPithFoundation>
+                            </tridas:heartwood>
+                            <tridas:sapwood presence="unknown">
+<tridas:nrOfSapwoodRings>0</tridas:nrOfSapwoodRings>
+<tridas:lastRingUnderBark presence="absent"></tridas:lastRingUnderBark>
+<tridas:missingSapwoodRingsToBark>0</tridas:missingSapwoodRingsToBark>
+<tridas:missingSapwoodRingsToBarkFoundation>0</tridas:missingSapwoodRingsToBarkFoundation>
+                            </tridas:sapwood>
+                            <tridas:bark presence="absent"/>
+                        </tridas:woodCompleteness>
+                        <tridas:azimuth>0</tridas:azimuth>
+                        <tridas:measurementSeries id="M651">
+                            <tridas:title>M1</tridas:title>
+                            <tridas:identifier domain="test.org">TEST-M:1</tridas:identifier>
+                            <tridas:createdTimestamp>2010-11-16T16:14:37.716+01:00</tridas:createdTimestamp>
+                            <tridas:lastModifiedTimestamp>2010-11-16T16:14:38.774+01:00</tridas:lastModifiedTimestamp>
+                            <tridas:comments>Comments</tridas:comments>
+                            <tridas:measuringDate certainty="exact">2010-11-16+01:00</tridas:measuringDate>
+                            <tridas:woodCompleteness>
+<tridas:ringCount>10</tridas:ringCount>
+<tridas:pith presence="absent"/>
+<tridas:heartwood presence="unknown">
+    <tridas:missingHeartwoodRingsToPith>0</tridas:missingHeartwoodRingsToPith>
+    <tridas:missingHeartwoodRingsToPithFoundation>0</tridas:missingHeartwoodRingsToPithFoundation>
+</tridas:heartwood>
+<tridas:sapwood presence="unknown">
+    <tridas:nrOfSapwoodRings>0</tridas:nrOfSapwoodRings>
+    <tridas:missingSapwoodRingsToBark>0</tridas:missingSapwoodRingsToBark>
+    <tridas:missingSapwoodRingsToBarkFoundation>0</tridas:missingSapwoodRingsToBarkFoundation>
+</tridas:sapwood>
+<tridas:bark presence="absent"/>
+                            </tridas:woodCompleteness>
+                            <tridas:analyst>Analyst</tridas:analyst>
+                            <tridas:dendrochronologist>Dendrochronologist</tridas:dendrochronologist>
+                            <tridas:measuringMethod normalTridas="measuring platform"></tridas:measuringMethod>
+                            <tridas:interpretationUnsolved/>
+                            <tridas:values>
+<tridas:variable normalTridas="ring width">Ring width</tridas:variable>
+<tridas:unit normalTridas="1/100th millimetres">1/100th millimetres</tridas:unit>
+<tridas:value value="101"/>
+<tridas:value value="102"/>
+<tridas:value value="103"/>
+<tridas:value value="104"/>
+<tridas:value value="105"/>
+<tridas:value value="106"/>
+<tridas:value value="107"/>
+<tridas:value value="108"/>
+<tridas:value value="109"/>
+<tridas:value value="110"/>
+                            </tridas:values>
+                        </tridas:measurementSeries>
+                    </tridas:radius>
+                    <tridas:radius>
+                        <tridas:title>test radius 2</tridas:title>
+                        <tridas:identifier domain="test.org">TEST-R:2</tridas:identifier>
+                        <tridas:createdTimestamp certainty="approximately">2010-11-17T11:47:47.945+01:00</tridas:createdTimestamp>
+                        <tridas:lastModifiedTimestamp certainty="exact">2010-11-17T11:47:50.596+01:00</tridas:lastModifiedTimestamp>
+                        <tridas:comments>Comments</tridas:comments>
+                        <tridas:woodCompleteness>
+                            <tridas:ringCount>233</tridas:ringCount>
+                            <tridas:averageRingWidth>105.0</tridas:averageRingWidth>
+                            <tridas:nrOfUnmeasuredInnerRings>0</tridas:nrOfUnmeasuredInnerRings>
+                            <tridas:nrOfUnmeasuredOuterRings>0</tridas:nrOfUnmeasuredOuterRings>
+                            <tridas:pith presence="absent"/>
+                            <tridas:heartwood presence="unknown">
+<tridas:missingHeartwoodRingsToPith>0</tridas:missingHeartwoodRingsToPith>
+<tridas:missingHeartwoodRingsToPithFoundation>0</tridas:missingHeartwoodRingsToPithFoundation>
+                            </tridas:heartwood>
+                            <tridas:sapwood presence="unknown">
+<tridas:nrOfSapwoodRings>0</tridas:nrOfSapwoodRings>
+<tridas:missingSapwoodRingsToBark>0</tridas:missingSapwoodRingsToBark>
+<tridas:missingSapwoodRingsToBarkFoundation>0</tridas:missingSapwoodRingsToBarkFoundation>
+                            </tridas:sapwood>
+                            <tridas:bark presence="absent"/>
+                        </tridas:woodCompleteness>
+                        <tridas:azimuth>0</tridas:azimuth>
+                        <tridas:measurementSeries id="M652">
+                            <tridas:title>M2</tridas:title>
+                            <tridas:identifier domain="test.org">TEST-M:2</tridas:identifier>
+                            <tridas:createdTimestamp>2010-11-16T16:28:46.812+01:00</tridas:createdTimestamp>
+                            <tridas:lastModifiedTimestamp>2010-11-16T16:28:47.971+01:00</tridas:lastModifiedTimestamp>
+                            <tridas:comments>Comments</tridas:comments>
+                            <tridas:measuringDate>2010-11-16+01:00</tridas:measuringDate>
+                            <tridas:woodCompleteness>
+<tridas:ringCount>10</tridas:ringCount>
+<tridas:averageRingWidth>105.0</tridas:averageRingWidth>
+<tridas:nrOfUnmeasuredInnerRings>0</tridas:nrOfUnmeasuredInnerRings>
+<tridas:nrOfUnmeasuredOuterRings>0</tridas:nrOfUnmeasuredOuterRings>
+<tridas:pith presence="absent"/>
+<tridas:heartwood presence="unknown">
+    <tridas:missingHeartwoodRingsToPith>0</tridas:missingHeartwoodRingsToPith>
+    <tridas:missingHeartwoodRingsToPithFoundation>0</tridas:missingHeartwoodRingsToPithFoundation>
+</tridas:heartwood>
+<tridas:sapwood presence="unknown">
+    <tridas:nrOfSapwoodRings>0</tridas:nrOfSapwoodRings>
+    <tridas:missingSapwoodRingsToBark>0</tridas:missingSapwoodRingsToBark>
+    <tridas:missingSapwoodRingsToBarkFoundation>0</tridas:missingSapwoodRingsToBarkFoundation>
+</tridas:sapwood>
+<tridas:bark presence="absent"/>
+                            </tridas:woodCompleteness>
+                            <tridas:analyst>Analyst</tridas:analyst>
+                            <tridas:dendrochronologist>Dendrochronologist</tridas:dendrochronologist>
+                            <tridas:measuringMethod normalTridas="measuring platform"></tridas:measuringMethod>
+                            <tridas:interpretation>
+<tridas:dating type="absolute"/>
+<tridas:firstYear suffix="AD" certainty="exact">1000</tridas:firstYear>
+<tridas:lastYear suffix="AD" certainty="exact">1010</tridas:lastYear>
+<tridas:statFoundation>
+    <tridas:statValue>0</tridas:statValue>
+    <tridas:type>type</tridas:type>
+    <tridas:usedSoftware>software</tridas:usedSoftware>
+</tridas:statFoundation>
+<tridas:pithYear suffix="AD" certainty="unknown">1000</tridas:pithYear>
+<tridas:deathYear suffix="AD" certainty="approximately">1010</tridas:deathYear>
+<tridas:provenance>Provenance</tridas:provenance>
+                            </tridas:interpretation>
+                            <tridas:values>
+<tridas:variable normalTridas="ring width">Ring width</tridas:variable>
+<tridas:unit normalTridas="1/100th millimetres">1/100th millimetres</tridas:unit>
+<tridas:value value="109"/>
+<tridas:value value="108"/>
+<tridas:value value="107"/>
+<tridas:value value="106"/>
+<tridas:value value="105"/>
+<tridas:value value="104"/>
+<tridas:value value="103"/>
+<tridas:value value="102"/>
+<tridas:value value="101"/>
+<tridas:value value="100"/>
+                            </tridas:values>
+                        </tridas:measurementSeries>
+                    </tridas:radius>
+                </tridas:sample>
+            </tridas:element>
+        </tridas:object>
+        <tridas:derivedSeries id="D165">
+            <tridas:title>test derivedseries 1</tridas:title>
+            <tridas:identifier domain="test.org">TEST-D:1</tridas:identifier>
+            <tridas:createdTimestamp>2010-11-16T16:27:44.302+01:00</tridas:createdTimestamp>
+            <tridas:lastModifiedTimestamp>2010-11-16T16:27:45.205+01:00</tridas:lastModifiedTimestamp>
+            <tridas:comments>Comments</tridas:comments>
+            <tridas:derivationDate>2010-11-16+01:00</tridas:derivationDate>
+            <tridas:type>Average of single sample</tridas:type>
+            <tridas:linkSeries>
+                <tridas:series>
+                    <tridas:identifier domain="test.org">TEST-S:1</tridas:identifier>
+                </tridas:series>
+            </tridas:linkSeries>
+            <tridas:objective>Objective</tridas:objective>
+            <tridas:standardizingMethod>Standardizing method</tridas:standardizingMethod>
+            <tridas:author>Author</tridas:author>
+            <tridas:version>Author</tridas:version>
+            <tridas:interpretationUnsolved/>
+            <tridas:location>
+                <tridas:locationGeometry>
+                    <gml:Point srsName="WGS 84">
+                        <gml:pos>4.00969 51.92261</gml:pos>
+                    </gml:Point>
+                </tridas:locationGeometry>
+                <tridas:locationType>growth location</tridas:locationType>
+                <tridas:locationPrecision></tridas:locationPrecision>
+                <tridas:locationComment>Comment</tridas:locationComment>
+            </tridas:location>
+            <tridas:values>
+<tridas:variable normalTridas="ring width">ring width</tridas:variable>
+<tridas:unit normalTridas="1/100th millimetres">1/100th millimetres</tridas:unit>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+                <tridas:value value="105"/>
+            </tridas:values>
+        </tridas:derivedSeries>
+    </tridas:project>
+</tridas:tridas>

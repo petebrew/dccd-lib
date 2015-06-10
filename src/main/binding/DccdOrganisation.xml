@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+<mapping name="dccdorganisation" class="nl.knaw.dans.dccd.model.DccdOrganisationImpl" abstract="true">
+  <!-- Note the id is also name -->
+  <value name="id" get-method="getId" set-method="setId"/>
+  <value name="address" get-method="getAddress" set-method="setAddress" usage="optional"/>
+  <value name="postalcode" get-method="getPostalCode" set-method="setPostalCode" usage="optional"/>
+  <value name="city" get-method="getCity" set-method="setCity" usage="optional"/>
+  <value name="country" get-method="getCountry" set-method="setCountry" usage="optional"/>
+  <value name="description" get-method="getDescription" set-method="setDescription" usage="optional"/>
+  <value name="state" get-method="getState" set-method="setState"/>
+  <!-- UserIds ? -->
+</mapping>
+</binding>

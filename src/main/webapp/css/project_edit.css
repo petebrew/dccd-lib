@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+/* make editable more different from view */
+#dendro_infotable th {
+	background-color: #ECECFF;	
+}
+.inputExample {
+	background-color: #ECECFF;/*#FFFAB9*/;	
+	background-image:url(../images/icon_i_blue.png);
+	background-repeat:no-repeat;
+	background-position:3px 3px;
+	padding-left:20px;
+	padding-right:3px;
+	margin-left: 0.5em;
+}

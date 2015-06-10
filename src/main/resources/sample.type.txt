@@ -1,0 +1,11 @@
+en	nl	de	fr
+cross section	dwars doorsnede	Querschnitt	section transversale
+core	boorkern	Bohrkern	carotte
+MRI	MRI	MRI	MRI
+none	geen	keine	aucun
+photo	foto	Foto	photo
+physical imprint	hout afdruk	Ausdruck	moulage
+scan	scan	Scan	scan
+wedge	wig	Keil	section
+various	divers	divers	divers
+other	anders	andere	autre
