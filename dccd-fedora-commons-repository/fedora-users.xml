@@ -1,0 +1,30 @@
+<?xml version='1.0' ?>
+  <users>
+    <user name="fedoraAdmin" password="password:fedoraAdmin">
+      <attribute name="fedoraRole">
+        <value>administrator</value>
+      </attribute>
+    </user>
+    <user name="dccd_webui" password="password:dccd_webui">
+      <attribute name="fedoraRole">
+        <value>administrator</value>
+      </attribute>
+    </user>
+    <user name="dccd_rest" password="password:dccd_rest">
+      <attribute name="fedoraRole">
+        <value>administrator</value>
+      </attribute>
+    </user>
+    <user name="dccd_oai" password="password:dccd_oai">
+      <attribute name="fedoraRole">
+        <value>administrator</value>
+      </attribute>
+    </user>
+    <user name="fedoraIntCallUser" 
+      password="password:fedoraIntCallUser">
+      <attribute name="fedoraRole">
+        <value>fedoraInternalCall-1</value>
+        <value>fedoraInternalCall-2</value>
+      </attribute>
+    </user>
+  </users>

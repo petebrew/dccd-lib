@@ -314,7 +314,7 @@
 					<!-- <changelogFile>src/changelog</changelogFile>-->
 					<mappings>
 						<mapping>
-							<directory>/usr/share/dccd/dccd-fedora-commons-repository</directory>
+							<directory>/opt/dccd/dccd-fedora-commons-repository</directory>
 							<filemode>655</filemode>
 							<username>root</username>
 							<groupname>root</groupname>
@@ -326,7 +326,7 @@
 							</sources>
 						</mapping>
 						<mapping>
-							<directory>/usr/share/dccd/dccd-home</directory>
+							<directory>/opt/dccd/dccd-home</directory>
 							<filemode>655</filemode>
 							<username>root</username>
 							<groupname>root</groupname>
@@ -338,7 +338,7 @@
 							</sources>
 						</mapping>			
 						<mapping>
-							<directory>/usr/share/dccd/ldap</directory>
+							<directory>/opt/dccd/ldap</directory>
 							<filemode>655</filemode>
 							<username>root</username>
 							<groupname>root</groupname>
@@ -350,7 +350,7 @@
 							</sources>
 						</mapping>			
 						<mapping>
-							<directory>/usr/share/dccd/solr</directory>
+							<directory>/opt/dccd/solr</directory>
 							<filemode>655</filemode>
 							<username>root</username>
 							<groupname>root</groupname>
@@ -362,7 +362,7 @@
 							</sources>
 						</mapping>
 						<mapping>
-							<directory>/usr/share/dccd/util</directory>
+							<directory>/opt/dccd/util</directory>
 							<filemode>655</filemode>
 							<username>root</username>
 							<groupname>root</groupname>
@@ -374,13 +374,24 @@
 							</sources>
 						</mapping>
 						<mapping>
-							<directory>/usr/share/dccd/apache</directory>
+							<directory>/opt/dccd/apache</directory>
 							<filemode>655</filemode>
 							<username>root</username>
 							<groupname>root</groupname>
 							<sources>
 								<source>
 									<location>target/classes/dccd.conf</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/opt/dccd</directory>
+							<filemode>655</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+							<sources>
+								<source>
+									<location>target/classes/post-rpm-install.sh</location>
 								</source>
 							</sources>
 						</mapping>
@@ -394,10 +405,10 @@
 						<require>openldap-servers</require>
 						<require>openldap-clients</require>
 					</requires>
-					<postinstallScriptlet>
+					<!-- <postinstallScriptlet>
 					  <scriptFile>src/main/bin/postinstall.sh</scriptFile>
 					  <fileEncoding>utf-8</fileEncoding>
-					</postinstallScriptlet>				
+					</postinstallScriptlet>-->				
 				</configuration>
 			</plugin>
 
