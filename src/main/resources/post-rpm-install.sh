@@ -71,6 +71,10 @@ printf "\n\n"
 read -p "Enter email address for the system administrator: " adminEmail
 printf "\n\n"
 
+printf "\n\n"
+read -p "Enter SMTP host for sending emails: " smtpHost
+printf "\n\n"
+
 
 ################################
 # Java JDK
@@ -102,7 +106,7 @@ printf "  Configuring Apache Tomcat environment for DCCD:\n"
 # DONE by rpm-maven-plugin
 
 # 2.4.2 Give the Tomcat 6 jvm more memory to work with
-echo 'JAVA_OPTS="${JAVA_OPTS} -Xmx2048m -Xms2048m -server -XX:PermSize=256m -XX:MaxPermSize=256m -XX:+AggressiveHeap"' >> /etc/tomcat6/tomcat6.conf
+echo -e '\n# Increase JVM memory size\nJAVA_OPTS="${JAVA_OPTS} -Xmx2048m -Xms2048m -server -XX:PermSize=256m -XX:MaxPermSize=256m -XX:+AggressiveHeap"' >> /etc/tomcat6/tomcat6.conf
 
 # 2.4.3 Configure Tomcat 6 to expect UTF-8 in percent-encoded bytes
 cp /etc/tomcat6/server.xml /etc/tomcat6/server.xml.bak
@@ -306,7 +310,20 @@ cp /opt/dccd/solr/config-tomcat/solr.xml /etc/tomcat6/Catalina/localhost
 # DCCD Web frontend 
 ################################
 
+# 4.1.1 Create the dccd-home dir
+# The director is already created by rpm-maven-plugin, but we need to configure the .properties files
+sed -i -e "s?###Fill-In-fedoraAdmin-password###?$fedora_db_admin?" /opt/dccd/dccd-home/dccd.properties
+sed -i -e "s?###Fill-In-ldapadmin-password###?$ldapadminsha?" /opt/dccd/dccd-home/dccd.properties
+sed -i -e "s?###Fill-In-email###?$adminEmail?" /opt/dccd/dccd-home/dccd.properties
+sed -i -e "s?###Fill-In-host###?$smtpHost?" /opt/dccd/dccd-home/dccd.properties
+echo -e '\n# DCCD home directory\nJAVA_OPTS=\"${JAVA_OPTS} -Ddccd.home=/opt/dccd/dccd-home\"' >> /etc/tomcat6/tomcat6.conf
 
+# 4.1.7 Limit access to passwords
+chmod 0600 /opt/dccd/dccd-home/dccd.properties
+
+#
+# Remaining steps performed by dccd-webui package
+#
 
 ################################
 # DCCD RESTful interface
