@@ -24,9 +24,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jibx.version>1.2.4.5</jibx.version>
 		<dans-common-legacy.version>1.0</dans-common-legacy.version>
-		
-		<!-- This should be set to the true domain of the server where this instance is going to be run -->
-		<server.domain>my.server.domain.com</server.domain>
 	</properties>
 
 	<dependencies>
@@ -307,82 +304,24 @@
 				<configuration>
 					<license>Apache 2.0</license>
 					<distribution>DANS</distribution>
-					<group>Application/Collectors</group>
+					<group>Application/Internet</group>
 					<!-- <icon>src/main/resources/icon.gif</icon>-->
 					<packager>Peter Brewer</packager>
-					<prefix>/usr/local</prefix>
+					<prefix>/opt</prefix>
 					<!-- <changelogFile>src/changelog</changelogFile>-->
 					<mappings>
 						<mapping>
-							<directory>/opt/dccd/dccd-fedora-commons-repository</directory>
+							<directory>/opt/dccd/</directory>
 							<filemode>655</filemode>
 							<username>root</username>
 							<groupname>root</groupname>
 							<recurseDirectories>true</recurseDirectories>
 							<sources>
 								<source>
-									<location>src/main/assembly/dccd-fedora-commons-repository</location>
+									<location>src/main/assembly/</location>
 								</source>
 							</sources>
 						</mapping>		
-						<mapping>
-							<directory>/opt/dccd/ldap</directory>
-							<filemode>655</filemode>
-							<username>root</username>
-							<groupname>root</groupname>
-							<recurseDirectories>true</recurseDirectories>
-							<sources>
-								<source>
-									<location>src/main/assembly/ldap</location>
-								</source>
-							</sources>
-						</mapping>			
-						<mapping>
-							<directory>/opt/dccd/solr</directory>
-							<filemode>655</filemode>
-							<username>root</username>
-							<groupname>root</groupname>
-							<recurseDirectories>true</recurseDirectories>
-							<sources>
-								<source>
-									<location>src/main/assembly/solr</location>
-								</source>
-							</sources>
-						</mapping>
-						<mapping>
-							<directory>/opt/dccd/util</directory>
-							<filemode>655</filemode>
-							<username>root</username>
-							<groupname>root</groupname>
-							<recurseDirectories>true</recurseDirectories>
-							<sources>
-								<source>
-									<location>src/main/assembly/util</location>
-								</source>
-							</sources>
-						</mapping>
-						<mapping>
-							<directory>/opt/dccd/apache</directory>
-							<filemode>655</filemode>
-							<username>root</username>
-							<groupname>root</groupname>
-							<sources>
-								<source>
-									<location>target/classes/dccd.conf</location>
-								</source>
-							</sources>
-						</mapping>
-						<mapping>
-							<directory>/opt/dccd</directory>
-							<filemode>655</filemode>
-							<username>root</username>
-							<groupname>root</groupname>
-							<sources>
-								<source>
-									<location>src/main/assembly/dccd-lib-post-install.sh</location>
-								</source>
-							</sources>
-						</mapping>
 					</mappings>
 					<requires>
 						<require>tomcat6</require>
@@ -392,11 +331,7 @@
 						<require>postgresql-server</require>
 						<require>openldap-servers</require>
 						<require>openldap-clients</require>
-					</requires>
-					<!-- <postinstallScriptlet>
-					  <scriptFile>src/main/bin/postinstall.sh</scriptFile>
-					  <fileEncoding>utf-8</fileEncoding>
-					</postinstallScriptlet>-->				
+					</requires>		
 				</configuration>
 			</plugin>
 

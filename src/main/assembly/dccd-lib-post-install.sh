@@ -8,6 +8,10 @@
 #
 # @author Peter Brewer (p.brewer@ltrr.arizona.edu)
 
+# Store output in log file as was as STDOUT
+exec > >(tee /var/log/dccd-lib-postinstall.log)
+exec 2>&1
+
 
 printf "\nCONFIGURING DCCD WEB APPLICATION BACKEND...\n\n"
 
@@ -23,7 +27,7 @@ printf "\nCONFIGURING DCCD WEB APPLICATION BACKEND...\n\n"
 function getNewPwd()
 {
     local __resultvar=$1
-    echo "Please enter the new password:"sudo
+    echo "Please enter the new password:"
     read -s pwd1
     echo "Please repeat the new password:"
     read -s pwd2
@@ -69,12 +73,15 @@ getNewPwd dccd_rest
 
 printf "\n\n"
 read -p "Enter email address for the system administrator: " adminEmail
-printf "\n\n"
+printf "\n"
 
 printf "\n\n"
 read -p "Enter SMTP host for sending emails: " smtpHost
-printf "\n\n"
+printf "\n"
 
+printf "\n\n"
+read -p "Enter domain name of this server: " serverDomain
+printf "\n"
 
 ################################
 # Java JDK
@@ -126,7 +133,9 @@ printf "  Configuring Apache HTTP Server for DCCD:\n"
 # DONE by rpm-maven-plugin
 
 # 2.5.2 Configure it so it serves as a tomcat proxy
-# DONE by rpm-maven-plugin - (apache conf file is stored in src/java/resources/dccd.conf)
+cp /opt/dccd/httpd/dccd.conf /etc/httpd/conf.d/
+sed -i -e 's/FILL.IN.YOUR@VALID-EMAIL/$adminEmail/' /etc/httpd/conf.d/dccd.conf
+sed -i -e 's/%%%SERVER_DOMAIN%%%/$serverDomain/' /etc/httpd/conf.d/dccd.conf
 
 # 2.5.3 Set up IPTables
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
@@ -148,9 +157,12 @@ printf "  Configuring PostGreSQL for DCCD:\n"
 service postgresql initdb
 
 # 2.6.3 Configure auto-vacuum (optional)
-cp /var/lib/pgsql/data/postgresql.conf /var/lib/pgsql/data/postgresql.conf.bak
-sed -i -e 's/#track_counts = on/track_counts = on/' /var/lib/pgsql/data/postgresql.conf
-sed -i -e 's/#autovacuum = on/autovacuum = on/' /var/lib/pgsql/data/postgresql.conf
+# Only do this if it's not been done already!
+if [ ! -f /var/lib/pgsql/data/postgresql.conf.dccd.bak ]; then
+   cp /var/lib/pgsql/data/postgresql.conf /var/lib/pgsql/data/postgresql.conf.dccd.bak
+   sed -i -e 's/#track_counts = on/track_counts = on/' /var/lib/pgsql/data/postgresql.conf
+   sed -i -e 's/#autovacuum = on/autovacuum = on/' /var/lib/pgsql/data/postgresql.conf
+fi
 
 # 2.6.4 Configure database to accept user/password credentials
 # User should do this step manually after installation
@@ -196,7 +208,7 @@ cp /opt/dccd/dccd-fedora-commons-repository/fedora.sh /etc/profile.d/
 /opt/dccd/dccd-fedora-commons-repository/fedora.sh
 
 # 3.1.4 Run the Fedora Commons installer
-printf "Downloading Fedora Commons v3.5 installer.  This may take some time...\n";
+printf "\nDownloading Fedora Commons v3.5 installer.  This may take some time...\n\n";
 wget -O /opt/dccd/dccd-fedora-commons-repository/fcrepo-installer-3.5.jar http://sourceforge.net/projects/fedora-commons/files/fedora/3.5/fcrepo-installer-3.5.jar/download
 cp /opt/dccd/dccd-fedora-commons-repository/install.properties /opt/dccd/dccd-fedora-commons-repository/install.properties.2
 sed -i -e 's/database.password=/database.password=$fedora_db_admin/' /opt/dccd/dccd-fedora-commons-repository/install.properties.2
@@ -261,26 +273,27 @@ ldapadd -v -Y EXTERNAL -H ldapi:/// -f /opt/dccd/ldap/dans-schema.ldif
 # 3.2.3 Add DCCD database
 ldapadd -v -Y EXTERNAL -H ldapi:/// -f /opt/dccd/ldap/dccd-db.ldif
 
+# 3.2.4 Add basic entries to the DCCD database
+sed -i -e 's/FILL.IN.YOUR@VALID-EMAIL/$adminEmail/' /opt/dccd/ldap/dccd-basis.ldif
+ldapadd -w secret -D cn=ldapadmin,dc=dans,dc=knaw,dc=nl -f /opt/dccd/ldap/dccd-basis.ldif
+
 # 3.2.5 Change the ldapadmin password
 sed -i -e "s?CHANGEME?$ldapadminsha?" /opt/dccd/ldap/change-ldapadmin-pw.ldif
 ldapadd -v -Y EXTERNAL -H ldapi:/// -f /opt/dccd/ldap/change-ldapadmin-pw.ldif
 
-# 3.2.4 Add basic entries to the DCCD database
-sed -i -e 's/FILL.IN.YOUR@VALID-EMAIL/$adminEmail/' /opt/dccd/ldap/dccd-basis.ldif
-ldapadd -w $ldapadminsha -D cn=ldapadmin,dc=dans,dc=knaw,dc=nl -f /opt/dccd/ldap/dccd-basis.ldif
-
 # 3.2.6 Change the dccdadmin user’s application password
 sed -i -e "s?CHANGEME?$dccduseradminsha?" /opt/dccd/ldap/change-dccdadmin-user-pw.ldif
-ldapadd -w $ldapadminsha -D cn=ldapadmin,dc=dans,dc=knaw,dc=nl -f /opt/dccd/ldap/change-dccdadmin-user-pw.ldif
+ldapadd -w "$ldapadmin" -D cn=ldapadmin,dc=dans,dc=knaw,dc=nl -f /opt/dccd/ldap/change-dccdadmin-user-pw.ldif
 
 ################################
 # DCCD SOLR Search Index 
 ################################
 
-printf "  Configuring Aoache SOLR environment for DCCD:\n"
+printf "  Configuring Apache SOLR environment for DCCD:\n"
 
 # 3.5.1 Install Apache SOLR 3.5
 cd /opt/dccd/ 
+printf "\nDownloading Apache SOLR v3.5 installer.  This may take some time...\n\n";
 wget http://archive.apache.org/dist/lucene/solr/3.5.0/apache-solr-3.5.0.tgz
 tar -xzf apache-solr-3.5.0.tgz -C /opt
 rm /opt/dccd/apache-solr-3.5.0.tgz
@@ -306,34 +319,10 @@ chown -R tomcat:tomcat /data/solr
 cp /opt/dccd/solr/config-tomcat/solr.xml /etc/tomcat6/Catalina/localhost
 
 
-################################
-# DCCD Web frontend 
-################################
 
-# 4.1.1 Create the dccd-home dir
-# The director is already created by rpm-maven-plugin, but we need to configure the .properties files
-sed -i -e "s?###Fill-In-fedoraAdmin-password###?$fedora_db_admin?" /opt/dccd/dccd-home/dccd.properties
-sed -i -e "s?###Fill-In-ldapadmin-password###?$ldapadminsha?" /opt/dccd/dccd-home/dccd.properties
-sed -i -e "s?###Fill-In-email###?$adminEmail?" /opt/dccd/dccd-home/dccd.properties
-sed -i -e "s?###Fill-In-host###?$smtpHost?" /opt/dccd/dccd-home/dccd.properties
-echo -e '\n# DCCD home directory\nJAVA_OPTS=\"${JAVA_OPTS} -Ddccd.home=/opt/dccd/dccd-home\"' >> /etc/tomcat6/tomcat6.conf
-
-# 4.1.7 Limit access to passwords
-chmod 0600 /opt/dccd/dccd-home/dccd.properties
-
-#
-# Remaining steps performed by dccd-webui package
-#
-
-################################
-# DCCD RESTful interface
-################################
-
-
-
-################################
-# DCCD OAI Module 
-################################
+#############################################################################
+# Remaining steps performed by dccd-webui, dccd-oai, and dccd-rest packages
+#############################################################################
 
 
 printf "\n\nDCCD backend configuration complete!\n\n";
