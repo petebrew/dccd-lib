@@ -23,7 +23,7 @@ printf "\nCONFIGURING DCCD WEB APPLICATION BACKEND...\n\n"
 function getNewPwd()
 {
     local __resultvar=$1
-    echo "Please enter the new password:"
+    echo "Please enter the new password:"sudo
     read -s pwd1
     echo "Please repeat the new password:"
     read -s pwd2

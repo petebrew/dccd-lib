@@ -321,22 +321,10 @@
 							<recurseDirectories>true</recurseDirectories>
 							<sources>
 								<source>
-									<location>dccd-fedora-commons-repository</location>
+									<location>src/main/assembly/dccd-fedora-commons-repository</location>
 								</source>
 							</sources>
-						</mapping>
-						<mapping>
-							<directory>/opt/dccd/dccd-home</directory>
-							<filemode>655</filemode>
-							<username>root</username>
-							<groupname>root</groupname>
-							<recurseDirectories>true</recurseDirectories>
-							<sources>
-								<source>
-									<location>dccd-home</location>
-								</source>
-							</sources>
-						</mapping>			
+						</mapping>		
 						<mapping>
 							<directory>/opt/dccd/ldap</directory>
 							<filemode>655</filemode>
@@ -345,7 +333,7 @@
 							<recurseDirectories>true</recurseDirectories>
 							<sources>
 								<source>
-									<location>ldap</location>
+									<location>src/main/assembly/ldap</location>
 								</source>
 							</sources>
 						</mapping>			
@@ -357,7 +345,7 @@
 							<recurseDirectories>true</recurseDirectories>
 							<sources>
 								<source>
-									<location>solr</location>
+									<location>src/main/assembly/solr</location>
 								</source>
 							</sources>
 						</mapping>
@@ -369,7 +357,7 @@
 							<recurseDirectories>true</recurseDirectories>
 							<sources>
 								<source>
-									<location>util</location>
+									<location>src/main/assembly/util</location>
 								</source>
 							</sources>
 						</mapping>
@@ -391,7 +379,7 @@
 							<groupname>root</groupname>
 							<sources>
 								<source>
-									<location>target/classes/post-rpm-install.sh</location>
+									<location>src/main/assembly/dccd-lib-post-install.sh</location>
 								</source>
 							</sources>
 						</mapping>
