@@ -1,11 +1,11 @@
 version: 1
 
-#dn: dc=dans,dc=knaw,dc=nl
-#objectclass: dcObject
-#objectclass: organization
-#dc: dans
-#o: knaw
-#description: DANS-KNAW
+dn: dc=dans,dc=knaw,dc=nl
+objectclass: dcObject
+objectclass: organization
+dc: dans
+o: knaw
+description: DANS-KNAW
 
 dn: ou=dccd,dc=dans,dc=knaw,dc=nl
 objectClass: top
