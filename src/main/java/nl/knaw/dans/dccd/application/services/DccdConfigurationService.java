@@ -118,11 +118,11 @@ public class DccdConfigurationService implements ConfigurationService
 			} 
 			catch (FileNotFoundException e) 
 			{
-				logger.warn("Could not read settings, using defaults");
+				logger.warn("Settings file: '"+fileLocation + filename+"' could not be found, trying to use default settings, but missing credentials will likely cause deployment to fail.");
 			} 
 			catch (IOException e) 
 			{
-				logger.warn("Could not read settings, using defaults");
+				logger.warn("There was an IOException reing the settings file: '"+fileLocation + filename+"'.  Trying to use default settings, but missing credentials will likely cause deployment to fail.");
 			}
 			finally
 			{
