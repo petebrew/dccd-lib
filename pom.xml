@@ -24,6 +24,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jibx.version>1.2.4.5</jibx.version>
 		<dans-common-legacy.version>1.0</dans-common-legacy.version>
+<!-- 
+		<dendrofileio.version>1.1.0-SNAPSHOT</dendrofileio.version>
+		<tridasjlib.version>1.22.3</tridasjlib.version>
+ -->
+<!-- -->
+		<dendrofileio.version>1.1.1</dendrofileio.version>
+		<tridasjlib.version>1.22.4</tridasjlib.version>
+<!-- -->		
 	</properties>
 
 	<dependencies>
@@ -63,14 +71,13 @@
 		<!-- TRiDaS libs: TridasJLib & DendroFileIO -->
 		<dependency>
 			<groupId>org.tridas</groupId>
-			<artifactId>tridasjlib</artifactId>
-			<version>1.22.3</version>
+			<artifactId>dendrofileio</artifactId>
+			<version>${dendrofileio.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.tridas</groupId>
-			<artifactId>dendrofileio</artifactId>
-			<!-- <version>1.0.9</version> -->
-			<version>1.1.0-SNAPSHOT</version>
+			<artifactId>tridasjlib</artifactId>
+			<version>${tridasjlib.version}</version>
 		</dependency>
 
 		<!-- needed for TridasJLib -->
