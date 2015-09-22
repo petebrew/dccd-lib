@@ -1,4 +1,4 @@
-dn: uid=dccdadmin,ou=users,ou=dccd,dc=dans,dc=knaw,dc=nl
+dn: uid=dccduseradmin,ou=users,ou=dccd,dc=dans,dc=knaw,dc=nl
 changetype: modify
 replace: userPassword
 userPassword: CHANGEME
