@@ -174,8 +174,9 @@ public class TreeRingDataFileService  {
 		}
 		catch (ImpossibleConversionException e)
 		{
-			report(filePath, "Impossible to convert: " +e.getMessage());
-			throw new TreeRingDataFileServiceException(e);
+			report(filePath, "No value files saved, impossible to convert: " +e.getMessage());
+			logger.debug("No value files saved, impossible to convert: " +e.getMessage());
+			return filenames; // just an empty list, nothing saved!
 		}
 		catch (ConversionWarningException e)
 		{
