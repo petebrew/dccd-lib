@@ -37,7 +37,6 @@ import nl.knaw.dans.dccd.repository.xml.XMLFilesRepositoryService;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
-import org.tridas.io.exceptions.ImpossibleConversionException;
 
 public class passThroughOnlineTest
 {
@@ -238,13 +237,10 @@ public class passThroughOnlineTest
 			List<String> formatList = TreeRingDataFileService.getWritingFormats();
 			for (String format : formatList)
 			{	
-				// skip problematic stuff, and continue testing
-				if(format.compareTo("CSV") == 0 
-						|| format.compareTo("Microsoft Excel 97/2000/XP") == 0
-						|| format.compareTo("Microsoft Excel 2007") == 0
-						|| format.compareTo("ODF Spreadsheet") == 0
-						|| format.compareTo("FHX2") == 0) 
-					continue;
+				// Note: Could skip problematic formats, and continue testing
+				//if(format.compareTo("CSV") == 0 
+				//		|| format.compareTo("FHX2") == 0) 
+				//	continue;
 
 				// export
 				// construct the data to save

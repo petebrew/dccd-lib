@@ -39,7 +39,6 @@ import org.tridas.io.naming.INamingConvention;
 import org.tridas.io.util.FilePermissionException;
 import org.tridas.schema.TridasProject;
 
-
 /**
  * For loading and saving files (DccdTreeRingData)
  *
@@ -168,14 +167,14 @@ public class TreeRingDataFileService  {
 			else
 			{	
 				report(filePath, "No value files saved, conversion not completely possible");
-				logger.debug("No value files saved, conversion not completely possible");
+				logger.warn("No value files saved, conversion not completely possible");
 				return filenames; // just an empty list, nothing saved!
 			}
 		}
 		catch (ImpossibleConversionException e)
 		{
 			report(filePath, "No value files saved, impossible to convert: " +e.getMessage());
-			logger.debug("No value files saved, impossible to convert: " +e.getMessage());
+			logger.warn("No value files saved, impossible to convert: " +e.getMessage());
 			return filenames; // just an empty list, nothing saved!
 		}
 		catch (ConversionWarningException e)
