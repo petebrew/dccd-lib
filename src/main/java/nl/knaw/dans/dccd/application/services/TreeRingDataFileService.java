@@ -70,6 +70,10 @@ public class TreeRingDataFileService  {
 		// for example CARTRAS and Sheffield 
 		//list.remove("CATRAS");
 		//list.remove("Sheffield");
+		//
+		// LiPD is to experimental
+		list.remove("LiPD");
+		list.remove("LiPD (metadata only)");
 		
 		return list;
 	}
