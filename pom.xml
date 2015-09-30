@@ -22,16 +22,10 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jibx.version>1.2.4.5</jibx.version>
+		<jibx.version>1.2.5</jibx.version>
 		<dans-common-legacy.version>1.0</dans-common-legacy.version>
-<!-- 
-		<dendrofileio.version>1.1.0-SNAPSHOT</dendrofileio.version>
-		<tridasjlib.version>1.22.3</tridasjlib.version>
- -->
-<!-- -->
 		<dendrofileio.version>1.1.1</dendrofileio.version>
 		<tridasjlib.version>1.22.4</tridasjlib.version>
-<!-- -->		
 	</properties>
 
 	<dependencies>
