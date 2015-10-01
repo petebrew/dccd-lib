@@ -15,12 +15,10 @@
  ******************************************************************************/
 package nl.knaw.dans.dccd.application.services;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,8 +36,8 @@ import org.tridas.io.exceptions.ImpossibleConversionException;
 import org.tridas.io.exceptions.InvalidDendroFileException;
 import org.tridas.io.exceptions.NothingToWriteException;
 import org.tridas.io.naming.INamingConvention;
+import org.tridas.io.util.FilePermissionException;
 import org.tridas.schema.TridasProject;
-//import org.tridas.treeringdatafileio.TucsonFile;
 
 /**
  * For loading and saving files (DccdTreeRingData)
@@ -57,7 +55,6 @@ public class TreeRingDataFileService  {
 	public static List<String> getReadingFormats() 
 	{
 		List<String> list = new ArrayList<String>();
-		// make sure it's not a fixed sized list
 		list.addAll(Arrays.asList(TridasIO.getSupportedReadingFormats())); 
 		return list;
 	}
@@ -66,14 +63,17 @@ public class TreeRingDataFileService  {
 	public static List<String> getWritingFormats() 
 	{
 		List<String> list = new ArrayList<String>();
-		// make sure it's not a fixed sized list
 		list.addAll(Arrays.asList(TridasIO.getSupportedWritingFormats())); 
 		
-		// FIXME
-		// This workaround exclude some problematic formats; CARTRAS and Sheffield 
-		// give errors up to and including version 1.0.7-SNAPSHOT
-//		list.remove("CATRAS");
-//		list.remove("Sheffield");
+		// NOTE
+		// As a workaround you can exclude some problematic formats; 
+		// for example CARTRAS and Sheffield 
+		//list.remove("CATRAS");
+		//list.remove("Sheffield");
+		//
+		// LiPD is to experimental
+		list.remove("LiPD");
+		list.remove("LiPD (metadata only)");
 		
 		return list;
 	}
@@ -158,7 +158,7 @@ public class TreeRingDataFileService  {
 		// Note:  maybe create our own Defaults for the writers
 
 		report(filePath, "\nDCCD Export TRiDaS project\'" + data.getTridasProject().getTitle() +  "\' to format: " +formatString);
-		filenames.add("export_report.txt"); //???
+		filenames.add("export_report.txt"); 
 		
 		try
 		{
@@ -166,40 +166,49 @@ public class TreeRingDataFileService  {
 
 			if (canSave(writer)) 
 			{
-				// write the files to disk
 				writer.saveAllToDisk(filePath.getPath());
 			}
 			else
 			{	
 				report(filePath, "No value files saved, conversion not completely possible");
-				logger.debug("No value files saved, conversion not completely possible");
+				logger.warn("No value files saved, conversion not completely possible");
 				return filenames; // just an empty list, nothing saved!
 			}
 		}
 		catch (ImpossibleConversionException e)
 		{
-			report(filePath, "Impossible to convert: " +e.getMessage());
-			throw new TreeRingDataFileServiceException(e);
+			report(filePath, "No value files saved, impossible to convert: " +e.getMessage());
+			logger.warn("No value files saved, impossible to convert: " +e.getMessage());
+			return filenames; // just an empty list, nothing saved!
 		}
 		catch (ConversionWarningException e)
 		{
 			report(filePath, "TRiDaS Conversion warning: " + e.getWarning().getMessage());
 			logger.warn("TRiDaS Conversion warning: " + e.getWarning().getMessage());
-			// show warnings
+
 			ConversionWarning[] warnings = writer.getWarnings(); 
 			for(ConversionWarning warning : warnings)
 			{
 				report(filePath, "warning: " + warning.getMessage());
 				logger.debug("warning: " + warning.getMessage());
 			}
-			//throw new TreeRingDataFileServiceException(e);
-			// Ignore, it's a warning, 
-			// we could also store these warnings in a text file and add it to the downloaded zip
 		} 
-		catch (NothingToWriteException e) 
+		catch (NothingToWriteException e)
 		{
 			report(filePath, "TRiDaS Conversion: Nothing to write: " +e.getMessage());
 			logger.warn("TRiDaS Conversion: Nothing to write");
+		} 
+		catch (FilePermissionException e) 
+		{
+			report(filePath, "TRiDaS Conversion: No permission to write: " +e.getMessage());
+			logger.error("TRiDaS Conversion: No permission to write");
+			throw new TreeRingDataFileServiceException(e);
+		} 
+		catch (Exception e) 
+		{
+			report(filePath, "TRiDaS Conversion: Unable to write: " +e.getMessage());
+			logger.error("TRiDaS Conversion: Unable to write");
+			throw new TreeRingDataFileServiceException(e);
 		}
 
 		INamingConvention nc = writer.getNamingConvention();
