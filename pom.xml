@@ -497,18 +497,17 @@
 			<url>http://people.apache.org/repo/m2-incubating-repository/</url>
 		</repository>
 
+		<!--  Apache Snapshots -->
 		<repository>
-			<id>apache-snapshots</id>
-			<name>Apache Snapshot repository</name>
-			<url>http://people.apache.org/repo/m2-snapshot-repository</url>
+			<id>apache.snapshots</id>
+			<url>https://repository.apache.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-				<checksumPolicy>fail</checksumPolicy>
-			</snapshots>
 		</repository>
 
 		<!-- Codehaus -->
@@ -624,19 +623,19 @@
 			</snapshots>
 		</pluginRepository>
 
-		<!-- Apache snapshot -->
+		<!-- Apache snapshot -->	
 		<pluginRepository>
-			<id>apache-snapshots</id>
-			<name>Apache Snapshot repository</name>
-			<url>http://people.apache.org/repo/m2-snapshot-repository</url>
+			<id>apache.snapshots2</id>
+			<url>https://repository.apache.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
 		</pluginRepository>
-
+		
 		<pluginRepository>
 			<id>appfuse</id>
 			<url>http://static.appfuse.org/repository</url>
