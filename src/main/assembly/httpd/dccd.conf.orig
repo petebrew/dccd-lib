@@ -3,23 +3,23 @@
 	<VirtualHost *:80>
     	ServerAdmin FILL.IN.YOUR@VALID-EMAIL
     	ServerName %%%SERVER_DOMAIN%%%
-    	CustomLog "/var/log/httpd/%%%SERVER_DOMAIN%%%.log" combined
+    	CustomLog "/var/log/httpd/dccd-server.log" combined
 	
     	RewriteEngine  on
 
     	# The DCCD RESTfull API
 		# Comment out the next line to disable requests from external clients
-		#RewriteRule ^/dccd-rest/(.*)$ ajp://localhost:8009/dccd-rest/$1 [P]
+		# RewriteRule ^/dccd-rest/(.*)$ ajp://localhost:8009/dccd-rest/$1 [P]
 		
-		# The DCCD OAI-MPH
+		# The DCCD OAI-PMH
 		# Comment out the next line to disable requests from external clients
 		RewriteRule ^/oai/(.*)$ ajp://localhost:8009/dccd-oai/$1 [P]
 		
 		# The DCCD webapplication (GUI)
-		RewriteRule ^/dccd/(.*)$ %%%SERVER_DOMAIN%%%/$1
+		RewriteRule ^/dccd/(.*)$ http://%%%SERVER_DOMAIN%%%/$1
 		
 		RewriteRule ^/(.*)$ ajp://localhost:8009/dccd/$1 [P]
-		ProxyPassReverse / %%%SERVER_DOMAIN%%%/dccd/
+		ProxyPassReverse / http://%%%SERVER_DOMAIN%%%/dccd/
 		ProxyPassReverseCookiePath /dccd /
 	</VirtualHost>
 	
@@ -27,7 +27,7 @@
 	<VirtualHost *:80>
     	ServerAdmin FILL.IN.YOUR@VALID-EMAIL
     	ServerName %%%SERVER_DOMAIN%%%
-    	CustomLog "/var/log/httpd/%%%SERVER_DOMAIN%%%.log" combined
+    	CustomLog "/var/log/httpd/dccd-server.log" combined
 	
     	<Proxy *>
 		 Order Deny,Allow
