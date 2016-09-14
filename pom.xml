@@ -298,6 +298,11 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
+					<!-- exclude log4j -->
+					<excludes>
+						<exclude>**/log4j.properties</exclude>
+						<exclude>**/log4j.xml</exclude>
+					</excludes>
 					<archive>
 						<manifestEntries>
 							<Main-Class>com.myproject.Main</Main-Class>
