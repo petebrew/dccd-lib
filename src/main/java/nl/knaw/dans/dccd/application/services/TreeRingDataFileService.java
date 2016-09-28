@@ -35,6 +35,35 @@ import org.tridas.io.exceptions.ConversionWarningException;
 import org.tridas.io.exceptions.ImpossibleConversionException;
 import org.tridas.io.exceptions.InvalidDendroFileException;
 import org.tridas.io.exceptions.NothingToWriteException;
+import org.tridas.io.formats.belfastapple.BelfastAppleWriter;
+import org.tridas.io.formats.besancon.BesanconWriter;
+import org.tridas.io.formats.catras.CatrasWriter;
+import org.tridas.io.formats.corina.CorinaWriter;
+import org.tridas.io.formats.csvmatrix.CSVMatrixWriter;
+import org.tridas.io.formats.csvmetadatamatrix.CSVMetadataWriter;
+import org.tridas.io.formats.excelmatrix.ExcelMatrixWriter;
+import org.tridas.io.formats.fhx2.FHX2Writer;
+import org.tridas.io.formats.heidelberg.HeidelbergUnstackedWriter;
+import org.tridas.io.formats.heidelberg.HeidelbergWriter;
+import org.tridas.io.formats.heikkenensingle.HeikkenenSingleWriter;
+import org.tridas.io.formats.lipd.LiPDWriter;
+import org.tridas.io.formats.lipdmetadata.LiPDMetadataWriter;
+import org.tridas.io.formats.nottingham.NottinghamWriter;
+import org.tridas.io.formats.odfmatrix.ODFMatrixWriter;
+import org.tridas.io.formats.ooxml.OOXMLWriter;
+import org.tridas.io.formats.oxford.OxfordWriter;
+import org.tridas.io.formats.past4.Past4Writer;
+import org.tridas.io.formats.sheffield.SheffieldWriter;
+import org.tridas.io.formats.topham.TophamWriter;
+import org.tridas.io.formats.tridas.TridasWriter1_2_2;
+import org.tridas.io.formats.tridas.TridasWriter1_2_3;
+import org.tridas.io.formats.tridasjson.TridasJSONWriter;
+import org.tridas.io.formats.trims.TrimsWriter;
+import org.tridas.io.formats.tucson.TucsonUnstackedWriter;
+import org.tridas.io.formats.tucson.TucsonWriter;
+import org.tridas.io.formats.tucsoncompact.TucsonCompactWriter;
+import org.tridas.io.formats.tucsondataonly.TucsonDataOnlyWriter;
+import org.tridas.io.formats.vformat.VFormatWriter;
 import org.tridas.io.naming.INamingConvention;
 import org.tridas.io.util.FilePermissionException;
 import org.tridas.schema.TridasProject;
@@ -70,10 +99,17 @@ public class TreeRingDataFileService  {
 		// for example CARTRAS and Sheffield 
 		//list.remove("CATRAS");
 		//list.remove("Sheffield");
-		//
-		// LiPD is to experimental
+		
+		// LiPD is too experimental
 		list.remove("LiPD");
 		list.remove("LiPD (metadata only)");
+		
+		// Fire history specific format - not relevant
+		list.remove("FHX2");
+		
+		// Don't need TRiDaS format as we're only interested in exporting to legacy formats
+		list.remove("TRiDaS v.1.2.2");
+		list.remove("TRiDaS v.1.2.3");
 		
 		return list;
 	}
@@ -162,7 +198,7 @@ public class TreeRingDataFileService  {
 		
 		try
 		{
-			writer.loadProject(data.getTridasProject());
+			writer.load(data.getTridasProject());
 
 			if (canSave(writer)) 
 			{
